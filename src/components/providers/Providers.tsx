@@ -3,7 +3,6 @@
 import { MotionConfig } from "framer-motion";
 import { ReactLenis } from "lenis/react";
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { Toaster } from "sonner";
 import { useSyncExternalStore, type ReactNode } from "react";
 
 function subscribe(cb: () => void) {
@@ -25,21 +24,7 @@ export function Providers({ children }: { children: ReactNode }) {
 
   const content = (
     <MotionConfig reducedMotion="user">
-      <Tooltip.Provider delayDuration={200}>
-        {children}
-        <Toaster
-          position="bottom-center"
-          toastOptions={{
-            style: {
-              background: "var(--c-ink)",
-              color: "var(--c-paper)",
-              border: "none",
-              borderRadius: "14px",
-              fontFamily: "var(--font-body)",
-            },
-          }}
-        />
-      </Tooltip.Provider>
+      <Tooltip.Provider delayDuration={200}>{children}</Tooltip.Provider>
     </MotionConfig>
   );
 

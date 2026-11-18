@@ -12,8 +12,6 @@ Sito della pizzeria **Lo Sfizio** in piazza a Dro (TN). È un sito statico in Ne
 | Componenti UI | [Radix UI](https://www.radix-ui.com) (Dialog, Tabs, Accordion, Tooltip, Dropdown Menu): accessibili e senza stile, stilizzati in Sass |
 | Carosello | [Embla Carousel](https://www.embla-carousel.com) + autoplay |
 | Scroll fluido | [Lenis](https://lenis.darkroom.engineering) (si disattiva se l'utente preferisce meno animazioni) |
-| Form | [React Hook Form](https://react-hook-form.com) + [Zod](https://zod.dev) |
-| Notifiche | [Sonner](https://sonner.emilkowal.ski) |
 | Icone | [Lucide](https://lucide.dev) |
 | Font | Fraunces + Manrope, ospitati nel progetto (`src/fonts`, licenza OFL) |
 
@@ -58,20 +56,17 @@ I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **s
 - [ ] Nome esatto dell'attività (ora: "Lo Sfizio")
 - [ ] Indirizzo (ora: Piazza Repubblica 15, Dro, da elenchi online) e coordinate
 - [ ] Numero di telefono (ora: `388 907 7320`, da elenchi online; un elenco riporta `388 907 7920`)
-- [ ] WhatsApp ed e-mail (ora vuoti: se li compili, il form invia la richiesta su WhatsApp o per e-mail)
+- [ ] WhatsApp ed e-mail (ora vuoti: se compili WhatsApp compare il pulsante per scrivervi)
 - [ ] Orari di apertura (ora: orario continuato, da RestaurantGuru)
 - [ ] Menu e prezzi (ora: esempio realistico)
 - [ ] Risposte delle FAQ (pagamenti, senza glutine…)
 - [ ] Link Instagram e Facebook (vuoti = icone nascoste)
 - [ ] Testo della pagina Privacy
 
-### Come funziona il modulo "Prenota o ordina"
+### Ordini e prenotazioni
 
-Il sito è statico e non ha un backend: il modulo prepara il messaggio e lo invia nel primo canale configurato, in questo ordine:
-
-1. WhatsApp (`contacts.whatsapp`)
-2. e-mail (`contacts.email`)
-3. nessuno dei due: copia il messaggio negli appunti e invita a telefonare
+Sul sito non ci sono prenotazioni né ordini online: la sezione "Ordina da asporto" spiega come ordinare per telefono.
+Se compili `contacts.whatsapp` in `src/data/site.ts` compare anche il pulsante "Scrivici su WhatsApp".
 
 ## Deploy su Vercel
 
@@ -89,10 +84,10 @@ src/
   proxy.ts             reindirizza "/" alla lingua del visitatore
   components/
     layout/            Header (menu mobile, scelta lingua e tema) e Footer
-    sections/          sezioni della home (Hero, Chi siamo, Pizze in evidenza, Menu, Orari e mappa, FAQ, Contatti)
+    sections/          sezioni della home (Hero, Chi siamo, Pizze in evidenza, Menu, Orari e mappa, FAQ, Ordina da asporto)
     menu/              menu completo con ricerca e filtri
     ui/                componenti riutilizzabili (Button, Reveal, PizzaArt, OpenStatus…)
-    providers/         Lenis, MotionConfig, Tooltip, Toaster
+    providers/         Lenis, MotionConfig, Tooltip
     seo/               dati strutturati JSON-LD (schema.org Restaurant)
   data/                contenuti modificabili
   lib/                 calcolo orari e stato "aperto/chiuso" sul fuso di Roma

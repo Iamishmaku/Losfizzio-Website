@@ -21,7 +21,6 @@ export function JsonLd({ locale, dict }: { locale: Locale; dict: Dictionary }) {
     image: `${site.url}/${locale}/opengraph-image`,
     servesCuisine: ["Pizza", "Italian", "Kebab"],
     priceRange: "€",
-    acceptsReservations: true,
     hasMap: mapsLink,
     address: {
       "@type": "PostalAddress",
