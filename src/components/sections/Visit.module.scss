@@ -5,8 +5,8 @@
   padding-block: clamp(80px, 11vw, 150px);
   background:
     radial-gradient(circle at 85% 10%, rgba(200, 50, 31, 0.35), transparent 45%),
-    radial-gradient(circle at 10% 90%, rgba(224, 163, 70, 0.18), transparent 40%), var(--c-ink);
-  color: var(--c-paper);
+    radial-gradient(circle at 10% 90%, rgba(224, 163, 70, 0.18), transparent 40%), var(--c-night);
+  color: var(--c-light);
 }
 
 .grid {
@@ -168,7 +168,7 @@
   gap: 10px;
   padding: 24px;
   text-align: center;
-  color: var(--c-paper);
+  color: var(--c-light);
 
   @include focus-ring(-6px);
 }

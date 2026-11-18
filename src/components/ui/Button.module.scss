@@ -2,7 +2,7 @@
 
 .button {
   --bg: var(--c-tomato);
-  --fg: var(--c-paper);
+  --fg: var(--c-light);
   --bd: transparent;
 
   position: relative;
@@ -91,8 +91,8 @@
 }
 
 .light {
-  --bg: var(--c-paper);
-  --fg: var(--c-ink);
+  --bg: var(--c-light);
+  --fg: var(--c-night);
 
   &::before {
     background: var(--c-cheese);

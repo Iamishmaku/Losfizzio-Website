@@ -2,7 +2,7 @@
 
 .footer {
   position: relative;
-  background: var(--c-ink);
+  background: var(--c-night);
   color: rgba(255, 250, 241, 0.78);
   padding-top: clamp(56px, 8vw, 96px);
   font-size: rem(15.5);
@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   height: 60px;
-  color: var(--c-ink);
+  color: var(--c-night);
 
   svg {
     width: 100%;
@@ -64,7 +64,7 @@
 
     @include hover {
       background: var(--c-tomato);
-      color: var(--c-paper);
+      color: var(--c-light);
     }
 
     svg {
@@ -111,7 +111,7 @@
   transition: color 0.2s;
 
   @include hover {
-    color: var(--c-paper);
+    color: var(--c-light);
     text-decoration: underline;
     text-underline-offset: 4px;
   }
@@ -129,7 +129,7 @@
 
   dt {
     font-weight: 600;
-    color: var(--c-paper);
+    color: var(--c-light);
   }
 
   dd {

@@ -1,4 +1,4 @@
-@use "../../styles/abstracts" as *;
+@use "../../../styles/abstracts" as *;
 
 .page {
   padding-top: calc(var(--header-h) + clamp(32px, 6vw, 72px));

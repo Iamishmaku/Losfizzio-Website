@@ -6,7 +6,10 @@ import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import clsx from "clsx";
-import { formatPrice, getFeatured, tagLabels } from "@/data/menu";
+import { formatPrice, getFeatured } from "@/data/menu";
+import { fmt } from "@/i18n/format";
+import { useI18n } from "@/i18n/I18nProvider";
+import { Rich } from "@/i18n/Rich";
 import { DishVisual } from "@/components/ui/DishVisual";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import styles from "./Featured.module.scss";
@@ -14,6 +17,8 @@ import styles from "./Featured.module.scss";
 const pizzas = getFeatured();
 
 export function Featured() {
+  const { locale, dict } = useI18n();
+  const t = dict.featured;
   const [emblaRef, embla] = useEmblaCarousel({ loop: true, align: "start", skipSnaps: false }, [
     Autoplay({
       delay: 4500,
@@ -44,42 +49,26 @@ export function Featured() {
     <section className={styles.section} aria-labelledby="featured-title">
       <div className="container">
         <div className={styles.head}>
-          <SectionHeading
-            id="featured-title"
-            eyebrow="Le più amate"
-            title={
-              <>
-                Le pizze da <em>non perdere</em>
-              </>
-            }
-          />
+          <SectionHeading id="featured-title" eyebrow={t.eyebrow} title={<Rich text={t.title} />} />
           <div className={styles.nav}>
-            <button
-              className={styles.arrow}
-              onClick={() => embla?.scrollPrev()}
-              aria-label="Pizza precedente"
-            >
+            <button className={styles.arrow} onClick={() => embla?.scrollPrev()} aria-label={t.prev}>
               <ArrowLeft />
             </button>
-            <button
-              className={styles.arrow}
-              onClick={() => embla?.scrollNext()}
-              aria-label="Pizza successiva"
-            >
+            <button className={styles.arrow} onClick={() => embla?.scrollNext()} aria-label={t.next}>
               <ArrowRight />
             </button>
           </div>
         </div>
       </div>
 
-      <div className={styles.viewport} ref={emblaRef} aria-roledescription="carosello">
+      <div className={styles.viewport} ref={emblaRef} aria-roledescription={t.carousel}>
         <ul className={styles.track}>
           {pizzas.map((p, i) => (
             <li
-              key={p.name}
+              key={p.id}
               className={styles.slide}
-              aria-roledescription="slide"
-              aria-label={`${i + 1} di ${pizzas.length}`}
+              aria-roledescription={t.slide}
+              aria-label={fmt(t.slideOf, { n: i + 1, total: pizzas.length })}
             >
               <motion.article className={styles.card} whileHover="hover" initial="rest" animate="rest">
                 <motion.div
@@ -90,23 +79,27 @@ export function Featured() {
                   }}
                   transition={{ type: "spring", stiffness: 120, damping: 14 }}
                 >
-                  <DishVisual item={p} sizes="(min-width: 1024px) 300px, (min-width: 560px) 40vw, 70vw" />
+                  <DishVisual
+                    item={p}
+                    locale={locale}
+                    sizes="(min-width: 1024px) 300px, (min-width: 560px) 40vw, 70vw"
+                  />
                 </motion.div>
                 <div className={styles.body}>
                   {p.tags?.length ? (
                     <ul className={styles.tags}>
-                      {p.tags.map((t) => (
-                        <li key={t} data-tag={t}>
-                          {tagLabels[t]}
+                      {p.tags.map((tag) => (
+                        <li key={tag} data-tag={tag}>
+                          {dict.tags[tag]}
                         </li>
                       ))}
                     </ul>
                   ) : null}
                   <div className={styles.titleRow}>
-                    <h3>{p.name}</h3>
-                    <span className={styles.price}>{formatPrice(p.price)}</span>
+                    <h3>{p.name[locale]}</h3>
+                    <span className={styles.price}>{formatPrice(p.price, locale)}</span>
                   </div>
-                  <p>{p.description}</p>
+                  <p>{p.description[locale]}</p>
                 </div>
               </motion.article>
             </li>
@@ -114,13 +107,13 @@ export function Featured() {
         </ul>
       </div>
 
-      <div className={styles.dots} role="group" aria-label="Scegli la pizza">
+      <div className={styles.dots} role="group" aria-label={t.dots}>
         {snaps.map((_, i) => (
           <button
             key={i}
             className={clsx(styles.dot, i === selected && styles.active)}
             onClick={() => embla?.scrollTo(i)}
-            aria-label={`Vai alla pizza ${i + 1}`}
+            aria-label={fmt(t.goTo, { n: i + 1 })}
             aria-current={i === selected}
           />
         ))}

@@ -1,7 +1,7 @@
 @use "abstracts" as *;
 
 :root {
-  // Palette
+  // Palette (tema chiaro)
   --c-cream: #fbf3e4;
   --c-cream-2: #f5e7cf;
   --c-paper: #fffaf1;
@@ -16,6 +16,30 @@
   --c-crust-dark: #b77a24;
   --c-cheese: #fde7a8;
   --c-line: rgba(34, 24, 15, 0.12);
+  --c-line-strong: rgba(34, 24, 15, 0.24);
+  --c-hover: rgba(34, 24, 15, 0.06);
+
+  // Colori che non cambiano col tema (superfici scure, testo su rosso)
+  --c-night: #22180f;
+  --c-light: #fffaf1;
+
+  // Superfici semitrasparenti
+  --c-glass: rgba(255, 250, 241, 0.75);
+  --c-glass-strong: rgba(255, 250, 241, 0.9);
+  --c-header-bg: rgba(251, 243, 228, 0.86);
+  --c-input-focus: #ffffff;
+  --c-dots: rgba(60, 35, 10, 0.05);
+  --c-glow: rgba(224, 163, 70, 0.35);
+
+  // Etichette del menu
+  --c-veg-bg: #e1efd9;
+  --c-veg-fg: #2f6b3a;
+  --c-hot-bg: #fde0d9;
+  --c-hot-fg: #9e2414;
+  --c-star-bg: #fde7a8;
+  --c-star-fg: #7a4b07;
+  --c-icon-bg: #fde7a8;
+  --c-icon-fg: #9e2414;
 
   --radius-sm: 10px;
   --radius: 18px;
@@ -26,6 +50,53 @@
 
   --header-h: #{$header-h};
   color-scheme: light;
+}
+
+// Tema scuro: segue il sistema, oppure la scelta fatta sul sito (data-theme su <html>).
+@mixin dark-theme {
+  --c-cream: #15100b;
+  --c-cream-2: #1e1711;
+  --c-paper: #261d15;
+  --c-ink: #f6ecdc;
+  --c-ink-soft: #d2c3ae;
+  --c-muted: #a08d77;
+  --c-tomato: #e2513a;
+  --c-tomato-dark: #ff9479;
+  --c-basil: #86c98f;
+  --c-line: rgba(255, 238, 214, 0.1);
+  --c-line-strong: rgba(255, 238, 214, 0.22);
+  --c-hover: rgba(255, 238, 214, 0.07);
+
+  --c-glass: rgba(38, 29, 21, 0.75);
+  --c-glass-strong: rgba(38, 29, 21, 0.9);
+  --c-header-bg: rgba(21, 16, 11, 0.85);
+  --c-input-focus: #2e241a;
+  --c-dots: rgba(255, 230, 190, 0.035);
+  --c-glow: rgba(224, 120, 50, 0.18);
+
+  --c-veg-bg: rgba(134, 201, 143, 0.16);
+  --c-veg-fg: #9ad6a2;
+  --c-hot-bg: rgba(226, 81, 58, 0.2);
+  --c-hot-fg: #ffab96;
+  --c-star-bg: rgba(253, 231, 168, 0.16);
+  --c-star-fg: #fde7a8;
+  --c-icon-bg: rgba(253, 231, 168, 0.12);
+  --c-icon-fg: #fde7a8;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+  color-scheme: dark;
+}
+
+:root[data-theme="dark"] {
+  @include dark-theme;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    @include dark-theme;
+  }
 }
 
 *,
@@ -66,6 +137,9 @@ html.lenis body {
 
 body {
   min-height: 100dvh;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   background: var(--c-cream);
   color: var(--c-ink);
   font-family: var(--font-body), system-ui, sans-serif;

@@ -1,23 +1,35 @@
 "use client";
 
 import clsx from "clsx";
-import { dayLabels } from "@/data/site";
-import { getOpenStatus, type OpenStatus as Status } from "@/lib/hours";
+import { fmt } from "@/i18n/format";
+import { useI18n } from "@/i18n/I18nProvider";
+import { getOpenStatus } from "@/lib/hours";
 import { useRomeClock } from "@/lib/useRomeClock";
 import styles from "./OpenStatus.module.scss";
 
-function label(status: Status, today: string) {
-  if (status.open) return `Aperto ora · chiude alle ${status.closesAt}`;
-  if (!status.opensAt || !status.opensDay) return "Chiuso";
-  const when = status.opensDay === today ? "oggi" : dayLabels[status.opensDay].toLowerCase();
-  return `Chiuso · apre ${when} alle ${status.opensAt}`;
-}
-
 /** Badge "aperto/chiuso" calcolato lato client sull'ora di Roma (la pagina resta statica). */
 export function OpenStatus({ className, tone = "dark" }: { className?: string; tone?: "dark" | "light" }) {
+  const { locale, dict } = useI18n();
   const clock = useRomeClock();
   // clock cambia ogni minuto: ricalcoliamo lo stato di conseguenza
   const status = clock ? getOpenStatus() : null;
+
+  let text = dict.status.fallback;
+  if (status && clock) {
+    if (status.open) text = fmt(dict.status.openNow, { time: status.closesAt });
+    else if (status.opensAt && status.opensDay)
+      text = fmt(dict.status.closedOpens, {
+        when:
+          status.opensDay === clock.day
+            ? dict.status.today
+            : // in italiano i giorni vanno in minuscolo, in inglese e tedesco no
+              locale === "it"
+              ? dict.days[status.opensDay].toLowerCase()
+              : dict.days[status.opensDay],
+        time: status.opensAt,
+      });
+    else text = dict.status.closed;
+  }
 
   return (
     <span
@@ -30,7 +42,7 @@ export function OpenStatus({ className, tone = "dark" }: { className?: string; t
       aria-live="polite"
     >
       <span className={styles.dot} aria-hidden="true" />
-      {status && clock ? label(status, clock.day) : "Orari di apertura"}
+      {text}
     </span>
   );
 }

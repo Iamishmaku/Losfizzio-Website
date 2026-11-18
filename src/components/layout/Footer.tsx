@@ -1,13 +1,26 @@
+"use client";
+
 import Link from "next/link";
 import { MapPin, Phone, Mail, Star } from "lucide-react";
-import { FacebookIcon, InstagramIcon } from "@/components/ui/SocialIcons";
-import { dayLabels, dayOrder, fullAddress, mapsLink, navLinks, site, telLink } from "@/data/site";
+import { dayOrder, fullAddress, mapsLink, site, telLink } from "@/data/site";
+import { localePath } from "@/i18n/config";
+import { useI18n } from "@/i18n/I18nProvider";
 import { slotLines } from "@/lib/hours";
 import { Logo } from "@/components/ui/Logo";
+import { FacebookIcon, InstagramIcon } from "@/components/ui/SocialIcons";
 import styles from "./Footer.module.scss";
 
 export function Footer() {
+  const { locale, dict } = useI18n();
   const { instagram, facebook, googleReviews } = site.social;
+  const links = [
+    { href: localePath(locale, "#about"), label: dict.nav.about },
+    { href: localePath(locale, "/menu"), label: dict.nav.menu },
+    { href: localePath(locale, "#hours"), label: dict.nav.hours },
+    { href: localePath(locale, "#location"), label: dict.nav.location },
+    { href: localePath(locale, "#contact"), label: dict.nav.contact },
+    { href: localePath(locale, "/privacy"), label: dict.nav.privacy },
+  ];
 
   return (
     <footer className={styles.footer}>
@@ -19,7 +32,7 @@ export function Footer() {
       <div className={styles.inner}>
         <div className={styles.brand}>
           <Logo tone="light" />
-          <p>{site.description}</p>
+          <p>{dict.meta.description}</p>
           <div className={styles.social}>
             {instagram && (
               <a href={instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -36,7 +49,7 @@ export function Footer() {
                 href={googleReviews}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Recensioni su Google"
+                aria-label={dict.footer.reviews}
               >
                 <Star />
               </a>
@@ -45,7 +58,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className={styles.title}>Contatti</h2>
+          <h2 className={styles.title}>{dict.footer.contacts}</h2>
           <ul className={styles.list}>
             <li>
               <MapPin aria-hidden="true" />
@@ -67,13 +80,13 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className={styles.title}>Orari</h2>
+          <h2 className={styles.title}>{dict.footer.hours}</h2>
           <dl className={styles.hours}>
             {dayOrder.map((d) => (
               <div key={d}>
-                <dt>{dayLabels[d]}</dt>
+                <dt>{dict.days[d]}</dt>
                 <dd>
-                  {slotLines(site.hours[d]).map((l) => (
+                  {slotLines(site.hours[d], dict.status.closed).map((l) => (
                     <span key={l}>{l}</span>
                   ))}
                 </dd>
@@ -83,24 +96,21 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className={styles.title}>Esplora</h2>
+          <h2 className={styles.title}>{dict.footer.explore}</h2>
           <ul className={styles.links}>
-            {navLinks.map((l) => (
+            {links.map((l) => (
               <li key={l.href}>
                 <Link href={l.href}>{l.label}</Link>
               </li>
             ))}
-            <li>
-              <Link href="/privacy">Privacy e cookie</Link>
-            </li>
           </ul>
         </div>
       </div>
       <div className={styles.bottom}>
         <p>
-          © {site.fullName} · {site.address.city} ({site.address.province})
+          © {dict.meta.fullName} · {site.address.city} ({site.address.province})
         </p>
-        <p>Fatto con passione (e un po&apos; di farina) in Valle del Sarca.</p>
+        <p>{dict.footer.madeWith}</p>
       </div>
     </footer>
   );

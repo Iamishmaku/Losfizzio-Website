@@ -50,14 +50,9 @@ export function getOpenStatus(date = new Date()): OpenStatus {
   return { open: false, opensAt: null, opensDay: null };
 }
 
-export function formatSlots(slots: readonly TimeSlot[]) {
-  if (!slots.length) return "Chiuso";
-  return slots.map((s) => `${s.open} – ${s.close}`).join(" · ");
-}
-
 /** Le fasce orarie come elenco di stringhe, da mostrare una per riga. */
-export function slotLines(slots: readonly TimeSlot[]) {
-  return slots.length ? slots.map((s) => `${s.open} – ${s.close}`) : ["Chiuso"];
+export function slotLines(slots: readonly TimeSlot[], closedLabel: string) {
+  return slots.length ? slots.map((s) => `${s.open} – ${s.close}`) : [closedLabel];
 }
 
 /** Formato schema.org "Mo-Su" per i dati strutturati. */

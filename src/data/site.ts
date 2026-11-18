@@ -2,6 +2,7 @@
  * Dati principali della pizzeria.
  * ⚠️ Tutti i valori marcati con "DA VERIFICARE" vanno controllati prima della messa online.
  * Modificando questo file si aggiornano automaticamente tutte le pagine, i metadati SEO e i dati strutturati.
+ * I testi tradotti (descrizioni, FAQ, ecc.) sono in src/i18n/dictionaries.
  */
 
 export type DayKey = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
@@ -14,13 +15,8 @@ export interface TimeSlot {
 
 export const site = {
   name: "Lo Sfizio",
-  fullName: "Lo Sfizio · Pizzeria, Kebab, Bar & Caffè",
-  tagline: "La pizza in piazza a Dro",
-  description:
-    "Lo Sfizio è la pizzeria in piazza a Dro (Trento): pizze cotte al momento, kebab, piadine, bar e caffè. Mangia da noi in piazza o ordina da asporto.",
   /** URL definitivo del sito (usato per SEO, sitemap e Open Graph). DA VERIFICARE */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://losfizio-dro.vercel.app",
-  locale: "it_IT",
 
   address: {
     /** Fonte: Tripadvisor e altri elenchi online (2026). */
@@ -70,19 +66,7 @@ export const site = {
     sat: [{ open: "10:00", close: "22:30" }],
     sun: [{ open: "11:30", close: "22:30" }],
   } satisfies Record<DayKey, TimeSlot[]>,
-
-  services: ["In piazza", "Asporto", "Kebab", "Bar & Caffè"],
 } as const;
-
-export const dayLabels: Record<DayKey, string> = {
-  mon: "Lunedì",
-  tue: "Martedì",
-  wed: "Mercoledì",
-  thu: "Giovedì",
-  fri: "Venerdì",
-  sat: "Sabato",
-  sun: "Domenica",
-};
 
 export const dayOrder: DayKey[] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
@@ -98,11 +82,3 @@ export function whatsappLink(text?: string) {
   const base = `https://wa.me/${site.contacts.whatsapp}`;
   return text ? `${base}?text=${encodeURIComponent(text)}` : base;
 }
-
-export const navLinks = [
-  { href: "/#chi-siamo", label: "Chi siamo" },
-  { href: "/menu", label: "Menu" },
-  { href: "/#orari", label: "Orari" },
-  { href: "/#dove-siamo", label: "Dove siamo" },
-  { href: "/#contatti", label: "Contatti" },
-] as const;

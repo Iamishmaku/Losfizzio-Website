@@ -92,8 +92,7 @@ $ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 
 @mixin paper-texture {
   background-image:
-    radial-gradient(rgba(60, 35, 10, 0.05) 1px, transparent 1px),
-    radial-gradient(rgba(60, 35, 10, 0.035) 1px, transparent 1px);
+    radial-gradient(var(--c-dots) 1px, transparent 1px), radial-gradient(var(--c-dots) 1px, transparent 1px);
   background-size:
     22px 22px,
     13px 13px;

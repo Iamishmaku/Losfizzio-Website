@@ -2,17 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Fragment } from "react";
+import { useI18n } from "@/i18n/I18nProvider";
 import styles from "./Marquee.module.scss";
-
-const items = [
-  "Pizza cotta al momento",
-  "Kebab",
-  "Asporto",
-  "Piadine",
-  "Bar & caffè",
-  "Spritz in piazza",
-  "Impasto a lunga lievitazione",
-];
 
 function Star() {
   return (
@@ -23,6 +14,8 @@ function Star() {
 }
 
 export function Marquee({ reverse = false }: { reverse?: boolean }) {
+  const { dict } = useI18n();
+  const items = dict.marquee;
   const row = (
     <div className={styles.row}>
       {items.map((t) => (

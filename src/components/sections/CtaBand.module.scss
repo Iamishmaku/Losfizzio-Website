@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   background: var(--c-tomato);
-  color: var(--c-paper);
+  color: var(--c-light);
   padding-block: clamp(64px, 9vw, 120px) clamp(96px, 12vw, 160px);
 
   &::before {
@@ -56,7 +56,7 @@
 }
 
 .ghost {
-  --fg: var(--c-paper) !important;
+  --fg: var(--c-light) !important;
   --bd: rgba(255, 255, 255, 0.45) !important;
 
   &::before {

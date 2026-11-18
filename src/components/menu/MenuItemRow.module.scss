@@ -58,26 +58,26 @@
   }
 
   &[data-tag="vegetariana"] {
-    background: #e1efd9;
-    color: var(--c-basil);
+    background: var(--c-veg-bg);
+    color: var(--c-veg-fg);
   }
 
   &[data-tag="piccante"] {
-    background: #fde0d9;
-    color: var(--c-tomato-dark);
+    background: var(--c-hot-bg);
+    color: var(--c-hot-fg);
   }
 
   &[data-tag="novita"],
   &[data-tag="consigliata"] {
-    background: var(--c-cheese);
-    color: #7a4b07;
+    background: var(--c-star-bg);
+    color: var(--c-star-fg);
   }
 }
 
 .leader {
   flex: 1;
   min-width: 16px;
-  border-bottom: 2px dotted rgba(34, 24, 15, 0.25);
+  border-bottom: 2px dotted var(--c-line-strong);
   transform: translateY(-5px);
 }
 

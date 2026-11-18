@@ -3,10 +3,12 @@ import { site } from "@/data/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: site.fullName,
+    name: "Lo Sfizio · Pizzeria, Kebab, Bar & Caffè",
     short_name: site.name,
-    description: site.description,
+    description:
+      "Pizzeria in piazza a Dro (TN) · Pizzeria on the square in Dro · Pizzeria auf der Piazza in Dro",
     start_url: "/",
+    scope: "/",
     display: "standalone",
     background_color: "#fbf3e4",
     theme_color: "#c8321f",

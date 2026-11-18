@@ -1,0 +1,61 @@
+@use "../styles/abstracts" as *;
+
+.page {
+  @include container;
+  min-height: 100svh;
+  padding-block: 64px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.art {
+  width: 150px;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.code {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: rem(24);
+  color: var(--c-tomato);
+}
+
+.block {
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+
+  h1 {
+    @include display(40px, 28px);
+  }
+
+  & + & {
+    padding-top: 14px;
+    border-top: 1px solid var(--c-line);
+  }
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--c-tomato);
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  @include hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}

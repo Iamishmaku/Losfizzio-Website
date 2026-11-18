@@ -4,14 +4,15 @@ import { Fragment, useRef } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import { site, telLink } from "@/data/site";
+import { localePath } from "@/i18n/config";
+import { useI18n } from "@/i18n/I18nProvider";
+import { splitWords } from "@/i18n/Rich";
 import { Button } from "@/components/ui/Button";
 import { OpenStatus } from "@/components/ui/OpenStatus";
 import { PizzaArt } from "@/components/ui/PizzaArt";
 import styles from "./Hero.module.scss";
 
 const ease = [0.22, 1, 0.36, 1] as const;
-
-const words = ["La", "pizza", "in piazza", "a", "Dro."];
 
 function Leaf({ className }: { className?: string }) {
   return (
@@ -48,6 +49,8 @@ function Mushroom({ className }: { className?: string }) {
 }
 
 export function Hero() {
+  const { locale, dict } = useI18n();
+  const words = splitWords(dict.hero.title);
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -84,15 +87,15 @@ export function Hero() {
           <h1 id="hero-title" className={styles.title}>
             <span className="sr-only">{site.name}: </span>
             {words.map((w, i) => (
-              <Fragment key={w}>
+              <Fragment key={`${w.text}-${i}`}>
                 <span className={styles.wordWrap}>
                   <motion.span
-                    className={w === "in piazza" ? styles.accent : undefined}
+                    className={w.accent ? styles.accent : undefined}
                     initial={{ y: "110%" }}
                     animate={{ y: "0%" }}
                     transition={{ duration: 0.9, ease, delay: 0.1 + i * 0.08 }}
                   >
-                    {w}
+                    {w.text}
                   </motion.span>
                 </span>
                 {i < words.length - 1 && " "}
@@ -106,8 +109,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease, delay: 0.55 }}
           >
-            Pizze cotte al momento, kebab, piadine e un buon caffè, nel cuore di Dro. Siediti in piazza o
-            passa a ritirarla da asporto.
+            {dict.hero.lead}
           </motion.p>
 
           <motion.div
@@ -116,11 +118,11 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease, delay: 0.7 }}
           >
-            <Button href="/menu" size="lg" iconRight={<ArrowRight />}>
-              Scopri il menu
+            <Button href={localePath(locale, "/menu")} size="lg" iconRight={<ArrowRight />}>
+              {dict.hero.ctaMenu}
             </Button>
             <Button href={telLink} size="lg" variant="secondary" icon={<Phone />}>
-              Ordina al telefono
+              {dict.hero.ctaPhone}
             </Button>
           </motion.div>
 
@@ -134,7 +136,7 @@ export function Hero() {
               },
             }}
           >
-            {site.services.map((s) => (
+            {dict.services.map((s) => (
               <motion.li
                 key={s}
                 variants={{
@@ -164,7 +166,7 @@ export function Hero() {
                   seed="hero"
                   toppings={["tomato", "mozzarella", "basil", "salami", "olive", "mushroom"]}
                   className={styles.pizza}
-                  title="Illustrazione di una pizza"
+                  title={dict.hero.illustration}
                 />
               </motion.div>
             </motion.div>
@@ -174,8 +176,9 @@ export function Hero() {
                 <path id="hero-ring" d="M100 100 m-88 0 a88 88 0 1 1 176 0 a88 88 0 1 1 -176 0" />
               </defs>
               <text>
-                <textPath href="#hero-ring">
-                  Pizzeria · Kebab · Bar · Caffè · In piazza a Dro · Pizzeria · Kebab · Bar ·
+                {/* textLength adatta il testo alla circonferenza (2π·88), qualunque sia la lingua */}
+                <textPath href="#hero-ring" textLength={552} lengthAdjust="spacing">
+                  {dict.hero.ring}
                 </textPath>
               </text>
             </svg>

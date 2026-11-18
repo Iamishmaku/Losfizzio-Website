@@ -9,7 +9,7 @@ Sito della pizzeria **Lo Sfizio** in piazza a Dro (TN). È un sito statico in Ne
 | Framework | [Next.js 16](https://nextjs.org) (App Router, tutte le pagine prerenderizzate) + React 19 + TypeScript |
 | Stili | [Sass](https://sass-lang.com) con CSS Modules (`*.module.scss`) + variabili/mixin in `src/styles/_abstracts.scss` |
 | Animazioni | [Framer Motion](https://motion.dev): parallax, comparse allo scroll, transizioni di tab e form |
-| Componenti UI | [Radix UI](https://www.radix-ui.com) (Dialog, Tabs, Accordion, Tooltip): accessibili e senza stile, stilizzati in Sass |
+| Componenti UI | [Radix UI](https://www.radix-ui.com) (Dialog, Tabs, Accordion, Tooltip, Dropdown Menu): accessibili e senza stile, stilizzati in Sass |
 | Carosello | [Embla Carousel](https://www.embla-carousel.com) + autoplay |
 | Scroll fluido | [Lenis](https://lenis.darkroom.engineering) (si disattiva se l'utente preferisce meno animazioni) |
 | Form | [React Hook Form](https://react-hook-form.com) + [Zod](https://zod.dev) |
@@ -31,13 +31,25 @@ npm run format     # Prettier
 
 Serve Node.js 20.9 o superiore.
 
+## Lingue e tema
+
+- **Lingue:** italiano, inglese e tedesco, con indirizzi separati (`/it`, `/en`, `/de`), tutti statici.
+  Chi apre `/` viene mandato nella sua lingua: prima conta quella scelta in precedenza sul sito (cookie),
+  poi la lingua del browser/sistema. Per le altre lingue (francese, olandese…) si usa l'inglese,
+  per i motori di ricerca l'italiano. Lo fa `src/proxy.ts`.
+- **Tema chiaro/scuro:** segue il sistema operativo. Si cambia in qualsiasi momento dall'header
+  (icona schermo/sole/luna: Automatico, Chiaro, Scuro) e la scelta resta salvata nel browser.
+- Anche la lingua si cambia dall'header (icona globo con la sigla: IT, EN, DE).
+
 ## Dove modificare i contenuti
 
-Tutti i contenuti stanno in tre file. Modificandoli si aggiornano le pagine, il SEO e i dati strutturati per Google.
+Tutti i contenuti stanno in pochi file. Modificandoli si aggiornano le pagine, il SEO e i dati strutturati per Google.
 
-- `src/data/site.ts`: nome, indirizzo, telefono, WhatsApp, e-mail, social, **orari**
-- `src/data/menu.ts`: categorie, piatti, prezzi, etichette (vegetariana, piccante…) e pizze in evidenza
-- `src/data/faq.ts`: domande frequenti
+- `src/data/site.ts`: indirizzo, telefono, WhatsApp, e-mail, social, **orari**
+- `src/data/menu.ts`: categorie, piatti, prezzi, etichette (vegetariana, piccante…), ingredienti per il disegno della pizza
+  e pizze in evidenza. Ogni testo è scritto come `l("italiano", "english", "deutsch")`
+- `src/i18n/dictionaries/it.ts`, `en.ts`, `de.ts`: tutti i testi del sito nelle tre lingue (comprese le FAQ).
+  Le parti tra `*asterischi*` vengono evidenziate in rosso
 
 ### ⚠️ Da verificare prima di andare online
 
@@ -71,9 +83,12 @@ Il sito è statico e non ha un backend: il modulo prepara il messaggio e lo invi
 
 ```
 src/
-  app/                 pagine (home, /menu, /privacy, 404), sitemap, robots, manifest, icone e immagine Open Graph
+  app/[lang]/          pagine in ogni lingua (home, /menu, /privacy, 404) e immagine Open Graph
+  app/                 sitemap, robots, manifest, icone, 404 globale
+  i18n/                lingue disponibili, dizionari dei testi, rilevamento della lingua
+  proxy.ts             reindirizza "/" alla lingua del visitatore
   components/
-    layout/            Header (con menu mobile) e Footer
+    layout/            Header (menu mobile, scelta lingua e tema) e Footer
     sections/          sezioni della home (Hero, Chi siamo, Pizze in evidenza, Menu, Orari e mappa, FAQ, Contatti)
     menu/              menu completo con ricerca e filtri
     ui/                componenti riutilizzabili (Button, Reveal, PizzaArt, OpenStatus…)
@@ -91,4 +106,4 @@ Per usare le foto vere mettile in `public/images/menu/` e aggiungi `image: "/ima
 
 ### Privacy
 
-Il sito non usa cookie né strumenti di analisi. La mappa di Google si carica solo quando l'utente la richiede.
+Il sito non usa cookie di profilazione né strumenti di analisi: salva solo la lingua scelta (cookie tecnico) e il tema (memoria del browser). La mappa di Google si carica solo quando l'utente la richiede.

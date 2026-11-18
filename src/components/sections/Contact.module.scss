@@ -27,8 +27,9 @@
   gap: 18px;
   padding: 22px;
   border-radius: var(--radius-lg);
-  background: var(--c-ink);
-  color: var(--c-paper);
+  background: var(--c-night);
+  color: var(--c-light);
+  border: 1px solid var(--c-line);
   width: fit-content;
   max-width: 100%;
 }
@@ -118,7 +119,7 @@
 }
 
 .typeActive {
-  color: var(--c-paper);
+  color: var(--c-light);
 }
 
 .typePill {
@@ -171,7 +172,7 @@
     &:focus {
       outline: none;
       border-color: var(--c-tomato);
-      background: #fff;
+      background: var(--c-input-focus);
       box-shadow: 0 0 0 4px rgba(200, 50, 31, 0.12);
     }
   }

@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { Flame, Leaf, Sparkles, ThumbsUp } from "lucide-react";
-import { formatPrice, tagLabels, type MenuItem, type Tag } from "@/data/menu";
+import { formatPrice, type MenuItem, type Tag } from "@/data/menu";
+import { useI18n } from "@/i18n/I18nProvider";
 import styles from "./MenuItemRow.module.scss";
 
 const tagIcon: Record<Tag, typeof Leaf> = {
@@ -11,6 +14,7 @@ const tagIcon: Record<Tag, typeof Leaf> = {
 };
 
 export function MenuItemRow({ item }: { item: MenuItem }) {
+  const { locale, dict } = useI18n();
   return (
     <div className={styles.row} data-has-image={item.image ? "" : undefined}>
       {item.image && (
@@ -19,20 +23,20 @@ export function MenuItemRow({ item }: { item: MenuItem }) {
         </span>
       )}
       <div className={styles.head}>
-        <h3 className={styles.name}>{item.name}</h3>
+        <h3 className={styles.name}>{item.name[locale]}</h3>
         {item.tags?.map((t) => {
           const Icon = tagIcon[t];
           return (
-            <span key={t} className={styles.tag} data-tag={t} title={tagLabels[t]}>
+            <span key={t} className={styles.tag} data-tag={t} title={dict.tags[t]}>
               <Icon aria-hidden="true" />
-              <span className="sr-only">{tagLabels[t]}</span>
+              <span className="sr-only">{dict.tags[t]}</span>
             </span>
           );
         })}
         <span className={styles.leader} aria-hidden="true" />
-        <span className={styles.price}>{formatPrice(item.price)}</span>
+        <span className={styles.price}>{formatPrice(item.price, locale)}</span>
       </div>
-      <p className={styles.desc}>{item.description}</p>
+      <p className={styles.desc}>{item.description[locale]}</p>
     </div>
   );
 }

@@ -5,8 +5,11 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { Info, MapPin, Navigation, Phone } from "lucide-react";
-import { dayLabels, dayOrder, fullAddress, mapsEmbed, mapsLink, site, telLink } from "@/data/site";
+import { dayOrder, fullAddress, mapsEmbed, mapsLink, site, telLink } from "@/data/site";
 import { slotLines } from "@/lib/hours";
+import { fmt } from "@/i18n/format";
+import { useI18n } from "@/i18n/I18nProvider";
+import { Rich } from "@/i18n/Rich";
 import { useRomeClock } from "@/lib/useRomeClock";
 import { Button } from "@/components/ui/Button";
 import { OpenStatus } from "@/components/ui/OpenStatus";
@@ -15,6 +18,8 @@ import { Reveal } from "@/components/ui/Reveal";
 import styles from "./Visit.module.scss";
 
 export function Visit() {
+  const { dict } = useI18n();
+  const t = dict.visit;
   const today = useRomeClock()?.day ?? null;
   const [mapLoaded, setMapLoaded] = useState(false);
 
@@ -24,30 +29,26 @@ export function Visit() {
         <SectionHeading
           id="visit-title"
           tone="light"
-          eyebrow="Vieni a trovarci"
-          title={
-            <>
-              Ti aspettiamo <em>in piazza</em>
-            </>
-          }
-          intro="Nel centro di Dro, a due passi dalla ciclabile della Valle del Sarca e a pochi minuti da Arco e Riva del Garda."
+          eyebrow={t.eyebrow}
+          title={<Rich text={t.title} />}
+          intro={t.intro}
         />
 
         <div className={styles.grid}>
-          <Reveal className={styles.card} id="orari">
+          <Reveal className={styles.card} id="hours">
             <div className={styles.cardHead}>
-              <h3>Orari di apertura</h3>
+              <h3>{t.hoursTitle}</h3>
               <OpenStatus tone="light" />
             </div>
             <dl className={styles.hours}>
               {dayOrder.map((d) => (
                 <div key={d} className={clsx(styles.day, d === today && styles.today)}>
                   <dt>
-                    {dayLabels[d]}
-                    {d === today && <span className={styles.todayBadge}>oggi</span>}
+                    {dict.days[d]}
+                    {d === today && <span className={styles.todayBadge}>{t.today}</span>}
                   </dt>
                   <dd className={clsx(!site.hours[d].length && styles.closed)}>
-                    {slotLines(site.hours[d]).map((l) => (
+                    {slotLines(site.hours[d], dict.status.closed).map((l) => (
                       <span key={l}>{l}</span>
                     ))}
                   </dd>
@@ -57,27 +58,27 @@ export function Visit() {
             <p className={styles.note}>
               <Tooltip.Root>
                 <Tooltip.Trigger asChild>
-                  <button className={styles.info} aria-label="Informazioni sugli orari">
+                  <button className={styles.info} aria-label={t.infoLabel}>
                     <Info />
                   </button>
                 </Tooltip.Trigger>
                 <Tooltip.Portal>
                   <Tooltip.Content className={styles.tooltip} sideOffset={6}>
-                    Nei giorni festivi e in alta stagione gli orari possono cambiare.
+                    {t.tooltip}
                     <Tooltip.Arrow className={styles.tooltipArrow} />
                   </Tooltip.Content>
                 </Tooltip.Portal>
               </Tooltip.Root>
-              Orari soggetti a variazioni nei festivi: nel dubbio, chiamaci.
+              {t.note}
             </p>
           </Reveal>
 
-          <Reveal className={styles.mapCard} delay={0.1} id="dove-siamo">
+          <Reveal className={styles.mapCard} delay={0.1} id="location">
             <div className={styles.map}>
               {mapLoaded ? (
                 <iframe
                   src={mapsEmbed}
-                  title={`Mappa: ${site.name}, ${fullAddress}`}
+                  title={fmt(t.mapTitle, { name: site.name, address: fullAddress })}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
@@ -95,22 +96,22 @@ export function Visit() {
                   >
                     <MapPin />
                   </motion.span>
-                  <span className={styles.mapCta}>Mostra la mappa</span>
-                  <span className={styles.mapHint}>Caricando la mappa accetti i cookie di Google Maps.</span>
+                  <span className={styles.mapCta}>{t.showMap}</span>
+                  <span className={styles.mapHint}>{t.mapHint}</span>
                 </button>
               )}
             </div>
             <div className={styles.address}>
               <div>
-                <h3>Dove siamo</h3>
+                <h3>{t.whereTitle}</h3>
                 <p>{fullAddress}</p>
               </div>
               <div className={styles.addressCtas}>
                 <Button href={mapsLink} variant="light" icon={<Navigation />}>
-                  Indicazioni
+                  {t.directions}
                 </Button>
                 <Button href={telLink} icon={<Phone />}>
-                  Chiama
+                  {dict.common.call}
                 </Button>
               </div>
             </div>

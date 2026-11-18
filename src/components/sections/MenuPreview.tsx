@@ -5,6 +5,9 @@ import * as Tabs from "@radix-ui/react-tabs";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { menu } from "@/data/menu";
+import { localePath } from "@/i18n/config";
+import { useI18n } from "@/i18n/I18nProvider";
+import { Rich } from "@/i18n/Rich";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MenuItemRow } from "@/components/menu/MenuItemRow";
@@ -13,25 +16,23 @@ import styles from "./MenuPreview.module.scss";
 const PREVIEW_COUNT = 6;
 
 export function MenuPreview() {
+  const { locale, dict } = useI18n();
+  const t = dict.menuPreview;
   const [tab, setTab] = useState(menu[0].id);
 
   return (
-    <section id="menu" className={styles.section} aria-labelledby="menu-title">
+    <section id="menu-preview" className={styles.section} aria-labelledby="menu-title">
       <div className="container">
         <SectionHeading
           id="menu-title"
-          eyebrow="Il menu"
+          eyebrow={t.eyebrow}
           align="center"
-          title={
-            <>
-              Scegli il tuo <em>sfizio</em>
-            </>
-          }
-          intro="Dalle classiche di sempre alle nostre specialità, passando per kebab e piadine. E per chiudere, un caffè al banco."
+          title={<Rich text={t.title} />}
+          intro={t.intro}
         />
 
         <Tabs.Root value={tab} onValueChange={setTab} className={styles.tabs}>
-          <Tabs.List className={styles.list} aria-label="Categorie del menu">
+          <Tabs.List className={styles.list} aria-label={t.tabsLabel}>
             {menu.map((c) => (
               <Tabs.Trigger key={c.id} value={c.id} className={styles.trigger}>
                 {tab === c.id && (
@@ -41,7 +42,7 @@ export function MenuPreview() {
                     transition={{ type: "spring", stiffness: 380, damping: 32 }}
                   />
                 )}
-                <span className={styles.label}>{c.title}</span>
+                <span className={styles.label}>{c.title[locale]}</span>
               </Tabs.Trigger>
             ))}
           </Tabs.List>
@@ -57,11 +58,11 @@ export function MenuPreview() {
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.35 }}
                   >
-                    {c.subtitle && <p className={styles.subtitle}>{c.subtitle}</p>}
+                    {c.subtitle && <p className={styles.subtitle}>{c.subtitle[locale]}</p>}
                     <ul className={styles.items}>
                       {c.items.slice(0, PREVIEW_COUNT).map((item, i) => (
                         <motion.li
-                          key={item.name}
+                          key={item.id}
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.04 * i, duration: 0.35 }}
@@ -78,8 +79,8 @@ export function MenuPreview() {
         </Tabs.Root>
 
         <div className={styles.cta}>
-          <Button href="/menu" size="lg" variant="secondary" iconRight={<ArrowRight />}>
-            Vedi il menu completo
+          <Button href={localePath(locale, "/menu")} size="lg" variant="secondary" iconRight={<ArrowRight />}>
+            {t.fullMenu}
           </Button>
         </div>
       </div>

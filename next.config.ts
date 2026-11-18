@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  experimental: {
+    // 404 unica per gli indirizzi che non esistono (il layout principale dipende dalla lingua)
+    globalNotFound: true,
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

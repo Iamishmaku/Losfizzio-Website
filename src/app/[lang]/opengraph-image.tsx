@@ -1,12 +1,21 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/data/site";
+import { defaultLocale, isLocale, locales } from "@/i18n/config";
+import { getDictionaryFor } from "@/i18n/server";
+import { fmt } from "@/i18n/format";
 import { PizzaArt } from "@/components/ui/PizzaArt";
 
-export const alt = `${site.name} · Pizzeria in piazza a Dro`;
+export const alt = `${site.name} · Pizzeria · Dro`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
+
+export default async function OpengraphImage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const dict = await getDictionaryFor(isLocale(lang) ? lang : defaultLocale);
   return new ImageResponse(
     <div
       style={{
@@ -30,7 +39,7 @@ export default function OpengraphImage() {
             fontWeight: 700,
           }}
         >
-          Pizzeria · Kebab · Bar · Caffè
+          {dict.meta.ogKicker}
         </div>
         <div
           style={{
@@ -44,7 +53,7 @@ export default function OpengraphImage() {
         >
           {site.name}
         </div>
-        <div style={{ fontSize: 44, color: "#5a4a3b", marginTop: 24 }}>{site.tagline}</div>
+        <div style={{ fontSize: 44, color: "#5a4a3b", marginTop: 24 }}>{dict.meta.tagline}</div>
         <div
           style={{
             display: "flex",
@@ -58,7 +67,7 @@ export default function OpengraphImage() {
             alignSelf: "flex-start",
           }}
         >
-          {`Asporto · ${site.contacts.phoneDisplay}`}
+          {fmt(dict.meta.ogBadge, { phone: site.contacts.phoneDisplay })}
         </div>
       </div>
       <div
