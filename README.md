@@ -55,8 +55,8 @@ I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **s
 
 - [ ] Nome esatto dell'attività (ora: "Lo Sfizio")
 - [ ] Indirizzo (ora: Piazza Repubblica 15, Dro, da elenchi online) e coordinate
-- [ ] Numero di telefono (ora: `388 907 7320`, da elenchi online; un elenco riporta `388 907 7920`)
-- [ ] Numero WhatsApp (ora lo stesso cellulare, solo per chiamate) ed e-mail (vuota = nascosta)
+- [x] Numero di telefono e WhatsApp: `388 907 7320` (su WhatsApp solo chiamate, niente messaggi)
+- [ ] E-mail (vuota = nascosta)
 - [ ] Orari di apertura (ora: orario continuato, da RestaurantGuru)
 - [ ] Menu e prezzi (ora: esempio realistico)
 - [ ] Risposte delle FAQ (pagamenti, senza glutine…)

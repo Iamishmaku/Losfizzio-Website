@@ -32,13 +32,13 @@ export const site = {
   mapsQuery: "Lo Sfizio, Piazza Repubblica 15, 38074 Dro TN",
 
   contacts: {
-    /** Numero da mostrare. Fonte: elenchi online (un elenco riporta 388 907 7920). DA VERIFICARE */
+    /** Numero da mostrare (confermato dal titolare). */
     phoneDisplay: "388 907 7320",
     /** Numero in formato internazionale senza spazi (link tel:). */
     phone: "+393889077320",
     /**
      * Numero WhatsApp in formato internazionale senza "+" (link wa.me). Lascia vuoto per nascondere il pulsante.
-     * Su WhatsApp i clienti possono solo chiamare, non scrivere. Si presume lo stesso cellulare. DA VERIFICARE
+     * Su WhatsApp i clienti possono solo chiamare, non scrivere. Stesso numero del cellulare (confermato).
      */
     whatsapp: "393889077320",
     /** Lascia vuoto per nasconderla. */
