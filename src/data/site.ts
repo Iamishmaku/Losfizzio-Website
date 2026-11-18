@@ -23,24 +23,27 @@ export const site = {
   locale: "it_IT",
 
   address: {
-    /** DA VERIFICARE */
-    street: "Via Capitelli 5",
+    /** Fonte: Tripadvisor e altri elenchi online (2026). */
+    street: "Piazza Repubblica 15",
     postalCode: "38074",
     city: "Dro",
     province: "TN",
     region: "Trentino-Alto Adige",
     country: "IT",
   },
-  /** Coordinate approssimative del centro di Dro. DA VERIFICARE */
+  /** Coordinate approssimative di Piazza Repubblica a Dro. DA VERIFICARE */
   geo: { lat: 45.9622, lng: 10.9117 },
-  mapsQuery: "Lo Sfizio Pizzeria Dro TN",
+  mapsQuery: "Lo Sfizio, Piazza Repubblica 15, 38074 Dro TN",
 
   contacts: {
-    /** Numero da mostrare. DA VERIFICARE */
-    phoneDisplay: "0464 000000",
-    /** Numero in formato internazionale senza spazi (link tel:). DA VERIFICARE */
-    phone: "+390464000000",
-    /** Numero WhatsApp in formato internazionale senza "+" (link wa.me). Lascia vuoto per nasconderlo. DA VERIFICARE */
+    /** Numero da mostrare. Fonte: elenchi online (un elenco riporta 388 907 7920). DA VERIFICARE */
+    phoneDisplay: "388 907 7320",
+    /** Numero in formato internazionale senza spazi (link tel:). */
+    phone: "+393889077320",
+    /**
+     * Numero WhatsApp in formato internazionale senza "+" (link wa.me), es. "393889077320".
+     * Lascialo vuoto finché non è confermato che il numero è attivo su WhatsApp.
+     */
     whatsapp: "",
     /** Lascia vuoto per nasconderla. */
     email: "",
@@ -51,33 +54,21 @@ export const site = {
     instagram: "",
     facebook: "",
     /** Link alla scheda Google per le recensioni. */
-    googleReviews: "https://www.google.com/maps/search/?api=1&query=Lo+Sfizio+Pizzeria+Dro",
+    googleReviews: "https://www.google.com/maps/search/?api=1&query=Lo+Sfizio+Piazza+Repubblica+15+Dro",
   },
 
-  /** Orari di apertura (fuso orario Europe/Rome). Array vuoto = chiuso. DA VERIFICARE */
+  /**
+   * Orari di apertura (fuso orario Europe/Rome). Array vuoto = chiuso.
+   * Fonte: RestaurantGuru (dato non recentissimo). DA VERIFICARE
+   */
   hours: {
-    mon: [],
-    tue: [
-      { open: "11:30", close: "14:00" },
-      { open: "17:30", close: "22:30" },
-    ],
-    wed: [
-      { open: "11:30", close: "14:00" },
-      { open: "17:30", close: "22:30" },
-    ],
-    thu: [
-      { open: "11:30", close: "14:00" },
-      { open: "17:30", close: "22:30" },
-    ],
-    fri: [
-      { open: "11:30", close: "14:00" },
-      { open: "17:30", close: "23:00" },
-    ],
-    sat: [
-      { open: "11:30", close: "14:00" },
-      { open: "17:30", close: "23:00" },
-    ],
-    sun: [{ open: "17:30", close: "22:30" }],
+    mon: [{ open: "12:00", close: "22:00" }],
+    tue: [{ open: "12:00", close: "22:30" }],
+    wed: [{ open: "12:00", close: "22:30" }],
+    thu: [{ open: "12:00", close: "22:30" }],
+    fri: [{ open: "12:00", close: "22:30" }],
+    sat: [{ open: "10:00", close: "22:30" }],
+    sun: [{ open: "11:30", close: "22:30" }],
   } satisfies Record<DayKey, TimeSlot[]>,
 
   services: ["In piazza", "Asporto", "Kebab", "Bar & Caffè"],

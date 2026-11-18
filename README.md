@@ -44,10 +44,10 @@ Tutti i contenuti stanno in tre file. Modificandoli si aggiornano le pagine, il 
 I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **segnaposto**. Sono tutti marcati con `DA VERIFICARE`:
 
 - [ ] Nome esatto dell'attività (ora: "Lo Sfizio")
-- [ ] Indirizzo e coordinate (ora: Via Capitelli 5, Dro)
-- [ ] Numero di telefono (ora: `0464 000000`, **finto**)
+- [ ] Indirizzo (ora: Piazza Repubblica 15, Dro, da elenchi online) e coordinate
+- [ ] Numero di telefono (ora: `388 907 7320`, da elenchi online; un elenco riporta `388 907 7920`)
 - [ ] WhatsApp ed e-mail (ora vuoti: se li compili, il form invia la richiesta su WhatsApp o per e-mail)
-- [ ] Orari di apertura
+- [ ] Orari di apertura (ora: orario continuato, da RestaurantGuru)
 - [ ] Menu e prezzi (ora: esempio realistico)
 - [ ] Risposte delle FAQ (pagamenti, senza glutine…)
 - [ ] Link Instagram e Facebook (vuoti = icone nascoste)
@@ -86,7 +86,8 @@ src/
 
 ### Immagini
 
-Le pizze sono illustrazioni SVG generate dal codice (`PizzaArt`) a partire dagli ingredienti, così il sito è completo anche senza foto. Quando avrai foto reali, mettile in `public/` e usa `next/image`.
+Le pizze sono illustrazioni SVG generate dal codice (`PizzaArt`) a partire dagli ingredienti, così il sito è completo anche senza foto.
+Per usare le foto vere mettile in `public/images/menu/` e aggiungi `image: "/images/menu/nome.jpg"` al piatto in `src/data/menu.ts` (istruzioni in `public/images/menu/LEGGIMI.md`).
 
 ### Privacy
 

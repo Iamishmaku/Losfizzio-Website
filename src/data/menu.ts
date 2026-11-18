@@ -27,8 +27,13 @@ export interface MenuItem {
   description: string;
   price: number;
   tags?: Tag[];
-  /** Usati per disegnare l'illustrazione della pizza. */
+  /** Usati per disegnare l'illustrazione della pizza (quando manca la foto). */
   toppings?: Topping[];
+  /**
+   * Foto del piatto, es. "/images/menu/margherita.jpg" (file in public/images/menu).
+   * Se presente, sostituisce l'illustrazione disegnata.
+   */
+  image?: string;
 }
 
 export interface MenuCategory {

@@ -4,6 +4,30 @@
   display: grid;
   gap: 4px;
   padding-block: 14px;
+
+  &[data-has-image] {
+    grid-template-columns: 72px 1fr;
+    column-gap: 16px;
+
+    .head,
+    .desc {
+      grid-column: 2;
+    }
+  }
+}
+
+.thumb {
+  position: relative;
+  grid-row: span 2;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--c-cream-2);
+
+  img {
+    object-fit: cover;
+  }
 }
 
 .head {

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import clsx from "clsx";
 import { formatPrice, getFeatured, tagLabels } from "@/data/menu";
-import { PizzaArt } from "@/components/ui/PizzaArt";
+import { DishVisual } from "@/components/ui/DishVisual";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import styles from "./Featured.module.scss";
 
@@ -90,7 +90,7 @@ export function Featured() {
                   }}
                   transition={{ type: "spring", stiffness: 120, damping: 14 }}
                 >
-                  <PizzaArt toppings={p.toppings} seed={p.name} title={`Pizza ${p.name}`} />
+                  <DishVisual item={p} sizes="(min-width: 1024px) 300px, (min-width: 560px) 40vw, 70vw" />
                 </motion.div>
                 <div className={styles.body}>
                   {p.tags?.length ? (

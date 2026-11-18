@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Flame, Leaf, Sparkles, ThumbsUp } from "lucide-react";
 import { formatPrice, tagLabels, type MenuItem, type Tag } from "@/data/menu";
 import styles from "./MenuItemRow.module.scss";
@@ -11,7 +12,12 @@ const tagIcon: Record<Tag, typeof Leaf> = {
 
 export function MenuItemRow({ item }: { item: MenuItem }) {
   return (
-    <div className={styles.row}>
+    <div className={styles.row} data-has-image={item.image ? "" : undefined}>
+      {item.image && (
+        <span className={styles.thumb}>
+          <Image src={item.image} alt="" fill sizes="72px" />
+        </span>
+      )}
       <div className={styles.head}>
         <h3 className={styles.name}>{item.name}</h3>
         {item.tags?.map((t) => {
