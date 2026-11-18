@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { MapPin, Phone, Mail, Star } from "lucide-react";
-import { dayOrder, fullAddress, mapsLink, site, telLink } from "@/data/site";
+import { dayOrder, fullAddress, mapsLink, site, telLink, whatsappLink } from "@/data/site";
 import { localePath } from "@/i18n/config";
 import { useI18n } from "@/i18n/I18nProvider";
 import { slotLines } from "@/lib/hours";
 import { Logo } from "@/components/ui/Logo";
-import { FacebookIcon, InstagramIcon } from "@/components/ui/SocialIcons";
+import { FacebookIcon, InstagramIcon, WhatsappIcon } from "@/components/ui/SocialIcons";
 import styles from "./Footer.module.scss";
 
 export function Footer() {
@@ -70,6 +70,14 @@ export function Footer() {
               <Phone aria-hidden="true" />
               <a href={telLink}>{site.contacts.phoneDisplay}</a>
             </li>
+            {whatsappLink() && (
+              <li>
+                <WhatsappIcon />
+                <a href={whatsappLink()!} target="_blank" rel="noopener noreferrer">
+                  {dict.contact.whatsapp}
+                </a>
+              </li>
+            )}
             {site.contacts.email && (
               <li>
                 <Mail aria-hidden="true" />

@@ -56,7 +56,7 @@ I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **s
 - [ ] Nome esatto dell'attività (ora: "Lo Sfizio")
 - [ ] Indirizzo (ora: Piazza Repubblica 15, Dro, da elenchi online) e coordinate
 - [ ] Numero di telefono (ora: `388 907 7320`, da elenchi online; un elenco riporta `388 907 7920`)
-- [ ] WhatsApp ed e-mail (ora vuoti: se compili WhatsApp compare il pulsante per scrivervi)
+- [ ] Numero WhatsApp (ora lo stesso cellulare, solo per chiamate) ed e-mail (vuota = nascosta)
 - [ ] Orari di apertura (ora: orario continuato, da RestaurantGuru)
 - [ ] Menu e prezzi (ora: esempio realistico)
 - [ ] Risposte delle FAQ (pagamenti, senza glutine…)
@@ -66,7 +66,7 @@ I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **s
 ### Ordini e prenotazioni
 
 Sul sito non ci sono prenotazioni né ordini online: la sezione "Ordina da asporto" spiega come ordinare per telefono.
-Se compili `contacts.whatsapp` in `src/data/site.ts` compare anche il pulsante "Scrivici su WhatsApp".
+Con `contacts.whatsapp` compilato in `src/data/site.ts` compare il pulsante "Chiamaci su WhatsApp" (solo chiamate, niente messaggi): apre la chat e il cliente tocca l'icona del telefono.
 
 ## Deploy su Vercel
 

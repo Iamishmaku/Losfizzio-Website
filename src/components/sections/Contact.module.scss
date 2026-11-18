@@ -140,6 +140,22 @@
   line-height: 1.1;
 }
 
+.wa {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+
+  a span:first-child svg {
+    color: #25d366;
+  }
+
+  p {
+    max-width: 46ch;
+    font-size: rem(13.5);
+    color: rgba(255, 250, 241, 0.65);
+  }
+}
+
 .where {
   display: flex;
   gap: 12px;

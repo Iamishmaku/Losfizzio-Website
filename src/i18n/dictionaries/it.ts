@@ -161,7 +161,7 @@ export const it = {
     items: [
       {
         q: "Si può ordinare da asporto?",
-        a: "Sì: chiamaci o passa direttamente in pizzeria. Ti diciamo subito a che ora sarà pronta la tua pizza, così non devi aspettare.",
+        a: "Sì: chiamaci (anche su WhatsApp) o passa direttamente in pizzeria. Ti diciamo subito a che ora sarà pronta la tua pizza, così non devi aspettare.",
       },
       {
         q: "Fate consegne a domicilio?",
@@ -196,13 +196,15 @@ export const it = {
       "Per ordinare basta una telefonata: ti diciamo subito a che ora è pronta e la trovi calda in pizzeria.",
     callUs: "Chiamaci",
     steps: [
-      { title: "Chiama", text: "Telefonaci negli orari di apertura." },
+      { title: "Chiama", text: "Al telefono o su WhatsApp, negli orari di apertura." },
       { title: "Ordina", text: "Dicci cosa desideri e a che ora passi." },
       { title: "Ritira", text: "Passa in piazza: la trovi pronta e calda." },
     ],
     whereTitle: "Dove ritirare",
     directions: "Indicazioni",
-    whatsapp: "Scrivici su WhatsApp",
+    whatsapp: "Chiamaci su WhatsApp",
+    whatsappHint:
+      "Si apre WhatsApp: tocca l'icona del telefono per chiamarci. Su WhatsApp rispondiamo solo alle chiamate, non ai messaggi.",
   },
   cta: {
     title: "Stasera pizza? *Chiamaci.*",
@@ -250,7 +252,7 @@ export const it = {
       },
       {
         title: "Dati raccolti da questo sito",
-        text: "Questo sito è statico: non contiene moduli, non raccoglie dati personali e non li salva sui propri server. Per ordinare si usa il telefono.",
+        text: "Questo sito è statico: non contiene moduli, non raccoglie dati personali e non li salva sui propri server. Per ordinare si usa il telefono. Il pulsante WhatsApp apre l'app WhatsApp, che tratta i dati secondo le proprie condizioni.",
       },
       {
         title: "Cookie e memoria locale",

@@ -37,10 +37,10 @@ export const site = {
     /** Numero in formato internazionale senza spazi (link tel:). */
     phone: "+393889077320",
     /**
-     * Numero WhatsApp in formato internazionale senza "+" (link wa.me), es. "393889077320".
-     * Lascialo vuoto finché non è confermato che il numero è attivo su WhatsApp.
+     * Numero WhatsApp in formato internazionale senza "+" (link wa.me). Lascia vuoto per nascondere il pulsante.
+     * Su WhatsApp i clienti possono solo chiamare, non scrivere. Si presume lo stesso cellulare. DA VERIFICARE
      */
-    whatsapp: "",
+    whatsapp: "393889077320",
     /** Lascia vuoto per nasconderla. */
     email: "",
   },
@@ -77,8 +77,10 @@ export const mapsEmbed = `https://www.google.com/maps?q=${encodeURIComponent(sit
 
 export const telLink = `tel:${site.contacts.phone}`;
 
-export function whatsappLink(text?: string) {
-  if (!site.contacts.whatsapp) return null;
-  const base = `https://wa.me/${site.contacts.whatsapp}`;
-  return text ? `${base}?text=${encodeURIComponent(text)}` : base;
+/**
+ * Link che apre la conversazione WhatsApp con la pizzeria: da lì il cliente tocca l'icona del telefono per chiamare.
+ * (WhatsApp non offre un link ufficiale che avvii direttamente la chiamata.)
+ */
+export function whatsappLink() {
+  return site.contacts.whatsapp ? `https://wa.me/${site.contacts.whatsapp}` : null;
 }

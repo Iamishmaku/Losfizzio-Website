@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
+import { MapPin, Navigation, Phone } from "lucide-react";
 import { fullAddress, mapsLink, site, telLink, whatsappLink } from "@/data/site";
 import { useI18n } from "@/i18n/I18nProvider";
 import { Rich } from "@/i18n/Rich";
 import { Button } from "@/components/ui/Button";
 import { OpenStatus } from "@/components/ui/OpenStatus";
+import { WhatsappIcon } from "@/components/ui/SocialIcons";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, staggerContainer, staggerItem } from "@/components/ui/Reveal";
 import styles from "./Contact.module.scss";
@@ -63,9 +64,12 @@ export function Contact() {
           </a>
 
           {wa && (
-            <Button href={wa} variant="light" icon={<MessageCircle />} className={styles.wa}>
-              {t.whatsapp}
-            </Button>
+            <div className={styles.wa}>
+              <Button href={wa} variant="light" icon={<WhatsappIcon />}>
+                {t.whatsapp}
+              </Button>
+              <p>{t.whatsappHint}</p>
+            </div>
           )}
 
           <div className={styles.where}>

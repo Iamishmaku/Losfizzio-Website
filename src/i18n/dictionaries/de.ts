@@ -160,7 +160,7 @@ export const de: Dictionary = {
     items: [
       {
         q: "Kann ich zum Mitnehmen bestellen?",
-        a: "Ja: Ruf uns an oder komm direkt vorbei. Wir sagen dir sofort, wann deine Pizza fertig ist, damit du nicht warten musst.",
+        a: "Ja: Ruf uns an (auch über WhatsApp) oder komm direkt vorbei. Wir sagen dir sofort, wann deine Pizza fertig ist, damit du nicht warten musst.",
       },
       {
         q: "Liefert ihr nach Hause?",
@@ -195,13 +195,15 @@ export const de: Dictionary = {
       "Ein Anruf genügt: Wir sagen dir sofort, wann deine Bestellung fertig ist, und du holst sie heiß in der Pizzeria ab.",
     callUs: "Ruf uns an",
     steps: [
-      { title: "Anrufen", text: "Ruf uns während der Öffnungszeiten an." },
+      { title: "Anrufen", text: "Per Telefon oder WhatsApp, während der Öffnungszeiten." },
       { title: "Bestellen", text: "Sag uns, was du möchtest und wann du kommst." },
       { title: "Abholen", text: "Komm auf die Piazza: Alles ist heiß und fertig." },
     ],
     whereTitle: "Abholung",
     directions: "Route",
-    whatsapp: "Schreib uns auf WhatsApp",
+    whatsapp: "Ruf uns über WhatsApp an",
+    whatsappHint:
+      "WhatsApp öffnet sich: Tippe auf das Telefonsymbol, um uns anzurufen. Über WhatsApp nehmen wir nur Anrufe an, keine Nachrichten.",
   },
   cta: {
     title: "Heute Abend Pizza? *Ruf an.*",
@@ -249,7 +251,7 @@ export const de: Dictionary = {
       },
       {
         title: "Von dieser Website erhobene Daten",
-        text: "Diese Website ist statisch: Sie enthält keine Formulare, erhebt keine personenbezogenen Daten und speichert nichts auf ihren Servern. Bestellungen werden telefonisch entgegengenommen.",
+        text: "Diese Website ist statisch: Sie enthält keine Formulare, erhebt keine personenbezogenen Daten und speichert nichts auf ihren Servern. Bestellungen werden telefonisch entgegengenommen. Die WhatsApp-Schaltfläche öffnet die WhatsApp-App, die Daten nach ihren eigenen Bedingungen verarbeitet.",
       },
       {
         title: "Cookies und lokaler Speicher",

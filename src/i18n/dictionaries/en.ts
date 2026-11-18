@@ -160,7 +160,7 @@ export const en: Dictionary = {
     items: [
       {
         q: "Can I order takeaway?",
-        a: "Yes: call us or just walk in. We'll tell you right away when your pizza will be ready, so you don't have to wait.",
+        a: "Yes: call us (on WhatsApp too) or just walk in. We'll tell you right away when your pizza will be ready, so you don't have to wait.",
       },
       {
         q: "Do you deliver?",
@@ -195,13 +195,15 @@ export const en: Dictionary = {
       "Ordering is just a phone call away: we'll tell you right away when it'll be ready, and it'll be hot when you pick it up.",
     callUs: "Call us",
     steps: [
-      { title: "Call", text: "Phone us during opening hours." },
+      { title: "Call", text: "By phone or on WhatsApp, during opening hours." },
       { title: "Order", text: "Tell us what you'd like and when you'll come by." },
       { title: "Pick up", text: "Stop by the square: it'll be hot and ready." },
     ],
     whereTitle: "Where to pick up",
     directions: "Directions",
-    whatsapp: "Message us on WhatsApp",
+    whatsapp: "Call us on WhatsApp",
+    whatsappHint:
+      "WhatsApp will open: tap the phone icon to call us. On WhatsApp we only answer calls, not messages.",
   },
   cta: {
     title: "Pizza tonight? *Call us.*",
@@ -249,7 +251,7 @@ export const en: Dictionary = {
       },
       {
         title: "Data collected by this website",
-        text: "This is a static website: it contains no forms, collects no personal data and stores nothing on its servers. Orders are taken by phone.",
+        text: "This is a static website: it contains no forms, collects no personal data and stores nothing on its servers. Orders are taken by phone. The WhatsApp button opens the WhatsApp app, which handles data under its own terms.",
       },
       {
         title: "Cookies and local storage",
