@@ -7,7 +7,7 @@ import { useI18n } from "@/i18n/I18nProvider";
 import { Rich } from "@/i18n/Rich";
 import { Button } from "@/components/ui/Button";
 import { OpenStatus } from "@/components/ui/OpenStatus";
-import { WhatsappIcon } from "@/components/ui/SocialIcons";
+import { FacebookIcon, InstagramIcon, WhatsappIcon } from "@/components/ui/SocialIcons";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, staggerContainer, staggerItem } from "@/components/ui/Reveal";
 import styles from "./Contact.module.scss";
@@ -79,6 +79,32 @@ export function Contact() {
               <p>{fullAddress}</p>
             </div>
           </div>
+
+          {(site.social.instagram || site.social.facebook) && (
+            <div className={styles.social}>
+              <span>{t.follow}</span>
+              {site.social.instagram && (
+                <a
+                  href={site.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <InstagramIcon />
+                </a>
+              )}
+              {site.social.facebook && (
+                <a
+                  href={site.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
+                  <FacebookIcon />
+                </a>
+              )}
+            </div>
+          )}
 
           <div className={styles.ctas}>
             <Button href={telLink} size="lg" icon={<Phone />}>

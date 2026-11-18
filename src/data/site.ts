@@ -47,8 +47,8 @@ export const site = {
 
   social: {
     /** Lascia vuoto per nascondere l'icona. */
-    instagram: "",
-    facebook: "",
+    instagram: "https://www.instagram.com/losfiziodro",
+    facebook: "https://www.facebook.com/share/1GjfgLTASC/",
     /** Link alla scheda Google per le recensioni. */
     googleReviews: "https://www.google.com/maps/search/?api=1&query=Lo+Sfizio+Piazza+Repubblica+15+Dro",
   },

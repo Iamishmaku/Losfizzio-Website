@@ -3,6 +3,8 @@
 .heading {
   display: grid;
   gap: 14px;
+  align-content: start;
+  align-self: start;
   max-width: 720px;
   margin-bottom: clamp(32px, 5vw, 56px);
 }

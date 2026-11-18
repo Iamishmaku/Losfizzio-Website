@@ -70,7 +70,7 @@ export const de: Dictionary = {
     sat: "Samstag",
     sun: "Sonntag",
   },
-  services: ["Auf der Piazza", "Zum Mitnehmen", "Kebab", "Bar & Café"],
+  services: ["Auf der Piazza", "Zum Mitnehmen", "Glutenfrei", "Kebab", "Bar & Café"],
   hero: {
     title: "Pizza *auf der Piazza* in Dro.",
     lead: "Frisch gebackene Pizza, Kebab, Piadina und guter Kaffee mitten in Dro. Setz dich auf die Piazza oder hol sie dir zum Mitnehmen ab.",
@@ -168,15 +168,15 @@ export const de: Dictionary = {
       },
       {
         q: "Muss ich einen Tisch reservieren?",
-        a: "Unter der Woche meistens nicht. Freitags, samstags und im Sommer füllt sich die Piazza schnell: Ein kurzer Anruf lohnt sich.",
+        a: "Nein, eine Reservierung ist nicht nötig: Komm einfach vorbei, wir finden einen Platz für dich auf der Piazza.",
       },
       {
-        q: "Gibt es glutenfreie oder laktosefreie Optionen?",
-        a: "Frag unser Personal nach glutenfreiem Teig und laktosefreiem Mozzarella. Bitte sag uns immer Bescheid, wenn du Allergien oder Unverträglichkeiten hast.",
+        q: "Gibt es glutenfreie Pizza?",
+        a: "Ja, wir machen auch glutenfreie Pizza: Frag einfach bei der Bestellung danach. Bitte sag uns immer Bescheid, wenn du Allergien oder Unverträglichkeiten hast.",
       },
       {
         q: "Kann ich mit Karte zahlen?",
-        a: "Ja, wir akzeptieren Bargeld, EC-Karten und die gängigen Kreditkarten.",
+        a: "Ja, du kannst mit Karte oder bar bezahlen.",
       },
       {
         q: "Macht ihr Pizzen für Feiern und Gruppen?",
@@ -201,6 +201,7 @@ export const de: Dictionary = {
     ],
     whereTitle: "Abholung",
     directions: "Route",
+    follow: "Folge uns",
     whatsapp: "Ruf uns über WhatsApp an",
     whatsappHint:
       "WhatsApp öffnet sich: Tippe auf das Telefonsymbol, um uns anzurufen. Über WhatsApp nehmen wir nur Anrufe an, keine Nachrichten.",
@@ -224,7 +225,7 @@ export const de: Dictionary = {
       "Pizza, Kebab, Piadina und Getränke. Suche dein Lieblingsgericht oder filtere nach vegetarisch und scharf.",
     notesLabel: "Hinweise zur Speisekarte",
     notes: [
-      "Glutenfreier Teig und laktosefreier Mozzarella: Bitte frag unser Personal nach der Verfügbarkeit.",
+      "Glutenfreie Pizza erhältlich: Frag einfach bei der Bestellung danach.",
       "Extra-Zutaten: 1 € bis 2,50 € je nach Zutat.",
       "Informationen zu Allergenen erhältst du auf Nachfrage beim Personal.",
     ],

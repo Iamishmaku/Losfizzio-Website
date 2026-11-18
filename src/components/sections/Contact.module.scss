@@ -181,6 +181,42 @@
   color: var(--c-light) !important;
 }
 
+.social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: rem(14);
+  color: rgba(255, 250, 241, 0.75);
+
+  span {
+    margin-right: 4px;
+  }
+
+  a {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--c-light);
+    transition:
+      background-color 0.2s,
+      transform 0.2s;
+
+    @include hover {
+      background: var(--c-tomato);
+      transform: translateY(-2px);
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
 .ctas {
   display: flex;
   flex-wrap: wrap;

@@ -59,8 +59,8 @@ I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **s
 - [ ] E-mail (vuota = nascosta)
 - [ ] Orari di apertura (ora: orario continuato, da RestaurantGuru)
 - [ ] Menu e prezzi (ora: esempio realistico)
-- [ ] Risposte delle FAQ (pagamenti, senza glutine…)
-- [ ] Link Instagram e Facebook (vuoti = icone nascoste)
+- [x] Risposte delle FAQ: carta sì, pizza senza glutine sì, prenotazione non obbligatoria
+- [x] Instagram (@losfiziodro) e Facebook
 - [ ] Testo della pagina Privacy
 
 ### Ordini e prenotazioni

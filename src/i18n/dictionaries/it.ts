@@ -71,7 +71,7 @@ export const it = {
     sat: "Sabato",
     sun: "Domenica",
   },
-  services: ["In piazza", "Asporto", "Kebab", "Bar & Caffè"],
+  services: ["In piazza", "Asporto", "Senza glutine", "Kebab", "Bar & Caffè"],
   hero: {
     title: "La pizza *in piazza* a Dro.",
     lead: "Pizze cotte al momento, kebab, piadine e un buon caffè, nel cuore di Dro. Siediti in piazza o passa a ritirarla da asporto.",
@@ -169,15 +169,15 @@ export const it = {
       },
       {
         q: "Serve prenotare un tavolo?",
-        a: "Nei giorni feriali di solito non serve. Il venerdì, il sabato e d'estate la piazza si riempie in fretta: meglio fare una telefonata.",
+        a: "No, la prenotazione non è obbligatoria: passa quando vuoi e ti troviamo un posto in piazza.",
       },
       {
-        q: "Avete opzioni senza glutine o senza lattosio?",
-        a: "Chiedi al personale la disponibilità di impasto senza glutine e mozzarella senza lattosio. Segnalaci sempre eventuali allergie o intolleranze.",
+        q: "Avete la pizza senza glutine?",
+        a: "Sì, facciamo anche la pizza senza glutine: chiedila quando ordini. Segnalaci sempre eventuali allergie o intolleranze.",
       },
       {
         q: "Si può pagare con la carta?",
-        a: "Sì, accettiamo contanti, bancomat e le principali carte di credito.",
+        a: "Sì, puoi pagare con la carta oppure in contanti.",
       },
       {
         q: "Fate pizze per feste e gruppi?",
@@ -202,6 +202,7 @@ export const it = {
     ],
     whereTitle: "Dove ritirare",
     directions: "Indicazioni",
+    follow: "Seguici",
     whatsapp: "Chiamaci su WhatsApp",
     whatsappHint:
       "Si apre WhatsApp: tocca l'icona del telefono per chiamarci. Su WhatsApp rispondiamo solo alle chiamate, non ai messaggi.",
@@ -225,7 +226,7 @@ export const it = {
       "Pizze, kebab, piadine e bevande. Cerca il tuo piatto preferito o filtra per le proposte vegetariane e piccanti.",
     notesLabel: "Note sul menu",
     notes: [
-      "Impasto senza glutine e mozzarella senza lattosio: chiedi al personale la disponibilità.",
+      "Pizza senza glutine disponibile: chiedila quando ordini.",
       "Aggiunte: da 1 € a 2,50 € in base all'ingrediente.",
       "Gli allergeni presenti nei piatti sono indicati nell'apposito registro: chiedi al personale.",
     ],

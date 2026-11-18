@@ -70,7 +70,7 @@ export const en: Dictionary = {
     sat: "Saturday",
     sun: "Sunday",
   },
-  services: ["On the square", "Takeaway", "Kebab", "Bar & Café"],
+  services: ["On the square", "Takeaway", "Gluten-free", "Kebab", "Bar & Café"],
   hero: {
     title: "Pizza *on the square* in Dro.",
     lead: "Freshly baked pizza, kebab, piadina and great coffee in the heart of Dro. Grab a table on the square or pick it up to take away.",
@@ -168,15 +168,15 @@ export const en: Dictionary = {
       },
       {
         q: "Do I need to book a table?",
-        a: "On weekdays usually not. On Fridays, Saturdays and in summer the square fills up quickly, so it's best to call ahead.",
+        a: "No, booking isn't required: come by whenever you like and we'll find you a seat on the square.",
       },
       {
-        q: "Do you have gluten-free or lactose-free options?",
-        a: "Ask our staff about gluten-free dough and lactose-free mozzarella. Please always tell us about any allergies or intolerances.",
+        q: "Do you have gluten-free pizza?",
+        a: "Yes, we also make gluten-free pizza: just ask when you order. Please always tell us about any allergies or intolerances.",
       },
       {
         q: "Can I pay by card?",
-        a: "Yes, we accept cash, debit cards and the main credit cards.",
+        a: "Yes, you can pay by card or in cash.",
       },
       {
         q: "Do you make pizzas for parties and groups?",
@@ -201,6 +201,7 @@ export const en: Dictionary = {
     ],
     whereTitle: "Where to pick up",
     directions: "Directions",
+    follow: "Follow us",
     whatsapp: "Call us on WhatsApp",
     whatsappHint:
       "WhatsApp will open: tap the phone icon to call us. On WhatsApp we only answer calls, not messages.",
@@ -224,7 +225,7 @@ export const en: Dictionary = {
       "Pizza, kebab, piadina and drinks. Search for your favourite dish or filter by vegetarian and spicy options.",
     notesLabel: "Menu notes",
     notes: [
-      "Gluten-free dough and lactose-free mozzarella: please ask our staff about availability.",
+      "Gluten-free pizza available: just ask when you order.",
       "Extra toppings: from €1 to €2.50 depending on the ingredient.",
       "Allergen information is available on request: please ask our staff.",
     ],
