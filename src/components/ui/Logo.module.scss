@@ -1,0 +1,56 @@
+@use "../../styles/abstracts" as *;
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mark {
+  width: 42px;
+  height: 42px;
+  flex: none;
+  transition: transform 0.6s $ease-out;
+}
+
+.logo:hover .mark {
+  transform: rotate(-20deg);
+}
+
+.text {
+  display: grid;
+  line-height: 1;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: rem(25);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+
+  em {
+    font-style: italic;
+    color: var(--c-tomato);
+  }
+}
+
+.sub {
+  margin-top: 4px;
+  font-size: rem(10.5);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.light {
+  color: var(--c-paper);
+
+  .name em {
+    color: var(--c-crust);
+  }
+
+  .sub {
+    color: rgba(255, 250, 241, 0.6);
+  }
+}

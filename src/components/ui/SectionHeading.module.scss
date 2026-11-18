@@ -1,0 +1,62 @@
+@use "../../styles/abstracts" as *;
+
+.heading {
+  display: grid;
+  gap: 14px;
+  max-width: 720px;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+  justify-items: center;
+}
+
+.eyebrow {
+  @include eyebrow;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  &::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+}
+
+.title {
+  @include display(60px, 34px);
+
+  em {
+    font-style: italic;
+    color: var(--c-tomato);
+  }
+}
+
+.intro {
+  font-size: rem(18);
+  color: var(--c-ink-soft);
+  max-width: 60ch;
+}
+
+.light {
+  .title {
+    color: var(--c-paper);
+
+    em {
+      color: var(--c-cheese);
+    }
+  }
+
+  .eyebrow {
+    color: var(--c-crust);
+  }
+
+  .intro {
+    color: rgba(255, 250, 241, 0.78);
+  }
+}

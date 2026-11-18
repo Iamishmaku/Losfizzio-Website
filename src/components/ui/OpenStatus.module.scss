@@ -1,0 +1,64 @@
+@use "../../styles/abstracts" as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 250, 241, 0.75);
+  border: 1px solid var(--c-line);
+  font-size: rem(14);
+  font-weight: 600;
+  color: var(--c-ink-soft);
+  backdrop-filter: blur(6px);
+}
+
+.dot {
+  position: relative;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--c-muted);
+  flex: none;
+}
+
+.open .dot {
+  background: #2fa24a;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid #2fa24a;
+    animation: pulse 1.8s $ease-out infinite;
+  }
+}
+
+.closed .dot {
+  background: var(--c-tomato);
+}
+
+.light {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 250, 241, 0.85);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .open .dot::after {
+    animation: none;
+  }
+}

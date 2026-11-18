@@ -1,0 +1,75 @@
+@use "../../styles/abstracts" as *;
+
+.section {
+  padding-block: clamp(80px, 11vw, 150px);
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+
+  @include up(lg) {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+    align-items: start;
+  }
+}
+
+.intro {
+  @include up(lg) {
+    position: sticky;
+    top: calc(var(--header-h) + 40px);
+  }
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+
+  @include up(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  box-shadow: var(--shadow-sm);
+
+  &:nth-child(even) {
+    @include up(sm) {
+      translate: 0 40px;
+    }
+  }
+
+  h3 {
+    font-size: rem(23);
+  }
+
+  p {
+    color: var(--c-ink-soft);
+    font-size: rem(16);
+  }
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: var(--c-cheese);
+  color: var(--c-tomato-dark);
+
+  svg {
+    width: 26px;
+    height: 26px;
+  }
+}

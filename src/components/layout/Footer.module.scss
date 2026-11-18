@@ -1,0 +1,153 @@
+@use "../../styles/abstracts" as *;
+
+.footer {
+  position: relative;
+  background: var(--c-ink);
+  color: rgba(255, 250, 241, 0.78);
+  padding-top: clamp(56px, 8vw, 96px);
+  font-size: rem(15.5);
+}
+
+.wave {
+  position: absolute;
+  top: -59px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  color: var(--c-ink);
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.inner {
+  @include container;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+
+  @include up(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include up(lg) {
+    grid-template-columns: 1.4fr 1fr 1fr 0.8fr;
+  }
+}
+
+.brand {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+
+  p {
+    max-width: 38ch;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+
+  a {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    @include hover {
+      background: var(--c-tomato);
+      color: var(--c-paper);
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 18px;
+  font-family: var(--font-body);
+  font-size: rem(13);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-crust);
+}
+
+.list,
+.links {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+
+  svg {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    color: var(--c-crust);
+  }
+}
+
+.list a,
+.links a {
+  transition: color 0.2s;
+
+  @include hover {
+    color: var(--c-paper);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+.hours {
+  display: grid;
+  gap: 6px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  dt {
+    font-weight: 600;
+    color: var(--c-paper);
+  }
+
+  dd {
+    display: grid;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.bottom {
+  @include container;
+  margin-top: 56px;
+  padding-block: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  font-size: rem(14);
+  color: rgba(255, 250, 241, 0.5);
+}

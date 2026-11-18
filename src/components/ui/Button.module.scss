@@ -1,0 +1,115 @@
+@use "../../styles/abstracts" as *;
+
+.button {
+  --bg: var(--c-tomato);
+  --fg: var(--c-paper);
+  --bd: transparent;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1.5px solid var(--bd);
+  background: var(--bg);
+  color: var(--fg);
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: 1.1;
+  white-space: nowrap;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform 0.25s $ease-out,
+    box-shadow 0.25s $ease-out,
+    background-color 0.25s,
+    color 0.25s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(101%);
+    transition: transform 0.35s $ease-out;
+  }
+
+  @include hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+
+    &::before {
+      transform: none;
+    }
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  @include down(sm) {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+.primary {
+  box-shadow: 0 8px 20px -10px rgba(200, 50, 31, 0.8);
+}
+
+.secondary {
+  --bg: transparent;
+  --fg: var(--c-ink);
+  --bd: var(--c-ink);
+
+  &::before {
+    background: var(--c-ink);
+  }
+
+  @include hover {
+    --fg: var(--c-paper);
+  }
+}
+
+.ghost {
+  --bg: transparent;
+  --fg: var(--c-ink);
+  --bd: var(--c-line);
+
+  &::before {
+    background: var(--c-cream-2);
+  }
+}
+
+.light {
+  --bg: var(--c-paper);
+  --fg: var(--c-ink);
+
+  &::before {
+    background: var(--c-cheese);
+  }
+}
+
+.lg {
+  min-height: 56px;
+  padding: 16px 28px;
+  font-size: rem(17);
+}
+
+.icon {
+  display: inline-flex;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}

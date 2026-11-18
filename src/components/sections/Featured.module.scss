@@ -1,0 +1,190 @@
+@use "../../styles/abstracts" as *;
+
+.section {
+  padding-block: clamp(80px, 10vw, 140px);
+  background: var(--c-cream-2);
+  overflow: hidden;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+
+  > :first-child {
+    margin-bottom: clamp(32px, 4vw, 48px);
+  }
+}
+
+.nav {
+  display: none;
+  gap: 10px;
+  margin-bottom: clamp(32px, 4vw, 48px);
+
+  @include up(md) {
+    display: flex;
+  }
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1.5px solid var(--c-ink);
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    transform 0.2s;
+
+  @include hover {
+    background: var(--c-ink);
+    color: var(--c-paper);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.viewport {
+  overflow: hidden;
+  padding-inline: max(clamp(16px, 4vw, 32px), calc((100vw - #{$container}) / 2 + 32px));
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.track {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  touch-action: pan-y pinch-zoom;
+}
+
+.slide {
+  flex: 0 0 86%;
+  min-width: 0;
+  padding-right: 20px;
+
+  @include up(sm) {
+    flex-basis: 50%;
+  }
+
+  @include up(lg) {
+    flex-basis: 33.333%;
+  }
+}
+
+.card {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: var(--c-paper);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s;
+
+  @include hover {
+    box-shadow: var(--shadow);
+  }
+}
+
+.art {
+  width: 78%;
+  margin: 8px auto 20px;
+  filter: drop-shadow(0 14px 16px rgba(60, 30, 10, 0.25));
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.body {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+
+  p {
+    color: var(--c-ink-soft);
+    font-size: rem(15.5);
+  }
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+
+  h3 {
+    font-size: rem(26);
+  }
+}
+
+.price {
+  font-weight: 800;
+  color: var(--c-tomato);
+  white-space: nowrap;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: rem(12);
+    font-weight: 700;
+    background: var(--c-cream-2);
+    color: var(--c-ink-soft);
+
+    &[data-tag="piccante"] {
+      background: #fde0d9;
+      color: var(--c-tomato-dark);
+    }
+
+    &[data-tag="vegetariana"] {
+      background: #e1efd9;
+      color: var(--c-basil);
+    }
+
+    &[data-tag="consigliata"],
+    &[data-tag="novita"] {
+      background: var(--c-cheese);
+      color: #7a4b07;
+    }
+  }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(34, 24, 15, 0.2);
+  transition:
+    width 0.3s $ease-out,
+    background-color 0.3s;
+}
+
+.active {
+  width: 32px;
+  background: var(--c-tomato);
+}

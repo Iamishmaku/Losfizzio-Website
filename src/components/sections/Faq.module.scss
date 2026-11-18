@@ -1,0 +1,117 @@
+@use "../../styles/abstracts" as *;
+
+.section {
+  padding-block: clamp(80px, 11vw, 150px);
+}
+
+.grid {
+  display: grid;
+  gap: 8px;
+
+  @include up(lg) {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 64px;
+  }
+}
+
+.accordion {
+  display: grid;
+  gap: 12px;
+}
+
+.item {
+  border-radius: var(--radius);
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+
+  &[data-state="open"] {
+    box-shadow: var(--shadow);
+  }
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 22px;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: rem(20);
+  font-weight: 600;
+
+  @include focus-ring(-3px);
+
+  &[data-state="open"] .icon {
+    transform: rotate(135deg);
+    background: var(--c-tomato);
+    color: var(--c-paper);
+  }
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--c-cream-2);
+  transition:
+    transform 0.4s $ease-out,
+    background-color 0.3s,
+    color 0.3s;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.content {
+  overflow: hidden;
+  color: var(--c-ink-soft);
+
+  p {
+    padding: 0 22px 22px;
+  }
+
+  &[data-state="open"] {
+    animation: slideDown 0.35s $ease-out;
+  }
+
+  &[data-state="closed"] {
+    animation: slideUp 0.3s $ease-out;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content[data-state] {
+    animation: none;
+  }
+}

@@ -1,0 +1,48 @@
+@use "../styles/abstracts" as *;
+
+.page {
+  @include container;
+  min-height: 100svh;
+  padding-top: calc(var(--header-h) + 48px);
+  padding-bottom: 96px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 16px;
+  text-align: center;
+
+  h1 {
+    @include display(54px, 32px);
+    max-width: 18ch;
+  }
+
+  > p:not(.code) {
+    max-width: 48ch;
+    color: var(--c-ink-soft);
+    margin-bottom: 8px;
+  }
+}
+
+.art {
+  position: relative;
+  width: 180px;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.slice {
+  position: absolute;
+  inset: 0;
+  background: var(--c-cream);
+  clip-path: polygon(50% 50%, 100% 20%, 100% 75%);
+}
+
+.code {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: rem(22);
+  color: var(--c-tomato);
+}
