@@ -107,7 +107,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease, delay: 0.55 }}
           >
             Pizze cotte al momento, kebab, piadine e un buon caffè, nel cuore di Dro. Siediti in piazza o
-            portala a casa: ci pensiamo noi.
+            passa a ritirarla da asporto.
           </motion.p>
 
           <motion.div

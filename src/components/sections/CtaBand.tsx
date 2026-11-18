@@ -24,7 +24,7 @@ export function CtaBand() {
           <h2 id="cta-title">
             Stasera pizza? <em>Chiamaci.</em>
           </h2>
-          <p>La prepariamo mentre arrivi. Calda, fragrante e pronta da portare a casa.</p>
+          <p>La prepariamo mentre arrivi: passi in pizzeria e la ritiri calda e fragrante.</p>
           <div className={styles.ctas}>
             <Button href={telLink} variant="light" size="lg" icon={<Phone />}>
               {site.contacts.phoneDisplay}

@@ -6,7 +6,7 @@ import { z } from "zod";
 import { toast } from "sonner";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bike, Phone, Send, UtensilsCrossed } from "lucide-react";
+import { Phone, ShoppingBag, Send, UtensilsCrossed } from "lucide-react";
 import { site, telLink, whatsappLink } from "@/data/site";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -129,7 +129,7 @@ export function Contact() {
             eyebrow="Prenota o ordina"
             title={
               <>
-                Hai <em>fame</em>? Ci pensiamo noi.
+                Hai <em>fame</em>? Passa a prenderla.
               </>
             }
             intro="Compila il modulo per preparare la tua richiesta di asporto o prenotazione. Per gli ordini dell'ultimo minuto il modo più veloce resta una telefonata."
@@ -153,7 +153,7 @@ export function Contact() {
               <legend className="sr-only">Cosa desideri?</legend>
               {(
                 [
-                  { value: "asporto", label: "Asporto", icon: Bike },
+                  { value: "asporto", label: "Asporto", icon: ShoppingBag },
                   { value: "tavolo", label: "Tavolo", icon: UtensilsCrossed },
                 ] as const
               ).map(({ value, label, icon: Icon }) => (

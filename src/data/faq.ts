@@ -5,6 +5,10 @@ export const faq = [
     a: "Sì: chiamaci o passa direttamente in pizzeria. Ti diciamo subito a che ora sarà pronta la tua pizza, così non devi aspettare.",
   },
   {
+    q: "Fate consegne a domicilio?",
+    a: "No, non facciamo consegne. Puoi mangiare da noi in piazza oppure ordinare da asporto: chiamaci e passa a ritirare all'orario che preferisci.",
+  },
+  {
     q: "Serve prenotare un tavolo?",
     a: "Nei giorni feriali di solito non serve. Il venerdì, il sabato e d'estate la piazza si riempie in fretta: meglio fare una telefonata.",
   },
