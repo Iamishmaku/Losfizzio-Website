@@ -11,6 +11,8 @@ export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const first = pathname.split("/")[1];
   if (isLocale(first)) return;
+  // /404 resta così com'è e mostra la pagina 404 (senza aggiungere la lingua)
+  if (pathname === "/404") return;
 
   const saved = request.cookies.get(LOCALE_COOKIE)?.value;
   const locale = isLocale(saved) ? saved : matchLocale(request.headers.get("accept-language"));
