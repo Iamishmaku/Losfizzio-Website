@@ -261,6 +261,7 @@ export const it = {
     spicy: "Piccanti",
     categoriesLabel: "Categorie",
     countOne: "1 proposta",
+    countFew: "{n} proposte",
     countOther: "{n} proposte",
     empty: "Nessuna proposta trovata. Prova con un altro ingrediente!",
     reset: "Azzera i filtri",

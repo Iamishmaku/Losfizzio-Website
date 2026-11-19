@@ -28,8 +28,8 @@ export function OpenStatus({ className, tone = "dark" }: { className?: string; t
         when:
           status.opensDay === clock.day
             ? dict.status.today
-            : // in italiano i giorni vanno in minuscolo, in inglese e tedesco no
-              locale === "it"
+            : // in italiano, polacco e slovacco i giorni vanno in minuscolo, in inglese e tedesco no
+              locale !== "en" && locale !== "de"
               ? dict.days[status.opensDay].toLowerCase()
               : dict.days[status.opensDay],
         time: status.opensAt,

@@ -1,4 +1,6 @@
-export const locales = ["it", "en", "de"] as const;
+import { cs as csPhrases, pl as plPhrases, sk as skPhrases } from "./content";
+
+export const locales = ["it", "en", "de", "pl", "sk", "cs"] as const;
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = "it";
@@ -10,6 +12,9 @@ export const localeNames: Record<Locale, string> = {
   it: "Italiano",
   en: "English",
   de: "Deutsch",
+  pl: "Polski",
+  sk: "Slovenčina",
+  cs: "Čeština",
 };
 
 /** Tag BCP 47 per Intl (date, prezzi). */
@@ -17,12 +22,18 @@ export const intlLocale: Record<Locale, string> = {
   it: "it-IT",
   en: "en-GB",
   de: "de-DE",
+  pl: "pl-PL",
+  sk: "sk-SK",
+  cs: "cs-CZ",
 };
 
 export const ogLocale: Record<Locale, string> = {
   it: "it_IT",
   en: "en_GB",
   de: "de_DE",
+  pl: "pl_PL",
+  sk: "sk_SK",
+  cs: "cs_CZ",
 };
 
 export function isLocale(value: string | undefined | null): value is Locale {
@@ -36,13 +47,28 @@ export function localePath(locale: Locale, path = "") {
   return `/${locale}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
-/** Testo tradotto nelle tre lingue. */
+/** Testo tradotto in tutte le lingue del sito. */
 export type Localized<T = string> = Record<Locale, T>;
 
-/** Crea un testo localizzato; se manca una traduzione usa l'italiano. */
+/**
+ * Crea un testo localizzato da italiano, inglese e tedesco.
+ * Polacco, slovacco e ceco vengono da src/i18n/content.ts (cercati con il testo italiano);
+ * se una traduzione manca si usa l'inglese, e se manca anche quello l'italiano.
+ */
 export function l(it: string, en?: string, de?: string): Localized {
-  return { it, en: en ?? it, de: de ?? en ?? it };
+  const english = en ?? it;
+  return {
+    it,
+    en: english,
+    de: de ?? english,
+    pl: plPhrases[it] ?? english,
+    sk: skPhrases[it] ?? english,
+    cs: csPhrases[it] ?? english,
+  };
 }
+
+/** Lingue simili a una di quelle del sito (aggiungine qui se serve, es. { hr: "en" }). */
+const localeAliases: Partial<Record<string, Locale>> = {};
 
 /** Lingua per i visitatori stranieri la cui lingua non è disponibile (es. francese, olandese). */
 export const foreignFallbackLocale: Locale = "en";
@@ -66,6 +92,8 @@ export function matchLocale(acceptLanguage: string | null | undefined): Locale {
   for (const { tag } of ranked) {
     const base = tag.split("-")[0];
     if (isLocale(base)) return base;
+    const alias = localeAliases[base];
+    if (alias) return alias;
   }
   return ranked.some((r) => r.tag !== "*") ? foreignFallbackLocale : defaultLocale;
 }

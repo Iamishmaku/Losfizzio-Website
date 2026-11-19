@@ -42,7 +42,8 @@ se si aggiunge una pagina nuova in `src/app/[lang]`, va aggiunta anche lì.
 
 ## Lingue e tema
 
-- **Lingue:** italiano, inglese e tedesco, con indirizzi separati (`/it`, `/en`, `/de`), tutti statici.
+- **Lingue:** italiano, inglese, tedesco, polacco, slovacco e ceco, con indirizzi separati
+  (`/it`, `/en`, `/de`, `/pl`, `/sk`, `/cs`), tutti statici.
   Chi apre `/` viene mandato nella sua lingua: prima conta quella scelta in precedenza sul sito (cookie),
   poi la lingua del browser/sistema. Per le altre lingue (francese, olandese…) si usa l'inglese,
   per i motori di ricerca l'italiano. Lo fa `src/proxy.ts`.
@@ -56,11 +57,13 @@ Tutti i contenuti stanno in pochi file. Modificandoli si aggiornano le pagine, i
 
 - `src/data/site.ts`: indirizzo, telefono, WhatsApp, e-mail, social, **orari**
 - `src/data/menu.ts`: categorie, piatti, prezzi, etichette (vegetariana, piccante…), ingredienti per il disegno della pizza
-  e pizze in evidenza. Ogni testo è scritto come `l("italiano", "english", "deutsch")`
+  e pizze in evidenza. Ogni testo è scritto come `l("italiano", "english", "deutsch")`;
+  polacco, slovacco e ceco sono in `src/i18n/content.ts`, cercati con il testo italiano (se manca una traduzione si usa l'inglese)
 - `src/data/partners.ts`: aziende amiche e partner della pagina `/partners` (logo in `public/images/partners`).
-  Per aggiungerne una basta un nuovo elemento nell'elenco `partners` (nome, descrizione nelle tre lingue, contatti):
+  Per aggiungerne una basta un nuovo elemento nell'elenco `partners` (nome, descrizione in italiano, inglese e tedesco, contatti; le altre lingue in `src/i18n/content.ts`):
   i campi facoltativi vuoti non vengono mostrati e pagina, sitemap, dati strutturati e `llms.txt` si aggiornano da soli
-- `src/i18n/dictionaries/it.ts`, `en.ts`, `de.ts`: tutti i testi del sito nelle tre lingue (comprese le FAQ).
+- `src/i18n/dictionaries/it.ts`, `en.ts`, `de.ts`, `pl.ts`, `sk.ts`, `cs.ts`: tutti i testi del sito in ogni lingua (comprese le FAQ).
+  Le traduzioni in polacco, slovacco e ceco non sono state fatte da madrelingua: conviene farle rileggere.
   Le parti tra `*asterischi*` vengono evidenziate in rosso
 
 ### ⚠️ Da verificare prima di andare online

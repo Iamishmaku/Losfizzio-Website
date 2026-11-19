@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
+import { fontClasses } from "@/fonts/fonts";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Providers } from "@/components/providers/Providers";
@@ -12,23 +12,6 @@ import { getDictionaryFor, getLocale } from "@/i18n/server";
 import { alternates } from "@/lib/seo";
 import { themeScript } from "@/lib/theme-script";
 import "@/styles/globals.scss";
-
-const display = localFont({
-  src: [
-    { path: "../../fonts/fraunces-latin-standard-normal.woff2", style: "normal", weight: "100 900" },
-    { path: "../../fonts/fraunces-latin-standard-italic.woff2", style: "italic", weight: "100 900" },
-  ],
-  variable: "--font-display",
-  display: "swap",
-  fallback: ["Georgia", "Times New Roman", "serif"],
-});
-
-const body = localFont({
-  src: [{ path: "../../fonts/manrope-latin-wght-normal.woff2", style: "normal", weight: "200 800" }],
-  variable: "--font-body",
-  display: "swap",
-  fallback: ["system-ui", "Segoe UI", "Roboto", "Arial", "sans-serif"],
-});
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -74,7 +57,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
 
   return (
     // suppressHydrationWarning: lo script del tema può aggiungere data-theme prima che React si avvii
-    <html lang={locale} className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
+    <html lang={locale} className={fontClasses} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

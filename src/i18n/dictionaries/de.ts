@@ -261,6 +261,7 @@ export const de: Dictionary = {
     spicy: "Scharf",
     categoriesLabel: "Kategorien",
     countOne: "1 Gericht",
+    countFew: "{n} Gerichte",
     countOther: "{n} Gerichte",
     empty: "Nichts gefunden. Probier eine andere Zutat!",
     reset: "Filter zurücksetzen",

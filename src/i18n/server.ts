@@ -7,6 +7,9 @@ const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   it: () => import("./dictionaries/it").then((m) => m.it),
   en: () => import("./dictionaries/en").then((m) => m.en),
   de: () => import("./dictionaries/de").then((m) => m.de),
+  pl: () => import("./dictionaries/pl").then((m) => m.pl),
+  sk: () => import("./dictionaries/sk").then((m) => m.sk),
+  cs: () => import("./dictionaries/cs").then((m) => m.cs),
 };
 
 /** Lingua della pagina corrente (dal segmento /[lang] dell'URL). Solo Server Components. */

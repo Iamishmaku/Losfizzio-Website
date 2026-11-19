@@ -260,6 +260,7 @@ export const en: Dictionary = {
     spicy: "Spicy",
     categoriesLabel: "Categories",
     countOne: "1 item",
+    countFew: "{n} items",
     countOther: "{n} items",
     empty: "Nothing found. Try another ingredient!",
     reset: "Reset filters",

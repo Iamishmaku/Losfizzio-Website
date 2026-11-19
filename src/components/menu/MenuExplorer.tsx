@@ -5,6 +5,7 @@ import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import { Flame, Leaf, Search, X } from "lucide-react";
 import clsx from "clsx";
 import { menu, type Tag } from "@/data/menu";
+import { intlLocale } from "@/i18n/config";
 import { fmt } from "@/i18n/format";
 import { useI18n } from "@/i18n/I18nProvider";
 import { PizzaArt } from "@/components/ui/PizzaArt";
@@ -23,6 +24,11 @@ function normalize(s: string) {
 export function MenuExplorer() {
   const { locale, dict } = useI18n();
   const t = dict.menuPage;
+  // Forme del plurale della lingua (es. polacco: 1 pozycja, 2 pozycje, 5 pozycji)
+  const countLabel = (n: number) => {
+    const form = new Intl.PluralRules(intlLocale[locale]).select(n);
+    return form === "one" ? t.countOne : form === "few" ? t.countFew : t.countOther;
+  };
   const [query, setQuery] = useState("");
   const [active, setActive] = useState<Tag[]>([]);
   const deferredQuery = useDeferredValue(query);
@@ -93,7 +99,7 @@ export function MenuExplorer() {
       </div>
 
       <p className={styles.count} aria-live="polite">
-        {total === 1 ? t.countOne : fmt(t.countOther, { n: total })}
+        {fmt(countLabel(total), { n: total })}
       </p>
 
       <LayoutGroup>
