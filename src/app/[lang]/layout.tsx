@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Providers } from "@/components/providers/Providers";
@@ -91,6 +92,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
             <ClosureBanner />
           </Providers>
         </I18nProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
