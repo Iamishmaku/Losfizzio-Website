@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
     // 404 unica per gli indirizzi che non esistono (il layout principale dipende dalla lingua)
     globalNotFound: true,
   },
+  async redirects() {
+    // Il nome standard è /llms.txt; anche /llm.txt porta lì
+    return [{ source: "/llm.txt", destination: "/llms.txt", permanent: true }];
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
