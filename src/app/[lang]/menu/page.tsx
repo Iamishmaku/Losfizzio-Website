@@ -17,7 +17,11 @@ export async function generateMetadata(): Promise<Metadata> {
     title: dict.meta.menuTitle,
     description: dict.meta.menuDescription,
     alternates: alternates(locale, "/menu"),
-    openGraph: { url: `/${locale}/menu` },
+    // Un openGraph definito qui sostituisce quello del layout: l'immagine di anteprima va indicata di nuovo
+    openGraph: {
+      url: `/${locale}/menu`,
+      images: [{ url: `/${locale}/opengraph-image`, width: 1200, height: 630, alt: dict.meta.title }],
+    },
   };
 }
 
