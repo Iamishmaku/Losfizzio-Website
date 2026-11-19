@@ -289,7 +289,7 @@ export const sk: Dictionary = {
       { title: "Prevádzkovateľ", text: "{holder}\n{address}\nTelefón: {phone}" },
       {
         title: "Zbierané údaje",
-        text: "Stránka je jednoduchá vizitka: nemá účty, formuláre, online objednávky ani platby a nepoužívame analytické ani profilovacie nástroje.\n\nKeď navštíviš stránku, server, na ktorom beží, dostane tvoju IP adresu a technické údaje požiadavky (prehliadač, požadovaná stránka, dátum a čas), ktoré sú potrebné na zobrazenie stránok a ochranu pred zneužitím.\n\nAk si vyberieš jazyk alebo vzhľad (svetlý či tmavý), uložíme túto voľbu do tvojho zariadenia, ako je opísané v časti „Cookies“.",
+        text: "Stránka je jednoduchá vizitka: nemá účty, formuláre, online objednávky ani platby a nepoužívame analytické ani profilovacie nástroje.\n\nKeď navštíviš stránku, server, na ktorom beží, dostane tvoju IP adresu a technické údaje požiadavky (prehliadač, požadovaná stránka, dátum a čas), ktoré sú potrebné na zobrazenie stránok a ochranu pred zneužitím.\n\nAby bola stránka rýchla, používame Vercel Speed Insights, ktorý anonymne a súhrnne meria čas načítania stránok: nepoužíva cookies, neidentifikuje návštevníkov a neslúži na reklamné účely.\n\nAk si vyberieš jazyk alebo vzhľad (svetlý či tmavý), uložíme túto voľbu do tvojho zariadenia, ako je opísané v časti „Cookies“.",
       },
       {
         title: "Právny základ",

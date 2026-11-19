@@ -59,6 +59,6 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Esclude solo i file interni di Next e l'icona generata
-  matcher: ["/((?!_next/|api/|apple-icon).*)"],
+  // Esclude i file interni di Next e di Vercel (es. Speed Insights) e l'icona generata
+  matcher: ["/((?!_next/|_vercel/|api/|apple-icon).*)"],
 };

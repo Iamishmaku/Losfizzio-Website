@@ -292,7 +292,7 @@ export const pl: Dictionary = {
       { title: "Administrator danych", text: "{holder}\n{address}\nTelefon: {phone}" },
       {
         title: "Zbierane dane",
-        text: "Strona jest zwykłą wizytówką: nie ma kont, formularzy, zamówień ani płatności online i nie używamy narzędzi analitycznych ani profilujących.\n\nGdy odwiedzasz stronę, serwer, na którym jest hostowana, otrzymuje Twój adres IP i dane techniczne żądania (przeglądarka, odwiedzana strona, data i godzina), niezbędne do wyświetlenia stron i ochrony serwisu przed nadużyciami.\n\nJeśli wybierzesz język lub motyw (jasny albo ciemny), zapisujemy ten wybór na Twoim urządzeniu, jak opisano w sekcji „Pliki cookie”.",
+        text: "Strona jest zwykłą wizytówką: nie ma kont, formularzy, zamówień ani płatności online i nie używamy narzędzi analitycznych ani profilujących.\n\nGdy odwiedzasz stronę, serwer, na którym jest hostowana, otrzymuje Twój adres IP i dane techniczne żądania (przeglądarka, odwiedzana strona, data i godzina), niezbędne do wyświetlenia stron i ochrony serwisu przed nadużyciami.\n\nAby strona działała szybko, używamy Vercel Speed Insights, które anonimowo i zbiorczo mierzy czas ładowania stron: nie używa plików cookie, nie identyfikuje odwiedzających i nie służy celom reklamowym.\n\nJeśli wybierzesz język lub motyw (jasny albo ciemny), zapisujemy ten wybór na Twoim urządzeniu, jak opisano w sekcji „Pliki cookie”.",
       },
       {
         title: "Podstawa prawna",

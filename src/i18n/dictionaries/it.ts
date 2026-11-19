@@ -290,7 +290,7 @@ export const it = {
       { title: "Titolare del trattamento", text: "{holder}\n{address}\nTelefono: {phone}" },
       {
         title: "Dati raccolti",
-        text: "Il sito è una semplice vetrina: non ci sono account, moduli, ordini o pagamenti online e non usiamo strumenti di statistica o di profilazione.\n\nQuando visiti il sito, il server che lo ospita riceve il tuo indirizzo IP e i dati tecnici della richiesta (browser, pagina richiesta, data e ora), necessari per mostrarti le pagine e proteggere il sito da abusi.\n\nSe scegli una lingua o un tema (chiaro o scuro), salviamo questa preferenza sul tuo dispositivo, come spiegato nella sezione «Cookie».",
+        text: "Il sito è una semplice vetrina: non ci sono account, moduli, ordini o pagamenti online e non usiamo strumenti di statistica o di profilazione.\n\nQuando visiti il sito, il server che lo ospita riceve il tuo indirizzo IP e i dati tecnici della richiesta (browser, pagina richiesta, data e ora), necessari per mostrarti le pagine e proteggere il sito da abusi.\n\nPer tenere il sito veloce usiamo Vercel Speed Insights, che misura in forma anonima e aggregata i tempi di caricamento delle pagine: non usa cookie, non identifica i visitatori e non serve a fini pubblicitari.\n\nSe scegli una lingua o un tema (chiaro o scuro), salviamo questa preferenza sul tuo dispositivo, come spiegato nella sezione «Cookie».",
       },
       {
         title: "Base giuridica",

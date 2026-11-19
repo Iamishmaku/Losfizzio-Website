@@ -290,7 +290,7 @@ export const de: Dictionary = {
       { title: "Verantwortlicher", text: "{holder}\n{address}\nTelefon: {phone}" },
       {
         title: "Erhobene Daten",
-        text: "Die Website ist ein einfaches Schaufenster: Es gibt keine Konten, keine Formulare, keine Online-Bestellungen oder -Zahlungen, und wir verwenden keine Analyse- oder Profiling-Tools.\n\nWenn Sie die Website besuchen, erhält der Server, auf dem sie gehostet wird, Ihre IP-Adresse und die technischen Angaben der Anfrage (Browser, aufgerufene Seite, Datum und Uhrzeit), die nötig sind, um Ihnen die Seiten anzuzeigen und die Website vor Missbrauch zu schützen.\n\nWenn Sie eine Sprache oder ein Design (hell oder dunkel) wählen, speichern wir diese Einstellung auf Ihrem Gerät, wie im Abschnitt „Cookies“ beschrieben.",
+        text: "Die Website ist ein einfaches Schaufenster: Es gibt keine Konten, keine Formulare, keine Online-Bestellungen oder -Zahlungen, und wir verwenden keine Analyse- oder Profiling-Tools.\n\nWenn Sie die Website besuchen, erhält der Server, auf dem sie gehostet wird, Ihre IP-Adresse und die technischen Angaben der Anfrage (Browser, aufgerufene Seite, Datum und Uhrzeit), die nötig sind, um Ihnen die Seiten anzuzeigen und die Website vor Missbrauch zu schützen.\n\nDamit die Website schnell bleibt, verwenden wir Vercel Speed Insights, das die Ladezeiten der Seiten anonym und zusammengefasst misst: ohne Cookies, ohne Besucher zu identifizieren und nicht zu Werbezwecken.\n\nWenn Sie eine Sprache oder ein Design (hell oder dunkel) wählen, speichern wir diese Einstellung auf Ihrem Gerät, wie im Abschnitt „Cookies“ beschrieben.",
       },
       {
         title: "Rechtsgrundlage",
