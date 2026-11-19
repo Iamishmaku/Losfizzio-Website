@@ -14,7 +14,8 @@ disegnata con i suoi ingredienti, indicati nel campo `toppings` del piatto in `s
 ```
 
 Ingredienti disponibili per il disegno: `tomato`, `mozzarella`, `basil`, `salami`, `ham`, `mushroom`, `olive`,
-`pepper`, `onion`, `rocket`, `tuna`, `egg`, `sausage`, `speck`, `zucchini`.
+`pepper`, `onion`, `rocket`, `tuna`, `egg`, `sausage`, `speck`, `zucchini`, `fries` (patatine fritte),
+`nduja` ('nduja).
 
 ## Foto (facoltative)
 

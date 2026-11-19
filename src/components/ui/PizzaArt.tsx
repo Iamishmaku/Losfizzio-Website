@@ -80,6 +80,8 @@ const counts: Partial<Record<Topping, number>> = {
   sausage: 9,
   speck: 6,
   zucchini: 7,
+  fries: 11,
+  nduja: 6,
 };
 
 function ToppingShape({ type, spot }: { type: Topping; spot: Spot }) {
@@ -210,6 +212,39 @@ function ToppingShape({ type, spot }: { type: Topping; spot: Spot }) {
           />
         </g>
       );
+    case "fries":
+      // patatine fritte: bastoncini dorati
+      return (
+        <g transform={t}>
+          <rect
+            x="-10"
+            y="-2.6"
+            width="20"
+            height="5.2"
+            rx="2"
+            fill="#f2c14e"
+            stroke="#c98a22"
+            strokeWidth="0.8"
+          />
+          <rect x="-9" y="-1.8" width="18" height="1.6" rx="0.8" fill="#fde49a" />
+        </g>
+      );
+    case "nduja":
+      // 'nduja: macchia cremosa rosso scuro con olio arancio, ben distinta dal pomodoro
+      return (
+        <g transform={t}>
+          <path
+            d="M-11 -2 C-12 -9 -2 -12 4 -10 C11 -8 13 -1 10 5 C7 11 -2 12 -6 9 C-11 6 -10 2 -11 -2Z"
+            fill="#6e1610"
+            stroke="#4a0d08"
+            strokeWidth="1"
+          />
+          <path d="M-6 -3 C-6 -7 1 -8 4 -5 C8 -3 7 2 3 4 C-1 5 -6 2 -6 -3Z" fill="#9b2a17" />
+          <circle cx="-3" cy="-5" r="1.4" fill="#f39c4a" />
+          <circle cx="5" cy="1" r="1.1" fill="#f39c4a" />
+          <circle cx="-1" cy="5" r="1" fill="#e07a35" />
+        </g>
+      );
     case "zucchini":
       return (
         <g transform={t}>
@@ -267,6 +302,7 @@ export function PizzaArt({
   // Ingredienti: prima i grandi, poi i piccoli
   const order: Topping[] = [
     "egg",
+    "nduja",
     "ham",
     "speck",
     "salami",
@@ -279,6 +315,7 @@ export function PizzaArt({
     "tuna",
     "olive",
     "rocket",
+    "fries",
   ];
   const layers = order
     .filter((tp) => toppings.includes(tp))

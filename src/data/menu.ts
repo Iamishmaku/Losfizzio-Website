@@ -22,7 +22,9 @@ export type Topping =
   | "egg"
   | "sausage"
   | "speck"
-  | "zucchini";
+  | "zucchini"
+  | "fries"
+  | "nduja";
 
 export interface MenuItem {
   /** Identificativo stabile (usato per le pizze in evidenza e come chiave). */
@@ -170,7 +172,7 @@ export const menu: MenuCategory[] = [
           "Tomate, Fior-di-Latte-Mozzarella, Würstchen, Pommes frites",
         ),
         price: 8.5,
-        toppings: ["tomato", "mozzarella", "sausage"],
+        toppings: ["tomato", "mozzarella", "sausage", "fries"],
       },
     ],
   },
@@ -263,7 +265,7 @@ export const menu: MenuCategory[] = [
         ),
         price: 10,
         tags: ["piccante", "novita"],
-        toppings: ["tomato", "mozzarella", "salami", "onion", "pepper"],
+        toppings: ["tomato", "mozzarella", "nduja", "salami", "onion"],
       },
       {
         id: "pizza-kebab",
