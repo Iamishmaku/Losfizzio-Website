@@ -50,10 +50,7 @@ export const pl: Phrases = {
   Bianca: "Biała",
   "Con patate fritte": "Z frytkami",
   "Con kebab": "Z kebabem",
-  "Salamino & gorgonzola": "Pikantne salami i gorgonzola",
-  "Peperoni & gorgonzola": "Papryka i gorgonzola",
   "Pizza senza glutine": "Pizza bezglutenowa",
-  "Con Nutella": "Z Nutellą",
 
   // Pizze: ingredienti
   "Pomodoro, mozzarella": "Pomidory, mozzarella",
@@ -127,10 +124,7 @@ export const pl: Phrases = {
     "Calabrese, pikantne salami, ser taleggio, cukinia w paski",
   "Calabrese, salamino piccante, acciughe, pomodorini ciliegia":
     "Calabrese, pikantne salami, anchois, pomidorki koktajlowe",
-  "Pomodoro, mozzarella, salamino piccante, gorgonzola": "Pomidory, mozzarella, pikantne salami, gorgonzola",
-  "Pomodoro, mozzarella, peperoni, gorgonzola": "Pomidory, mozzarella, papryka, gorgonzola",
   "La pizza che preferisci, con impasto senza glutine": "Twoja ulubiona pizza na cieście bezglutenowym",
-  "Focaccia, Nutella, zucchero a velo": "Focaccia, Nutella, cukier puder",
 
   // Primi piatti
   "Spaghetti al pomodoro": "Spaghetti z sosem pomidorowym",
@@ -238,10 +232,7 @@ export const sk: Phrases = {
   Bianca: "Biela",
   "Con patate fritte": "S hranolkami",
   "Con kebab": "S kebabom",
-  "Salamino & gorgonzola": "Pikantná saláma a gorgonzola",
-  "Peperoni & gorgonzola": "Paprika a gorgonzola",
   "Pizza senza glutine": "Bezlepková pizza",
-  "Con Nutella": "S Nutellou",
 
   // Pizze: ingredienti
   "Pomodoro, mozzarella": "Paradajky, mozzarella",
@@ -315,10 +306,7 @@ export const sk: Phrases = {
     "Calabrese, pikantná saláma, syr taleggio, cuketa na prúžky",
   "Calabrese, salamino piccante, acciughe, pomodorini ciliegia":
     "Calabrese, pikantná saláma, ančovičky, cherry paradajky",
-  "Pomodoro, mozzarella, salamino piccante, gorgonzola": "Paradajky, mozzarella, pikantná saláma, gorgonzola",
-  "Pomodoro, mozzarella, peperoni, gorgonzola": "Paradajky, mozzarella, paprika, gorgonzola",
   "La pizza che preferisci, con impasto senza glutine": "Tvoja obľúbená pizza z bezlepkového cesta",
-  "Focaccia, Nutella, zucchero a velo": "Focaccia, Nutella, práškový cukor",
 
   // Primi piatti
   "Spaghetti al pomodoro": "Špagety s paradajkovou omáčkou",
@@ -426,10 +414,7 @@ export const cs: Phrases = {
   Bianca: "Bílá",
   "Con patate fritte": "S hranolky",
   "Con kebab": "S kebabem",
-  "Salamino & gorgonzola": "Pikantní salám a gorgonzola",
-  "Peperoni & gorgonzola": "Paprika a gorgonzola",
   "Pizza senza glutine": "Bezlepková pizza",
-  "Con Nutella": "S Nutellou",
 
   // Pizze: ingredienti
   "Pomodoro, mozzarella": "Rajčata, mozzarella",
@@ -502,10 +487,7 @@ export const cs: Phrases = {
     "Calabrese, pikantní salám, sýr taleggio, cuketa na nudličky",
   "Calabrese, salamino piccante, acciughe, pomodorini ciliegia":
     "Calabrese, pikantní salám, ančovičky, cherry rajčata",
-  "Pomodoro, mozzarella, salamino piccante, gorgonzola": "Rajčata, mozzarella, pikantní salám, gorgonzola",
-  "Pomodoro, mozzarella, peperoni, gorgonzola": "Rajčata, mozzarella, paprika, gorgonzola",
   "La pizza che preferisci, con impasto senza glutine": "Tvoje oblíbená pizza z bezlepkového těsta",
-  "Focaccia, Nutella, zucchero a velo": "Focaccia, Nutella, moučkový cukr",
 
   // Primi piatti
   "Spaghetti al pomodoro": "Špagety s rajčatovou omáčkou",

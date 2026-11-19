@@ -714,28 +714,6 @@ export const menu: MenuCategory[] = [
         toppings: [M, "garlic", "chili", "salami", "anchovy", "cherrytomato"],
       },
       {
-        id: "salamino-gorgonzola",
-        name: l("Salamino & gorgonzola", "Spicy salami & gorgonzola", "Scharfe Salami & Gorgonzola"),
-        description: l(
-          "Pomodoro, mozzarella, salamino piccante, gorgonzola",
-          "Tomato, mozzarella, spicy salami, gorgonzola",
-          "Tomate, Mozzarella, scharfe Salami, Gorgonzola",
-        ),
-        tags: ["piccante"],
-        toppings: [T, M, "salami", "gorgonzola"],
-      },
-      {
-        id: "peperoni-gorgonzola",
-        name: l("Peperoni & gorgonzola", "Peppers & gorgonzola", "Paprika & Gorgonzola"),
-        description: l(
-          "Pomodoro, mozzarella, peperoni, gorgonzola",
-          "Tomato, mozzarella, peppers, gorgonzola",
-          "Tomate, Mozzarella, Paprika, Gorgonzola",
-        ),
-        tags: ["vegetariana"],
-        toppings: [T, M, "pepper", "gorgonzola"],
-      },
-      {
         id: "senza-glutine",
         name: l("Pizza senza glutine", "Gluten-free pizza", "Glutenfreie Pizza"),
         description: l(
@@ -744,17 +722,6 @@ export const menu: MenuCategory[] = [
           "Deine Lieblingspizza mit glutenfreiem Teig",
         ),
         toppings: [T, M, "basil"],
-      },
-      {
-        id: "nutella",
-        name: l("Con Nutella", "Nutella", "Nutella"),
-        description: l(
-          "Focaccia, Nutella, zucchero a velo",
-          "Focaccia, Nutella, icing sugar",
-          "Focaccia, Nutella, Puderzucker",
-        ),
-        tags: ["vegetariana"],
-        toppings: ["nutella"],
       },
     ],
   },
