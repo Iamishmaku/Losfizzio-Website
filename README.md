@@ -72,15 +72,16 @@ Con `contacts.whatsapp` compilato in `src/data/site.ts` compare il pulsante "Chi
 
 ## Deploy su Vercel
 
-Il progetto è collegato a GitHub: ogni modifica salvata sul repository viene pubblicata da sola.
+Il progetto Vercel **losfizzio-website-884e** è collegato a GitHub: ogni modifica salvata sul repository viene pubblicata da sola.
 
-- Indirizzo principale: `https://www.losfiziodro.it` (predefinito nel codice; la variabile `NEXT_PUBLIC_SITE_URL` su Vercel non serve, se la crei usa il tipo *Config*)
-- Dominio: **www.losfiziodro.it** (comprato su Register.it); `losfiziodro.it` senza www rimanda a www.
-  In Vercel: *Settings → Domains*. Su Register.it, nella gestione DNS del dominio:
-  - record **A** per `losfiziodro.it` (nome vuoto o `@`) → `76.76.21.21`
-  - record **CNAME** per `www` → `cname.vercel-dns.com`
-
-  (valgono i valori che mostra Vercel, se diversi)
+- Indirizzo principale: `https://www.losfiziodro.it` (predefinito nel codice, non servono variabili d'ambiente).
+  Per cambiarlo si può creare su Vercel la variabile `NEXT_PUBLIC_SITE_URL`, di tipo *Config*.
+- Dominio **losfiziodro.it** comprato su Register.it, con i DNS gestiti da **Cloudflare**
+  (nameserver `konnor.ns.cloudflare.com` e `walk.ns.cloudflare.com`). Record su Cloudflare, con proxy disattivato
+  (nuvoletta grigia, "DNS only"):
+  - **A** `@` → `216.198.79.1`
+  - **CNAME** `www` → `5fded2d005e45dd1.vercel-dns-017.com`
+- Su Vercel (*Settings → Domains*) `losfiziodro.it` rimanda con un redirect a `www.losfiziodro.it`.
 
 ## Struttura
 
