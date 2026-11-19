@@ -53,10 +53,71 @@ export function weekHours(season: Season): Record<DayKey, readonly TimeSlot[]> {
   return site.hours[season];
 }
 
+/** Data a Roma nel formato "AAAA-MM-GG". */
+export function dateKeyInRome(date = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: TIME_ZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(date);
+  const get = (t: string) => parts.find((p) => p.type === t)?.value ?? "01";
+  return `${get("year")}-${get("month")}-${get("day")}`;
+}
+
+/** Mezzogiorno (ora di Roma, circa) di una data "AAAA-MM-GG": comodo per calcolare giorno della settimana e stagione. */
+function noonOf(key: string) {
+  const [y, m, d] = key.split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1, d, 11));
+}
+
+function nextDayKey(key: string) {
+  const d = noonOf(key);
+  d.setUTCDate(d.getUTCDate() + 1);
+  return d.toISOString().slice(0, 10);
+}
+
+export interface ActiveClosure {
+  /** Ultimo giorno di chiusura (incluso) */
+  until: string;
+  /** Giorno e ora della riapertura */
+  reopenDate: string | null;
+  reopenTime: string | null;
+}
+
+/** Chiusura straordinaria in corso in una certa data, con giorno e ora di riapertura. */
+export function activeClosure(dateKey: string): ActiveClosure | null {
+  const closure = site.closures.find((c) => dateKey >= c.from && dateKey <= c.to);
+  if (!closure) return null;
+  let key = closure.to;
+  for (let i = 0; i < 30; i++) {
+    key = nextDayKey(key);
+    if (site.closures.some((c) => key >= c.from && key <= c.to)) continue;
+    const noon = noonOf(key);
+    const slots = weekHours(seasonOn(noon))[nowInRome(noon).day];
+    if (slots.length) return { until: closure.to, reopenDate: key, reopenTime: slots[0].open };
+  }
+  return { until: closure.to, reopenDate: null, reopenTime: null };
+}
+
+/** Formatta una data "AAAA-MM-GG" per esteso, es. "martedì 24 novembre". */
+export function formatDayKey(key: string, intlLocale: string) {
+  return noonOf(key).toLocaleDateString(intlLocale, {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    timeZone: TIME_ZONE,
+  });
+}
+
 export type OpenStatus =
-  { open: true; closesAt: string } | { open: false; opensAt: string | null; opensDay: DayKey | null };
+  | { open: true; closesAt: string }
+  | { open: false; opensAt: string | null; opensDay: DayKey | null; closure?: ActiveClosure };
 
 export function getOpenStatus(date = new Date()): OpenStatus {
+  const closure = activeClosure(dateKeyInRome(date));
+  if (closure) return { open: false, opensAt: closure.reopenTime, opensDay: null, closure };
+
   const { day, minutes } = nowInRome(date);
   const hours = weekHours(seasonOn(date));
   const today = hours[day];
@@ -102,4 +163,18 @@ export function openingHoursSpecification(date: Date) {
       closes: s.close,
     })),
   );
+}
+
+/** Chiusure straordinarie per i dati strutturati di Google (giorni con apertura e chiusura alle 00:00). */
+export function specialClosuresSpecification(date: Date) {
+  const today = dateKeyInRome(date);
+  return site.closures
+    .filter((c) => c.to >= today)
+    .map((c) => ({
+      "@type": "OpeningHoursSpecification",
+      opens: "00:00",
+      closes: "00:00",
+      validFrom: c.from,
+      validThrough: c.to,
+    }));
 }

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Providers } from "@/components/providers/Providers";
+import { ClosureBanner } from "@/components/ui/ClosureBanner";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { site } from "@/data/site";
 import { locales, ogLocale, type Locale } from "@/i18n/config";
@@ -87,6 +88,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
             <Header />
             <main id="contenuto">{children}</main>
             <Footer />
+            <ClosureBanner />
           </Providers>
         </I18nProvider>
       </body>

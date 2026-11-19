@@ -8,6 +8,7 @@ import { Info, MapPin, Navigation, Phone } from "lucide-react";
 import { dayOrder, fullAddress, mapsEmbed, mapsLink, site, telLink } from "@/data/site";
 import { slotLines, weekHours } from "@/lib/hours";
 import { useSeason } from "@/lib/useSeason";
+import { useClosureText } from "@/components/ui/ClosureBanner";
 import { fmt } from "@/i18n/format";
 import { useI18n } from "@/i18n/I18nProvider";
 import { Rich } from "@/i18n/Rich";
@@ -23,6 +24,7 @@ export function Visit() {
   const t = dict.visit;
   const season = useSeason();
   const hours = weekHours(season);
+  const closure = useClosureText();
   const today = useRomeClock()?.day ?? null;
   const [mapLoaded, setMapLoaded] = useState(false);
 
@@ -46,6 +48,12 @@ export function Visit() {
               </div>
               <OpenStatus tone="light" />
             </div>
+            {closure && (
+              <p className={styles.closure} role="status">
+                <strong>{closure.title}</strong>
+                {closure.text}
+              </p>
+            )}
             <dl className={styles.hours}>
               {dayOrder.map((d) => (
                 <div key={d} className={clsx(styles.day, d === today && styles.today)}>

@@ -62,6 +62,12 @@ export const it = {
     closed: "Chiuso",
     fallback: "Orari di apertura",
   },
+  closure: {
+    title: "Chiusura straordinaria",
+    banner: "Siamo chiusi fino a {until} compreso. Riapriamo {reopen} alle {time}!",
+    badge: "Chiuso · riapre {reopen} alle {time}",
+    close: "Chiudi avviso",
+  },
   days: {
     mon: "Lunedì",
     tue: "Martedì",

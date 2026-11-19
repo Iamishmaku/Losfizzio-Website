@@ -1,9 +1,10 @@
 "use client";
 
 import clsx from "clsx";
+import { intlLocale } from "@/i18n/config";
 import { fmt } from "@/i18n/format";
 import { useI18n } from "@/i18n/I18nProvider";
-import { getOpenStatus } from "@/lib/hours";
+import { formatDayKey, getOpenStatus } from "@/lib/hours";
 import { useRomeClock } from "@/lib/useRomeClock";
 import styles from "./OpenStatus.module.scss";
 
@@ -17,6 +18,11 @@ export function OpenStatus({ className, tone = "dark" }: { className?: string; t
   let text = dict.status.fallback;
   if (status && clock) {
     if (status.open) text = fmt(dict.status.openNow, { time: status.closesAt });
+    else if (status.closure?.reopenDate && status.closure.reopenTime)
+      text = fmt(dict.closure.badge, {
+        reopen: formatDayKey(status.closure.reopenDate, intlLocale[locale]),
+        time: status.closure.reopenTime,
+      });
     else if (status.opensAt && status.opensDay)
       text = fmt(dict.status.closedOpens, {
         when:

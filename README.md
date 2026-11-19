@@ -29,6 +29,12 @@ npm run format     # Prettier
 
 Serve Node.js 20.9 o superiore.
 
+## Chiusure straordinarie
+
+Per ferie o chiusure, aggiungi le date in `closures` in `src/data/site.ts` (formato `AAAA-MM-GG`, estremi inclusi).
+Durante la chiusura il sito mostra un avviso su tutte le pagine, il badge "Chiuso · riapre …" e un riquadro negli orari;
+il giorno della riapertura gli avvisi spariscono da soli.
+
 ## Lingue e tema
 
 - **Lingue:** italiano, inglese e tedesco, con indirizzi separati (`/it`, `/en`, `/de`), tutti statici.

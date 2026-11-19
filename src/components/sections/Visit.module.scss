@@ -53,6 +53,23 @@
   color: var(--c-crust);
 }
 
+.closure {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(226, 81, 58, 0.18);
+  border: 1px solid rgba(226, 81, 58, 0.5);
+  color: var(--c-light);
+
+  strong {
+    font-size: rem(12.5);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffb4a3;
+  }
+}
+
 .hours {
   display: grid;
 }

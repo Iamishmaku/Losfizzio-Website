@@ -61,6 +61,13 @@ export const de: Dictionary = {
     closed: "Geschlossen",
     fallback: "Öffnungszeiten",
   },
+  closure: {
+    title: "Vorübergehend geschlossen",
+    banner:
+      "Wir haben bis einschließlich {until} geschlossen. Ab {reopen} um {time} Uhr sind wir wieder für euch da!",
+    badge: "Geschlossen · wieder geöffnet ab {reopen}, {time} Uhr",
+    close: "Hinweis schließen",
+  },
   days: {
     mon: "Montag",
     tue: "Dienstag",
