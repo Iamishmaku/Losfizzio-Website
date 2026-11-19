@@ -1,5 +1,5 @@
 /**
- * Menu dello Sfizio (dal menu cartaceo, novembre 2026), in italiano, inglese e tedesco.
+ * Menu de Lo Sfizio (dal menu cartaceo, novembre 2026), in italiano, inglese e tedesco.
  * l("italiano", "english", "deutsch"): se una traduzione manca viene usato il testo italiano.
  * `toppings` serve solo per disegnare la pizza; `price` mancante = "prezzo su richiesta".
  */
