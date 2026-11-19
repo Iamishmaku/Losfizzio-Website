@@ -1,4 +1,4 @@
-import { dayOrder, site, type DayKey, type TimeSlot } from "@/data/site";
+import { dayOrder, site, type DayKey, type Season, type TimeSlot } from "@/data/site";
 
 const TIME_ZONE = "Europe/Rome";
 
@@ -28,12 +28,37 @@ export function nowInRome(date = new Date()): { day: DayKey; minutes: number } {
   return { day: weekday as DayKey, minutes: hour * 60 + minute };
 }
 
+/** Mese e giorno a Roma nel formato "MM-GG". */
+function monthDayInRome(date: Date) {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: TIME_ZONE,
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(date);
+  const month = parts.find((p) => p.type === "month")?.value ?? "01";
+  const day = parts.find((p) => p.type === "day")?.value ?? "01";
+  return `${month}-${day}`;
+}
+
+/** Stagione (orario estivo o invernale) in una certa data. */
+export function seasonOn(date = new Date()): Season {
+  const md = monthDayInRome(date);
+  const { from, to } = site.summer;
+  const inSummer = from <= to ? md >= from && md <= to : md >= from || md <= to;
+  return inSummer ? "summer" : "winter";
+}
+
+/** Orari della settimana per una stagione. */
+export function weekHours(season: Season): Record<DayKey, readonly TimeSlot[]> {
+  return site.hours[season];
+}
+
 export type OpenStatus =
   { open: true; closesAt: string } | { open: false; opensAt: string | null; opensDay: DayKey | null };
 
 export function getOpenStatus(date = new Date()): OpenStatus {
   const { day, minutes } = nowInRome(date);
-  const hours = site.hours as Record<DayKey, readonly TimeSlot[]>;
+  const hours = weekHours(seasonOn(date));
   const today = hours[day];
 
   const current = today.find((s) => minutes >= toMinutes(s.open) && minutes < toMinutes(s.close));
@@ -66,8 +91,9 @@ const schemaDay: Record<DayKey, string> = {
   sun: "Sunday",
 };
 
-export function openingHoursSpecification() {
-  const hours = site.hours as Record<DayKey, readonly TimeSlot[]>;
+/** Orari della stagione in corso, per i dati strutturati di Google (calcolati quando il sito viene pubblicato). */
+export function openingHoursSpecification(date: Date) {
+  const hours = weekHours(seasonOn(date));
   return dayOrder.flatMap((d) =>
     hours[d].map((s) => ({
       "@type": "OpeningHoursSpecification",

@@ -2,6 +2,7 @@ import { mapsLink, site } from "@/data/site";
 import { menu } from "@/data/menu";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/it";
+import { BUILD_DATE } from "@/lib/build-date";
 import { openingHoursSpecification } from "@/lib/hours";
 
 /** Dati strutturati schema.org per Google (scheda ristorante, orari, menu), nella lingua della pagina. */
@@ -31,7 +32,7 @@ export function JsonLd({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       addressCountry: site.address.country,
     },
     geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng },
-    openingHoursSpecification: openingHoursSpecification(),
+    openingHoursSpecification: openingHoursSpecification(BUILD_DATE),
     hasMenu: {
       "@type": "Menu",
       url: `${site.url}/${locale}/menu`,

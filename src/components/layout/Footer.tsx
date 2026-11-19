@@ -5,7 +5,8 @@ import { MapPin, Phone, Mail, Star } from "lucide-react";
 import { dayOrder, fullAddress, mapsLink, site, telLink, whatsappLink } from "@/data/site";
 import { localePath } from "@/i18n/config";
 import { useI18n } from "@/i18n/I18nProvider";
-import { slotLines } from "@/lib/hours";
+import { slotLines, weekHours } from "@/lib/hours";
+import { useSeason } from "@/lib/useSeason";
 import { Logo } from "@/components/ui/Logo";
 import { FacebookIcon, InstagramIcon, WhatsappIcon } from "@/components/ui/SocialIcons";
 import styles from "./Footer.module.scss";
@@ -13,6 +14,8 @@ import styles from "./Footer.module.scss";
 export function Footer() {
   const { locale, dict } = useI18n();
   const { instagram, facebook, googleReviews } = site.social;
+  const season = useSeason();
+  const hours = weekHours(season);
   const links = [
     { href: localePath(locale, "#about"), label: dict.nav.about },
     { href: localePath(locale, "/menu"), label: dict.nav.menu },
@@ -89,12 +92,13 @@ export function Footer() {
 
         <div>
           <h2 className={styles.title}>{dict.footer.hours}</h2>
+          <p className={styles.season}>{dict.visit.season[season]}</p>
           <dl className={styles.hours}>
             {dayOrder.map((d) => (
               <div key={d}>
                 <dt>{dict.days[d]}</dt>
                 <dd>
-                  {slotLines(site.hours[d], dict.status.closed).map((l) => (
+                  {slotLines(hours[d], dict.status.closed).map((l) => (
                     <span key={l}>{l}</span>
                   ))}
                 </dd>

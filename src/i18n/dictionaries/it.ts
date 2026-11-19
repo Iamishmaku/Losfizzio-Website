@@ -139,6 +139,7 @@ export const it = {
     consigliata: "La consigliata",
   },
   visit: {
+    season: { winter: "Orario invernale", summer: "Orario estivo" },
     eyebrow: "Vieni a trovarci",
     title: "Ti aspettiamo *in piazza*",
     intro:

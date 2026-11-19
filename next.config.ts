@@ -13,6 +13,8 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  // Data della pubblicazione: serve per mostrare subito l'orario (estivo/invernale) giusto
+  env: { NEXT_PUBLIC_BUILD_DATE: new Date().toISOString() },
   experimental: {
     // 404 unica per gli indirizzi che non esistono (il layout principale dipende dalla lingua)
     globalNotFound: true,

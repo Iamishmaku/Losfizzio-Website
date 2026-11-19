@@ -138,6 +138,7 @@ export const de: Dictionary = {
     consigliata: "Unser Tipp",
   },
   visit: {
+    season: { winter: "Wintersaison", summer: "Sommersaison" },
     eyebrow: "Besuch uns",
     title: "Wir warten *auf der Piazza*",
     intro:

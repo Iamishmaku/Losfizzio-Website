@@ -44,6 +44,15 @@
   }
 }
 
+.season {
+  margin-top: 4px;
+  font-size: rem(13);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-crust);
+}
+
 .hours {
   display: grid;
 }

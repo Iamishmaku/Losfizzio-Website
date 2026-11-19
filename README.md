@@ -57,7 +57,9 @@ I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **s
 - [x] Indirizzo: Piazza Repubblica 15, 38074 Dro (TN)
 - [x] Numero di telefono e WhatsApp: `388 907 7320` (su WhatsApp solo chiamate, niente messaggi)
 - [ ] E-mail (vuota = nascosta)
-- [ ] Orari di apertura (ora: orario continuato, da RestaurantGuru)
+- [x] Orario invernale: lun–ven 11:30–14:00 e 17:30–22:30, sab–dom 11:30–22:30
+- [x] Orario estivo: tutti i giorni 11:30–22:30
+- [ ] Date dell'orario estivo (ora: 1 aprile – 30 settembre, in `summer` in `src/data/site.ts`). Il sito cambia orario da solo
 - [ ] Menu e prezzi (ora: esempio realistico)
 - [x] Risposte delle FAQ: carta sì, pizza senza glutine sì, prenotazione non obbligatoria
 - [x] Instagram (@losfiziodro) e Facebook

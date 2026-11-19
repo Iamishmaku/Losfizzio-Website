@@ -117,6 +117,13 @@
   }
 }
 
+.season {
+  margin: -10px 0 12px;
+  font-size: rem(13);
+  font-style: italic;
+  color: rgba(255, 250, 241, 0.55);
+}
+
 .hours {
   display: grid;
   gap: 6px;

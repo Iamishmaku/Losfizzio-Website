@@ -7,6 +7,8 @@
 
 export type DayKey = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 
+export type Season = "winter" | "summer";
+
 /** Fascia oraria nel formato "HH:MM" (24h). Una fascia che termina dopo mezzanotte non è supportata. */
 export interface TimeSlot {
   open: string;
@@ -54,18 +56,50 @@ export const site = {
   },
 
   /**
+   * Periodo dell'orario estivo, nel formato "MM-GG" (estremi inclusi). Il resto dell'anno vale l'orario invernale.
+   * Il sito passa da un orario all'altro da solo in base alla data. DA CONFERMARE le date.
+   */
+  summer: { from: "04-01", to: "09-30" },
+
+  /**
    * Orari di apertura (fuso orario Europe/Rome). Array vuoto = chiuso.
-   * Fonte: RestaurantGuru (dato non recentissimo). DA VERIFICARE
+   * Entrambi confermati dal titolare.
    */
   hours: {
-    mon: [{ open: "12:00", close: "22:00" }],
-    tue: [{ open: "12:00", close: "22:30" }],
-    wed: [{ open: "12:00", close: "22:30" }],
-    thu: [{ open: "12:00", close: "22:30" }],
-    fri: [{ open: "12:00", close: "22:30" }],
-    sat: [{ open: "10:00", close: "22:30" }],
-    sun: [{ open: "11:30", close: "22:30" }],
-  } satisfies Record<DayKey, TimeSlot[]>,
+    winter: {
+      mon: [
+        { open: "11:30", close: "14:00" },
+        { open: "17:30", close: "22:30" },
+      ],
+      tue: [
+        { open: "11:30", close: "14:00" },
+        { open: "17:30", close: "22:30" },
+      ],
+      wed: [
+        { open: "11:30", close: "14:00" },
+        { open: "17:30", close: "22:30" },
+      ],
+      thu: [
+        { open: "11:30", close: "14:00" },
+        { open: "17:30", close: "22:30" },
+      ],
+      fri: [
+        { open: "11:30", close: "14:00" },
+        { open: "17:30", close: "22:30" },
+      ],
+      sat: [{ open: "11:30", close: "22:30" }],
+      sun: [{ open: "11:30", close: "22:30" }],
+    },
+    summer: {
+      mon: [{ open: "11:30", close: "22:30" }],
+      tue: [{ open: "11:30", close: "22:30" }],
+      wed: [{ open: "11:30", close: "22:30" }],
+      thu: [{ open: "11:30", close: "22:30" }],
+      fri: [{ open: "11:30", close: "22:30" }],
+      sat: [{ open: "11:30", close: "22:30" }],
+      sun: [{ open: "11:30", close: "22:30" }],
+    },
+  } satisfies Record<Season, Record<DayKey, TimeSlot[]>>,
 } as const;
 
 export const dayOrder: DayKey[] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];

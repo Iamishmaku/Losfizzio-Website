@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { Info, MapPin, Navigation, Phone } from "lucide-react";
 import { dayOrder, fullAddress, mapsEmbed, mapsLink, site, telLink } from "@/data/site";
-import { slotLines } from "@/lib/hours";
+import { slotLines, weekHours } from "@/lib/hours";
+import { useSeason } from "@/lib/useSeason";
 import { fmt } from "@/i18n/format";
 import { useI18n } from "@/i18n/I18nProvider";
 import { Rich } from "@/i18n/Rich";
@@ -20,6 +21,8 @@ import styles from "./Visit.module.scss";
 export function Visit() {
   const { dict } = useI18n();
   const t = dict.visit;
+  const season = useSeason();
+  const hours = weekHours(season);
   const today = useRomeClock()?.day ?? null;
   const [mapLoaded, setMapLoaded] = useState(false);
 
@@ -37,7 +40,10 @@ export function Visit() {
         <div className={styles.grid}>
           <Reveal className={styles.card} id="hours">
             <div className={styles.cardHead}>
-              <h3>{t.hoursTitle}</h3>
+              <div>
+                <h3>{t.hoursTitle}</h3>
+                <p className={styles.season}>{t.season[season]}</p>
+              </div>
               <OpenStatus tone="light" />
             </div>
             <dl className={styles.hours}>
@@ -47,8 +53,8 @@ export function Visit() {
                     {dict.days[d]}
                     {d === today && <span className={styles.todayBadge}>{t.today}</span>}
                   </dt>
-                  <dd className={clsx(!site.hours[d].length && styles.closed)}>
-                    {slotLines(site.hours[d], dict.status.closed).map((l) => (
+                  <dd className={clsx(!hours[d].length && styles.closed)}>
+                    {slotLines(hours[d], dict.status.closed).map((l) => (
                       <span key={l}>{l}</span>
                     ))}
                   </dd>
