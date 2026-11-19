@@ -21,6 +21,17 @@ export const de: Dictionary = {
     menuTitle: "Speisekarte",
     menuDescription:
       "Die Speisekarte von Lo Sfizio in Dro: klassische und besondere Pizzen, Kebab, Piadina, Bar und Getränke. Preise und Zutaten.",
+    partnersTitle: "Was tun in Dro: E-Bikes & Abenteuerpark",
+    partnersDescription:
+      "Was tun in Dro und im Sarcatal: E-Bike-Verleih, Abenteuerpark und die befreundeten Betriebe von Lo Sfizio. Adressen, Öffnungszeiten und Kontakt.",
+    partnersKeywords: [
+      "Was tun in Dro",
+      "E-Bike Verleih Dro",
+      "Abenteuerpark Dro",
+      "Elias Adventure Park",
+      "Lelettrica Dro",
+      "Sarcatal",
+    ],
     privacyTitle: "Datenschutz & Cookies",
     privacyDescription: "Datenschutz- und Cookie-Hinweise der Website von Lo Sfizio.",
     ogBadge: "Zum Mitnehmen · {phone}",
@@ -38,6 +49,7 @@ export const de: Dictionary = {
     menu: "Speisekarte",
     hours: "Öffnungszeiten",
     location: "Anfahrt",
+    partners: "Freunde",
     contact: "Kontakt",
     privacy: "Datenschutz & Cookies",
     mainLabel: "Hauptnavigation",
@@ -252,6 +264,20 @@ export const de: Dictionary = {
     countOther: "{n} Gerichte",
     empty: "Nichts gefunden. Probier eine andere Zutat!",
     reset: "Filter zurücksetzen",
+  },
+  partnersPage: {
+    eyebrow: "Freunde & Partner",
+    title: "Die *Freunde* von Lo Sfizio in Dro",
+    intro:
+      "Die Betriebe, mit denen wir zusammenarbeiten, und Freunde, die wir Gästen in Dro gerne empfehlen: E-Bike-Verleih, Abenteuerpark und mehr, im Sarcatal nahe Arco und Gardasee.",
+    afterTitle: "Nach dem Ausflug *warten wir* auf der Piazza",
+    afterText:
+      "Ob nach einer Radtour oder einem Abenteuertag: Lo Sfizio ist die Pizzeria auf der Piazza in Dro, mit frisch gebackenen Pizzen, Kebab, Piadina und gutem Kaffee.",
+    listLabel: "Befreundete Betriebe",
+    logoAlt: "Logo von {name}",
+    hours: "Öffnungszeiten",
+    website: "Website",
+    directions: "Route",
   },
   privacy: {
     eyebrow: "Hinweise",

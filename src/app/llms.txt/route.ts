@@ -1,5 +1,6 @@
 import { dayOrder, fullAddress, site, type DayKey } from "@/data/site";
 import { formatPrice, menu } from "@/data/menu";
+import { partnerAddress, partners } from "@/data/partners";
 import { it } from "@/i18n/dictionaries/it";
 import { locales } from "@/i18n/config";
 import { BUILD_DATE } from "@/lib/build-date";
@@ -43,6 +44,26 @@ function build() {
     })
     .join("\n\n");
 
+  const partnersText = partners
+    .map((p) => {
+      const lines = [
+        `### ${p.name} · ${p.category.it}`,
+        "",
+        p.description.it,
+        "",
+        `- Servizi: ${p.services.map((s) => s.it).join("; ")}`,
+        ...(partnerAddress(p) ? [`- Indirizzo: ${partnerAddress(p)}`] : []),
+        ...(p.hours ? [`- Orari: ${p.hours.it}`] : []),
+        ...(p.phone ? [`- Telefono: ${p.phone.display} (${p.phone.tel})`] : []),
+        ...(p.email ? [`- E-mail: ${p.email}`] : []),
+        ...(p.website ? [`- Sito web: ${p.website}`] : []),
+        ...(p.instagram ? [`- Instagram: ${p.instagram}`] : []),
+        ...(p.facebook ? [`- Facebook: ${p.facebook}`] : []),
+      ];
+      return lines.join("\n");
+    })
+    .join("\n\n");
+
   return `# ${site.name} · Pizzeria a Dro (TN)
 
 > ${it.meta.description}
@@ -77,7 +98,15 @@ ${closures ? `\n${closures}\n` : ""}
 
 - Home: ${page("")}
 - Menu completo: ${page("/menu")}
+- Cosa fare a Dro, aziende amiche e partner: ${page("/partners")}
 - Privacy: ${page("/privacy")}
+
+## Cosa fare a Dro: aziende amiche e partner
+
+Attività di Dro e della Valle del Sarca con cui collaboriamo e che consigliamo a chi viene a trovarci
+(dettagli in ${site.url}/it/partners):
+
+${partnersText}
 
 ## Menu (prezzi in euro)
 

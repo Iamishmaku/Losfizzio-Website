@@ -20,6 +20,7 @@
 .text {
   display: grid;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .name {

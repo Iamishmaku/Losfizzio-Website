@@ -21,6 +21,17 @@ export const en: Dictionary = {
     menuTitle: "Menu",
     menuDescription:
       "The menu of Lo Sfizio in Dro: classic and signature pizzas, kebab, piadina, bar and drinks. Prices and ingredients.",
+    partnersTitle: "What to do in Dro: e-bikes & adventure park",
+    partnersDescription:
+      "Things to do in Dro and the Sarca Valley: e-bike rental, an adventure park and the local friends of Lo Sfizio. Addresses, opening hours and contacts.",
+    partnersKeywords: [
+      "things to do in Dro",
+      "e-bike rental Dro",
+      "adventure park Dro",
+      "Elias Adventure Park",
+      "Lelettrica Dro",
+      "Sarca Valley",
+    ],
     privacyTitle: "Privacy & cookies",
     privacyDescription: "Privacy and cookie policy of the Lo Sfizio website.",
     ogBadge: "Takeaway · {phone}",
@@ -38,6 +49,7 @@ export const en: Dictionary = {
     menu: "Menu",
     hours: "Opening hours",
     location: "Find us",
+    partners: "Friends",
     contact: "Contact",
     privacy: "Privacy & cookies",
     mainLabel: "Main navigation",
@@ -251,6 +263,20 @@ export const en: Dictionary = {
     countOther: "{n} items",
     empty: "Nothing found. Try another ingredient!",
     reset: "Reset filters",
+  },
+  partnersPage: {
+    eyebrow: "Friends & partners",
+    title: "The *friends* of Lo Sfizio in Dro",
+    intro:
+      "The businesses we work with and the friends we love to recommend to anyone visiting Dro: e-bike rental, an adventure park and more, in the Sarca Valley close to Arco and Lake Garda.",
+    afterTitle: "After the trip, *we'll be waiting* on the square",
+    afterText:
+      "Whether you're back from a bike ride or a day of adventure, Lo Sfizio is the pizzeria on the square in Dro: pizzas baked to order, kebab, piadina and a good coffee.",
+    listLabel: "Friendly businesses",
+    logoAlt: "{name} logo",
+    hours: "Opening hours",
+    website: "Website",
+    directions: "Directions",
   },
   privacy: {
     eyebrow: "Policy",
