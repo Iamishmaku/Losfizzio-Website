@@ -20,7 +20,10 @@ export default async function PrivacyPage() {
   const dict = await getDictionary();
   const t = dict.privacy;
   const { companyName, vatNumber } = site.legal;
-  const holder = [companyName || site.name, vatNumber && `${dict.footer.vat} ${vatNumber}`]
+  const holder = [
+    companyName ? `${companyName} (${site.name})` : site.name,
+    vatNumber && `${dict.footer.vat} ${vatNumber}`,
+  ]
     .filter(Boolean)
     .join(" · ");
   const vars = {

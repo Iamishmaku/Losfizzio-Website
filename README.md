@@ -64,7 +64,8 @@ I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **s
 - [x] Risposte delle FAQ: carta sì, pizza senza glutine sì, prenotazione non obbligatoria
 - [x] Instagram (@losfiziodro) e Facebook
 - [x] Privacy riscritta su misura (niente account, moduli o statistiche; un solo cookie tecnico per la lingua)
-- [ ] Ragione sociale e Partita IVA (`legal` in `src/data/site.ts`): obbligatorie per legge, vanno in fondo alla pagina e nella privacy
+- [x] Impresa: Ishmaku Sauela (Registro Imprese, Piazza Repubblica 15, Dro)
+- [ ] Partita IVA (`legal.vatNumber` in `src/data/site.ts`): obbligatoria per legge, compare in fondo alla pagina e nella privacy
 
 ### Ordini e prenotazioni
 

@@ -34,8 +34,8 @@ export const site = {
    * Compaiono nel fondo pagina e nella privacy. Lasciali vuoti per nasconderli. DA COMPLETARE
    */
   legal: {
-    /** Ragione sociale, es. "Lo Sfizio di Mario Rossi" */
-    companyName: "",
+    /** Nome dell'impresa come risulta dal Registro Imprese (Camera di Commercio di Trento) */
+    companyName: "Ishmaku Sauela",
     /** Partita IVA, es. "01234567890" */
     vatNumber: "",
   },

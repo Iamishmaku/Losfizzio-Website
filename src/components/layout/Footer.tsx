@@ -121,7 +121,8 @@ export function Footer() {
       </div>
       <div className={styles.bottom}>
         <p>
-          © {BUILD_DATE.getFullYear()} {site.legal.companyName || site.name}
+          © {BUILD_DATE.getFullYear()} {site.name}
+          {site.legal.companyName && ` · ${site.legal.companyName}`}
           {site.legal.vatNumber && ` · ${dict.footer.vat} ${site.legal.vatNumber}`} · {dict.footer.rights}
         </p>
         <p>{dict.footer.madeWith}</p>
