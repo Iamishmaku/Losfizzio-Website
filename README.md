@@ -63,7 +63,8 @@ I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **s
 - [ ] Menu e prezzi (ora: esempio realistico)
 - [x] Risposte delle FAQ: carta sì, pizza senza glutine sì, prenotazione non obbligatoria
 - [x] Instagram (@losfiziodro) e Facebook
-- [ ] Testo della pagina Privacy
+- [x] Privacy riscritta su misura (niente account, moduli o statistiche; un solo cookie tecnico per la lingua)
+- [ ] Ragione sociale e Partita IVA (`legal` in `src/data/site.ts`): obbligatorie per legge, vanno in fondo alla pagina e nella privacy
 
 ### Ordini e prenotazioni
 

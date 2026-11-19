@@ -19,10 +19,15 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function PrivacyPage() {
   const dict = await getDictionary();
   const t = dict.privacy;
+  const { companyName, vatNumber } = site.legal;
+  const holder = [companyName || site.name, vatNumber && `${dict.footer.vat} ${vatNumber}`]
+    .filter(Boolean)
+    .join(" · ");
   const vars = {
-    holder: dict.meta.fullName,
+    name: site.name,
+    holder,
     address: fullAddress,
-    phone: site.contacts.phoneDisplay + (site.contacts.email ? `, ${site.contacts.email}` : ""),
+    phone: site.contacts.phoneDisplay,
   };
 
   return (
@@ -30,11 +35,23 @@ export default async function PrivacyPage() {
       <div className={styles.inner}>
         <p className={styles.eyebrow}>{t.eyebrow}</p>
         <h1>{t.title}</h1>
-        <p className={styles.note}>{t.draftNote}</p>
+        <p className={styles.updated}>{t.lastUpdated}</p>
+        <p className={styles.intro}>{fmt(t.intro, vars)}</p>
         {t.sections.map((s) => (
           <section key={s.title}>
             <h2>{s.title}</h2>
-            <p>{fmt(s.text, vars)}</p>
+            {fmt(s.text, vars)
+              .split("\n\n")
+              .map((para, i) => (
+                <p key={i}>
+                  {para.split("\n").map((line, j, lines) => (
+                    <span key={j}>
+                      {line}
+                      {j < lines.length - 1 && <br />}
+                    </span>
+                  ))}
+                </p>
+              ))}
           </section>
         ))}
       </div>

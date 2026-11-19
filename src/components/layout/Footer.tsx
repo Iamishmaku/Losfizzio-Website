@@ -7,6 +7,7 @@ import { localePath } from "@/i18n/config";
 import { useI18n } from "@/i18n/I18nProvider";
 import { slotLines, weekHours } from "@/lib/hours";
 import { useSeason } from "@/lib/useSeason";
+import { BUILD_DATE } from "@/lib/build-date";
 import { Logo } from "@/components/ui/Logo";
 import { FacebookIcon, InstagramIcon, WhatsappIcon } from "@/components/ui/SocialIcons";
 import styles from "./Footer.module.scss";
@@ -120,7 +121,8 @@ export function Footer() {
       </div>
       <div className={styles.bottom}>
         <p>
-          © {dict.meta.fullName} · {site.address.city} ({site.address.province})
+          © {BUILD_DATE.getFullYear()} {site.legal.companyName || site.name}
+          {site.legal.vatNumber && ` · ${dict.footer.vat} ${site.legal.vatNumber}`} · {dict.footer.rights}
         </p>
         <p>{dict.footer.madeWith}</p>
       </div>

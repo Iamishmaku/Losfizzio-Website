@@ -213,6 +213,8 @@ export const de: Dictionary = {
     menu: "Speisekarte ansehen",
   },
   footer: {
+    rights: "Alle Rechte vorbehalten.",
+    vat: "USt-IdNr.",
     contacts: "Kontakt",
     hours: "Öffnungszeiten",
     explore: "Entdecken",
@@ -244,28 +246,43 @@ export const de: Dictionary = {
   },
   privacy: {
     eyebrow: "Hinweise",
-    title: "Datenschutz & Cookies",
-    draftNote: "Entwurf: vor der endgültigen Veröffentlichung von einer Fachperson prüfen lassen.",
+    title: "Datenschutzerklärung",
+    lastUpdated: "Zuletzt aktualisiert: November 2026",
+    intro:
+      "Diese Seite erklärt, welche Daten die Website von {name} verarbeitet, warum und wie lange, gemäß der Datenschutz-Grundverordnung (EU) 2016/679 (DSGVO).",
     sections: [
+      { title: "Verantwortlicher", text: "{holder}\n{address}\nTelefon: {phone}" },
       {
-        title: "Verantwortlicher",
-        text: "{holder}, {address}. Telefon: {phone}.",
+        title: "Erhobene Daten",
+        text: "Die Website ist ein einfaches Schaufenster: Es gibt keine Konten, keine Formulare, keine Online-Bestellungen oder -Zahlungen, und wir verwenden keine Analyse- oder Profiling-Tools.\n\nWenn Sie die Website besuchen, erhält der Server, auf dem sie gehostet wird, Ihre IP-Adresse und die technischen Angaben der Anfrage (Browser, aufgerufene Seite, Datum und Uhrzeit), die nötig sind, um Ihnen die Seiten anzuzeigen und die Website vor Missbrauch zu schützen.\n\nWenn Sie eine Sprache oder ein Design (hell oder dunkel) wählen, speichern wir diese Einstellung auf Ihrem Gerät, wie im Abschnitt „Cookies“ beschrieben.",
       },
       {
-        title: "Von dieser Website erhobene Daten",
-        text: "Diese Website ist statisch: Sie enthält keine Formulare, erhebt keine personenbezogenen Daten und speichert nichts auf ihren Servern. Bestellungen werden telefonisch entgegengenommen. Die WhatsApp-Schaltfläche öffnet die WhatsApp-App, die Daten nach ihren eigenen Bedingungen verarbeitet.",
+        title: "Rechtsgrundlage",
+        text: "Die Verarbeitung der technischen Nutzungsdaten und die Speicherung Ihrer Einstellungen beruhen auf dem berechtigten Interesse, Ihnen eine sichere und funktionierende Website anzubieten (Art. 6 Abs. 1 lit. f DSGVO). Wir verarbeiten keine Daten, für die Ihre Einwilligung erforderlich ist.",
       },
       {
-        title: "Cookies und lokaler Speicher",
-        text: 'Die Website verwendet keine Profiling-Cookies und keine Analysetools. Wir speichern nur die gewählte Sprache (in einem technischen Cookie) und das helle/dunkle Design (im Speicher deines Browsers). Google Maps wird nur geladen, wenn du auf „Karte anzeigen" klickst: In diesem Fall kann Google eigene Cookies setzen, gemäß seiner Datenschutzerklärung (policies.google.com/privacy).',
+        title: "Cookies",
+        text: "Wir verwenden ein einziges technisches Cookie: NEXT_LOCALE, das sich die gewählte Sprache merkt (ein Jahr). Das helle/dunkle Design wird im Speicher Ihres Browsers (localStorage) gespeichert und an niemanden gesendet. Wir verwenden keine Profiling- oder Analyse-Cookies, deshalb zeigt die Website kein Cookie-Banner.\n\nGoogle Maps wird nur geladen, wenn Sie auf „Karte anzeigen“ klicken: Ab dann kann Google eigene Cookies setzen.",
       },
       {
-        title: "Hosting",
-        text: "Die Website wird von Vercel Inc. gehostet, das technische Daten (z. B. IP-Adressen) aus Sicherheits- und Betriebsgründen in Server-Logs speichern kann.",
+        title: "Datenspeicherung",
+        text: "Technische Nutzungsdaten bleiben nur so lange in den Protokollen des Hosting-Anbieters, wie es für den Betrieb und die Sicherheit der Website nötig ist. Ihre Sprach- und Design-Einstellungen bleiben auf Ihrem Gerät, bis Sie sie im Browser löschen.",
       },
       {
-        title: "Deine Rechte",
-        text: "Du kannst jederzeit Auskunft, Berichtigung oder Löschung deiner Daten verlangen, indem du den Verantwortlichen über die oben genannten Kontaktdaten kontaktierst, und du kannst Beschwerde bei der italienischen Datenschutzbehörde (Garante per la protezione dei dati personali) einlegen.",
+        title: "Datenempfänger",
+        text: "Die Website wird von Vercel Inc. (USA) gehostet, die technische Nutzungsdaten in unserem Auftrag als Auftragsverarbeiter verarbeitet. Die Übermittlung in die USA erfolgt mit den von der DSGVO vorgesehenen Garantien (EU-U.S. Data Privacy Framework und Standardvertragsklauseln). Die Domain wird über Cloudflare Inc. verwaltet, die Ihrem Browser lediglich mitteilt, wo sich die Website befindet. Wir verkaufen oder übermitteln Ihre Daten an niemanden.",
+      },
+      {
+        title: "Von Ihrem Browser kontaktierte Dienste",
+        text: "Einige Schaltflächen öffnen externe Dienste, nur wenn Sie darauf klicken: Google Maps (Karte und Route), WhatsApp, Instagram und Facebook (Meta). Diese Dienste erhalten Ihre IP-Adresse, können eigene Cookies setzen und verarbeiten Daten nach ihren eigenen Datenschutzbestimmungen.",
+      },
+      {
+        title: "Betroffenenrechte",
+        text: "Gemäß Art. 15–22 DSGVO haben Sie das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten, Einschränkung der Verarbeitung, Widerspruch gegen die Verarbeitung und Datenübertragbarkeit. Sie haben zudem das Recht, bei der italienischen Datenschutzbehörde (Garante per la protezione dei dati personali, www.garanteprivacy.it) Beschwerde einzulegen.",
+      },
+      {
+        title: "Kontakt",
+        text: "Für alle Anfragen zum Datenschutz können Sie uns unter {phone} anrufen, uns schreiben oder in der Pizzeria vorbeikommen: {address}.",
       },
     ],
   },

@@ -28,6 +28,17 @@ function normalizeSiteUrl(value: string | undefined, fallback: string) {
 
 export const site = {
   name: "Lo Sfizio",
+
+  /**
+   * Dati legali dell'attività, obbligatori sul sito di un'impresa in Italia.
+   * Compaiono nel fondo pagina e nella privacy. Lasciali vuoti per nasconderli. DA COMPLETARE
+   */
+  legal: {
+    /** Ragione sociale, es. "Lo Sfizio di Mario Rossi" */
+    companyName: "",
+    /** Partita IVA, es. "01234567890" */
+    vatNumber: "",
+  },
   /** Indirizzo del sito (SEO, sitemap, anteprime social). Dominio principale: www.losfiziodro.it (Register.it); losfiziodro.it rimanda qui. */
   url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://www.losfiziodro.it"),
 

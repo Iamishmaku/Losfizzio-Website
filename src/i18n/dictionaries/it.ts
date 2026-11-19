@@ -214,6 +214,8 @@ export const it = {
     menu: "Sfoglia il menu",
   },
   footer: {
+    rights: "Tutti i diritti riservati.",
+    vat: "P.IVA",
     contacts: "Contatti",
     hours: "Orari",
     explore: "Esplora",
@@ -245,28 +247,43 @@ export const it = {
   },
   privacy: {
     eyebrow: "Informativa",
-    title: "Privacy e cookie",
-    draftNote: "Testo base da far verificare a un consulente prima della pubblicazione definitiva.",
+    title: "Privacy Policy",
+    lastUpdated: "Ultimo aggiornamento: novembre 2026",
+    intro:
+      "Questa pagina spiega quali dati tratta il sito di {name}, perché e per quanto tempo, ai sensi del Regolamento UE 2016/679 (GDPR).",
     sections: [
+      { title: "Titolare del trattamento", text: "{holder}\n{address}\nTelefono: {phone}" },
       {
-        title: "Titolare del trattamento",
-        text: "{holder}, {address}. Telefono: {phone}.",
+        title: "Dati raccolti",
+        text: "Il sito è una semplice vetrina: non ci sono account, moduli, ordini o pagamenti online e non usiamo strumenti di statistica o di profilazione.\n\nQuando visiti il sito, il server che lo ospita riceve il tuo indirizzo IP e i dati tecnici della richiesta (browser, pagina richiesta, data e ora), necessari per mostrarti le pagine e proteggere il sito da abusi.\n\nSe scegli una lingua o un tema (chiaro o scuro), salviamo questa preferenza sul tuo dispositivo, come spiegato nella sezione «Cookie».",
       },
       {
-        title: "Dati raccolti da questo sito",
-        text: "Questo sito è statico: non contiene moduli, non raccoglie dati personali e non li salva sui propri server. Per ordinare si usa il telefono. Il pulsante WhatsApp apre l'app WhatsApp, che tratta i dati secondo le proprie condizioni.",
+        title: "Base giuridica",
+        text: "Il trattamento dei dati tecnici di navigazione e la memorizzazione delle tue preferenze si basano sul legittimo interesse a offrirti un sito sicuro e funzionante (art. 6, par. 1, lett. f GDPR). Non trattiamo dati che richiedono il tuo consenso.",
       },
       {
-        title: "Cookie e memoria locale",
-        text: 'Il sito non usa cookie di profilazione né strumenti di analisi. Salviamo solo la lingua scelta (in un cookie tecnico) e il tema chiaro/scuro (nella memoria del browser). La mappa di Google Maps viene caricata solo se fai clic su "Mostra la mappa": in quel caso Google può impostare propri cookie, secondo la sua informativa (policies.google.com/privacy).',
+        title: "Cookie",
+        text: "Usiamo un solo cookie tecnico: NEXT_LOCALE, che ricorda la lingua che hai scelto (durata un anno). Il tema chiaro/scuro viene salvato nella memoria del browser (localStorage) e non viene inviato a nessuno. Non usiamo cookie di profilazione né di statistica, per questo il sito non mostra un banner dei cookie.\n\nLa mappa di Google Maps viene caricata solo se fai clic su «Mostra la mappa»: da quel momento Google può impostare i propri cookie.",
       },
       {
-        title: "Hosting",
-        text: "Il sito è ospitato da Vercel Inc., che può registrare dati tecnici (come l'indirizzo IP) nei log del server per motivi di sicurezza e funzionamento.",
+        title: "Conservazione dei dati",
+        text: "I dati tecnici di navigazione restano nei registri del fornitore di hosting solo per il tempo necessario al funzionamento e alla sicurezza del sito. Le preferenze di lingua e tema restano sul tuo dispositivo finché non le cancelli dal browser.",
       },
       {
-        title: "I tuoi diritti",
-        text: "Puoi chiedere in ogni momento l'accesso, la rettifica o la cancellazione dei tuoi dati contattando il titolare ai recapiti indicati sopra, e puoi proporre reclamo al Garante per la protezione dei dati personali.",
+        title: "Destinatari dei dati",
+        text: "Il sito è ospitato da Vercel Inc. (Stati Uniti), che tratta i dati tecnici di navigazione per nostro conto come responsabile del trattamento. Il trasferimento verso gli Stati Uniti avviene con le garanzie previste dal GDPR (EU-U.S. Data Privacy Framework e clausole contrattuali standard). Il dominio è gestito tramite Cloudflare Inc., che si limita a indicare al tuo browser dove si trova il sito. Non vendiamo né cediamo i tuoi dati a nessuno.",
+      },
+      {
+        title: "Servizi contattati dal tuo browser",
+        text: "Alcuni pulsanti aprono servizi esterni, solo se ci clicchi: Google Maps (mappa e indicazioni stradali), WhatsApp, Instagram e Facebook (Meta). Questi servizi ricevono il tuo indirizzo IP, possono impostare propri cookie e trattano i dati secondo le loro informative.",
+      },
+      {
+        title: "Diritti dell'interessato",
+        text: "Ai sensi degli artt. 15–22 GDPR hai il diritto di accedere ai tuoi dati, chiederne la rettifica o la cancellazione, limitarne il trattamento, opporti al trattamento e chiederne la portabilità. Hai inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it).",
+      },
+      {
+        title: "Contatti",
+        text: "Per qualsiasi richiesta sul trattamento dei dati puoi chiamarci al {phone} oppure scriverci o passare in pizzeria: {address}.",
       },
     ],
   },

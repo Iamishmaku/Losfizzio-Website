@@ -213,6 +213,8 @@ export const en: Dictionary = {
     menu: "Browse the menu",
   },
   footer: {
+    rights: "All rights reserved.",
+    vat: "VAT",
     contacts: "Contact",
     hours: "Hours",
     explore: "Explore",
@@ -244,28 +246,43 @@ export const en: Dictionary = {
   },
   privacy: {
     eyebrow: "Policy",
-    title: "Privacy & cookies",
-    draftNote: "Draft text: to be reviewed by a consultant before final publication.",
+    title: "Privacy Policy",
+    lastUpdated: "Last updated: November 2026",
+    intro:
+      "This page explains which data the {name} website processes, why and for how long, under the EU General Data Protection Regulation 2016/679 (GDPR).",
     sections: [
+      { title: "Data Controller", text: "{holder}\n{address}\nPhone: {phone}" },
       {
-        title: "Data controller",
-        text: "{holder}, {address}. Phone: {phone}.",
+        title: "Data Collected",
+        text: 'The website is a simple showcase: there are no accounts, forms, online orders or payments, and we use no analytics or profiling tools.\n\nWhen you visit the site, the server hosting it receives your IP address and the technical details of the request (browser, page requested, date and time), which are needed to show you the pages and protect the site from abuse.\n\nIf you choose a language or a theme (light or dark), we save that preference on your device, as explained in the "Cookies" section.',
       },
       {
-        title: "Data collected by this website",
-        text: "This is a static website: it contains no forms, collects no personal data and stores nothing on its servers. Orders are taken by phone. The WhatsApp button opens the WhatsApp app, which handles data under its own terms.",
+        title: "Legal Basis",
+        text: "Processing technical browsing data and storing your preferences is based on our legitimate interest in giving you a safe and working website (Art. 6(1)(f) GDPR). We do not process any data that requires your consent.",
       },
       {
-        title: "Cookies and local storage",
-        text: 'The website uses no profiling cookies and no analytics. We only store your chosen language (in a technical cookie) and the light/dark theme (in your browser\'s storage). Google Maps is loaded only if you click "Show the map": in that case Google may set its own cookies, according to its policy (policies.google.com/privacy).',
+        title: "Cookies",
+        text: 'We use a single technical cookie: NEXT_LOCALE, which remembers the language you chose (one year). The light/dark theme is saved in your browser\'s storage (localStorage) and is not sent to anyone. We use no profiling or analytics cookies, which is why the site shows no cookie banner.\n\nGoogle Maps is loaded only if you click "Show the map": from then on Google may set its own cookies.',
       },
       {
-        title: "Hosting",
-        text: "The website is hosted by Vercel Inc., which may record technical data (such as IP addresses) in server logs for security and operational purposes.",
+        title: "Data Retention",
+        text: "Technical browsing data stays in the hosting provider's logs only for as long as needed to run and secure the site. Your language and theme preferences stay on your device until you clear them from your browser.",
       },
       {
-        title: "Your rights",
-        text: "You can request access to, correction or deletion of your data at any time by contacting the data controller using the details above, and you can lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali).",
+        title: "Data Recipients",
+        text: "The website is hosted by Vercel Inc. (United States), which processes technical browsing data on our behalf as a data processor. Transfers to the United States rely on the safeguards provided by the GDPR (EU-U.S. Data Privacy Framework and standard contractual clauses). The domain is managed through Cloudflare Inc., which only tells your browser where the site is located. We never sell or share your data.",
+      },
+      {
+        title: "Services contacted by your browser",
+        text: "Some buttons open external services, only if you click them: Google Maps (map and directions), WhatsApp, Instagram and Facebook (Meta). These services receive your IP address, may set their own cookies and process data under their own policies.",
+      },
+      {
+        title: "Your Rights",
+        text: "Under Arts. 15–22 GDPR you have the right to access your data, request its rectification or erasure, restrict its processing, object to processing and request data portability. You also have the right to lodge a complaint with the Italian data protection authority (Garante per la protezione dei dati personali, www.garanteprivacy.it).",
+      },
+      {
+        title: "Contact",
+        text: "For any request about data processing you can call us on {phone}, or write to us or drop by the pizzeria: {address}.",
       },
     ],
   },
