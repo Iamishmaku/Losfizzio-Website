@@ -7,8 +7,27 @@ import { LOCALE_COOKIE, isLocale, matchLocale } from "@/i18n/config";
  * 2. altrimenti la lingua del browser/sistema (Accept-Language),
  * 3. altrimenti l'italiano.
  */
+/** File veri del sito con estensione: vanno serviti così come sono. */
+const SITE_FILES = new Set([
+  "/robots.txt",
+  "/sitemap.xml",
+  "/manifest.webmanifest",
+  "/llms.txt",
+  "/icon.svg",
+]);
+const PUBLIC_DIRS = ["/images/", "/.well-known/"];
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Indirizzi con estensione (es. /bot.txt) che non sono file del sito: mostriamo la nostra pagina 404
+  if (pathname.includes(".")) {
+    if (SITE_FILES.has(pathname) || PUBLIC_DIRS.some((d) => pathname.startsWith(d))) return;
+    const first = pathname.split("/")[1];
+    if (!isLocale(first)) return NextResponse.rewrite(new URL("/404", request.url));
+    return;
+  }
+
   const first = pathname.split("/")[1];
   if (isLocale(first)) return;
   // /404 resta così com'è e mostra la pagina 404 (senza aggiungere la lingua)
@@ -27,6 +46,6 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Esclude file interni di Next, file statici (con estensione) e le icone generate
-  matcher: ["/((?!_next/|api/|apple-icon|.*\\..*).*)"],
+  // Esclude solo i file interni di Next e l'icona generata (i file con estensione li gestisce la funzione qui sopra)
+  matcher: ["/((?!_next/|api/|apple-icon).*)"],
 };
