@@ -1,6 +1,9 @@
 @use "../../styles/abstracts" as *;
 
 .hero {
+  // Le animazioni d'ingresso sono in CSS (non framer-motion) così partono
+  // al primo paint, senza aspettare che il JavaScript sia caricato.
+  --hero-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   padding-top: calc(var(--header-h) + clamp(24px, 6vw, 72px));
   padding-bottom: clamp(56px, 8vw, 110px);
@@ -59,7 +62,12 @@
 
   > span {
     display: inline-block;
+    animation: word-up 0.9s var(--hero-ease) both;
   }
+}
+
+.enter {
+  animation: rise 0.8s var(--hero-ease) both;
 }
 
 .accent {
@@ -102,6 +110,7 @@
     font-size: rem(14);
     font-weight: 600;
     color: var(--c-ink-soft);
+    animation: pop 0.5s var(--hero-ease) both;
   }
 }
 
@@ -122,6 +131,7 @@
   box-shadow: var(--shadow-lg);
   display: grid;
   place-items: center;
+  animation: board-in 1.2s var(--hero-ease) 0.1s both;
 
   &::before {
     // venature del tagliere
@@ -206,8 +216,41 @@
   }
 }
 
+// opacity parte da 0.01 (non 0): così il browser dipinge subito il testo
+// e lo conta come contenuto visibile (LCP) già dal primo frame.
+@keyframes rise {
+  from {
+    opacity: 0.01;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes word-up {
+  from {
+    transform: translateY(110%);
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0.01;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes board-in {
+  from {
+    opacity: 0.01;
+    transform: scale(0.85) rotate(-20deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .ring {
+  .ring,
+  .enter,
+  .board,
+  .wordWrap > span,
+  .services li {
     animation: none;
   }
 }

@@ -243,7 +243,7 @@ export const it = {
   menuPage: {
     priceOnRequest: "Prezzo su richiesta",
     eyebrow: "Il nostro menu",
-    title: "Tutto il gusto dello *Sfizio*",
+    title: "Tutto il gusto de *Lo Sfizio*",
     intro:
       "Pizze, kebab, piadine e bevande. Cerca il tuo piatto preferito o filtra per le proposte vegetariane e piccanti.",
     notesLabel: "Note sul menu",

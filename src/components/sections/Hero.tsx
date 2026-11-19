@@ -12,8 +12,6 @@ import { OpenStatus } from "@/components/ui/OpenStatus";
 import { PizzaArt } from "@/components/ui/PizzaArt";
 import styles from "./Hero.module.scss";
 
-const ease = [0.22, 1, 0.36, 1] as const;
-
 function Leaf({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 40 40" className={className} aria-hidden="true">
@@ -76,87 +74,51 @@ export function Hero() {
 
       <div className={styles.inner}>
         <motion.div className={styles.copy} style={{ y: textY, opacity: textOpacity }}>
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease }}
-          >
+          <div className={styles.enter}>
             <OpenStatus />
-          </motion.div>
+          </div>
 
           <h1 id="hero-title" className={styles.title}>
             <span className="sr-only">{site.name}: </span>
             {words.map((w, i) => (
               <Fragment key={`${w.text}-${i}`}>
                 <span className={styles.wordWrap}>
-                  <motion.span
+                  <span
                     className={w.accent ? styles.accent : undefined}
-                    initial={{ y: "110%" }}
-                    animate={{ y: "0%" }}
-                    transition={{ duration: 0.9, ease, delay: 0.1 + i * 0.08 }}
+                    style={{ animationDelay: `${0.05 + i * 0.07}s` }}
                   >
                     {w.text}
-                  </motion.span>
+                  </span>
                 </span>
                 {i < words.length - 1 && " "}
               </Fragment>
             ))}
           </h1>
 
-          <motion.p
-            className={styles.lead}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease, delay: 0.55 }}
-          >
+          <p className={`${styles.lead} ${styles.enter}`} style={{ animationDelay: "0.3s" }}>
             {dict.hero.lead}
-          </motion.p>
+          </p>
 
-          <motion.div
-            className={styles.ctas}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease, delay: 0.7 }}
-          >
+          <div className={`${styles.ctas} ${styles.enter}`} style={{ animationDelay: "0.4s" }}>
             <Button href={localePath(locale, "/menu")} size="lg" iconRight={<ArrowRight />}>
               {dict.hero.ctaMenu}
             </Button>
             <Button href={telLink} size="lg" variant="secondary" icon={<Phone />}>
               {dict.hero.ctaPhone}
             </Button>
-          </motion.div>
+          </div>
 
-          <motion.ul
-            className={styles.services}
-            initial="hidden"
-            animate="show"
-            variants={{
-              show: {
-                transition: { staggerChildren: 0.07, delayChildren: 0.9 },
-              },
-            }}
-          >
-            {dict.services.map((s) => (
-              <motion.li
-                key={s}
-                variants={{
-                  hidden: { opacity: 0, scale: 0.8 },
-                  show: { opacity: 1, scale: 1 },
-                }}
-              >
+          <ul className={styles.services}>
+            {dict.services.map((s, i) => (
+              <li key={s} style={{ animationDelay: `${0.5 + i * 0.06}s` }}>
                 {s}
-              </motion.li>
+              </li>
             ))}
-          </motion.ul>
+          </ul>
         </motion.div>
 
         <div className={styles.visual}>
-          <motion.div
-            className={styles.board}
-            initial={{ opacity: 0, scale: 0.85, rotate: -20 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 1.2, ease, delay: 0.15 }}
-          >
+          <div className={styles.board}>
             <motion.div style={{ rotate: pizzaRotate, y: pizzaY }} className={styles.pizzaWrap}>
               <motion.div
                 animate={{ rotate: 360 }}
@@ -182,7 +144,7 @@ export function Hero() {
                 </textPath>
               </text>
             </svg>
-          </motion.div>
+          </div>
 
           <motion.div className={`${styles.float} ${styles.f1}`} style={{ y: leafY }}>
             <motion.div
