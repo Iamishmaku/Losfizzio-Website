@@ -87,6 +87,11 @@ export const menu: MenuCategory[] = [
       "All baked to order. Gluten-free pizza also available.",
       "Alle frisch gebacken. Auch glutenfreie Pizza erhältlich.",
     ),
+    note: l(
+      "Pizza a più gusti: +0,50 € per ogni gusto · Ogni supplemento: 1,50 € sulla pizza piccola, 6,00 € sulla pizza maxi",
+      "Pizza with more than one flavour: +€0.50 for each flavour · Each extra topping: €1.50 on a small pizza, €6.00 on a maxi pizza",
+      "Pizza mit mehreren Sorten: +0,50 € pro Sorte · Jede Extrazutat: 1,50 € auf der kleinen Pizza, 6,00 € auf der Maxi-Pizza",
+    ),
     items: [
       {
         id: "margherita",

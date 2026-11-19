@@ -18,6 +18,8 @@ export const pl: Phrases = {
   "Piadine tradizionali": "Tradycyjne piadiny",
   "La piadina romagnola, farcita al momento.": "Włoski placek piadina, nadziewany na zamówienie.",
   "Kebab ed extra": "Kebab i inne",
+  "Pizza a più gusti: +0,50 € per ogni gusto · Ogni supplemento: 1,50 € sulla pizza piccola, 6,00 € sulla pizza maxi":
+    "Pizza z kilkoma smakami: +0,50 € za każdy smak · Każdy dodatek: 1,50 € do małej pizzy, 6,00 € do pizzy maxi",
   "Aggiunte all'insalata: mozzarella 3,00 € · mozzarella di bufala 4,00 € · funghi champignon 2,00 € · carciofi 2,00 € · grana 4,00 € · leerdammer 3,00 € · olive nere 2,40 € · uovo 2,40 €":
     "Dodatki do sałatki: mozzarella 3,00 € · mozzarella z mleka bawolego 4,00 € · pieczarki 2,00 € · karczochy 2,00 € · grana 4,00 € · leerdammer 3,00 € · czarne oliwki 2,40 € · jajko 2,40 €",
 
@@ -200,6 +202,8 @@ export const sk: Phrases = {
   "Piadine tradizionali": "Tradičné piadiny",
   "La piadina romagnola, farcita al momento.": "Talianska placka piadina, plnená na objednávku.",
   "Kebab ed extra": "Kebab a ďalšie",
+  "Pizza a più gusti: +0,50 € per ogni gusto · Ogni supplemento: 1,50 € sulla pizza piccola, 6,00 € sulla pizza maxi":
+    "Pizza s viacerými chuťami: +0,50 € za každú chuť · Každá prísada navyše: 1,50 € na malej pizze, 6,00 € na pizze maxi",
   "Aggiunte all'insalata: mozzarella 3,00 € · mozzarella di bufala 4,00 € · funghi champignon 2,00 € · carciofi 2,00 € · grana 4,00 € · leerdammer 3,00 € · olive nere 2,40 € · uovo 2,40 €":
     "Prílohy k šalátu: mozzarella 3,00 € · byvolia mozzarella 4,00 € · šampiňóny 2,00 € · artičoky 2,00 € · grana 4,00 € · leerdammer 3,00 € · čierne olivy 2,40 € · vajce 2,40 €",
 
@@ -382,6 +386,8 @@ export const cs: Phrases = {
   "Piadine tradizionali": "Tradiční piadiny",
   "La piadina romagnola, farcita al momento.": "Italská placka piadina, plněná na objednávku.",
   "Kebab ed extra": "Kebab a další",
+  "Pizza a più gusti: +0,50 € per ogni gusto · Ogni supplemento: 1,50 € sulla pizza piccola, 6,00 € sulla pizza maxi":
+    "Pizza s více chutěmi: +0,50 € za každou chuť · Každá přísada navíc: 1,50 € na malé pizze, 6,00 € na pizze maxi",
   "Aggiunte all'insalata: mozzarella 3,00 € · mozzarella di bufala 4,00 € · funghi champignon 2,00 € · carciofi 2,00 € · grana 4,00 € · leerdammer 3,00 € · olive nere 2,40 € · uovo 2,40 €":
     "Přílohy k salátu: mozzarella 3,00 € · buvolí mozzarella 4,00 € · žampiony 2,00 € · artyčoky 2,00 € · grana 4,00 € · leerdammer 3,00 € · černé olivy 2,40 € · vejce 2,40 €",
 
