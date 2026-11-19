@@ -1,12 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { LOCALE_COOKIE, isLocale, matchLocale } from "@/i18n/config";
 
-/**
- * Sceglie la lingua per gli indirizzi senza prefisso (es. "/" o "/menu"):
- * 1. la lingua scelta in precedenza sul sito (cookie),
- * 2. altrimenti la lingua del browser/sistema (Accept-Language),
- * 3. altrimenti l'italiano.
- */
 /** File veri del sito con estensione: vanno serviti così come sono. */
 const SITE_FILES = new Set([
   "/robots.txt",
@@ -17,27 +11,46 @@ const SITE_FILES = new Set([
 ]);
 const PUBLIC_DIRS = ["/images/", "/.well-known/"];
 
+/**
+ * Pagine esistenti (dopo la lingua). Se aggiungi una pagina in src/app/[lang], aggiungila anche qui,
+ * altrimenti il suo indirizzo porterebbe alla pagina 404.
+ */
+const PAGES = new Set(["", "menu", "privacy", "opengraph-image"]);
+
+function notFound(request: NextRequest) {
+  return NextResponse.redirect(new URL("/404", request.url), 307);
+}
+
+/**
+ * - Indirizzi inesistenti (con o senza estensione) → pagina /404.
+ * - Indirizzi senza lingua (es. "/" o "/menu") → lingua scelta in precedenza (cookie),
+ *   altrimenti quella del browser (Accept-Language), altrimenti l'italiano.
+ */
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  if (pathname === "/404") return;
 
-  // Indirizzi con estensione (es. /bot.txt) che non sono file del sito: portiamo alla pagina /404 (stato 404)
+  // File con estensione
   if (pathname.includes(".")) {
     if (SITE_FILES.has(pathname) || PUBLIC_DIRS.some((d) => pathname.startsWith(d))) return;
-    const first = pathname.split("/")[1];
-    if (!isLocale(first)) return NextResponse.redirect(new URL("/404", request.url), 307);
-    return;
+    return notFound(request);
   }
 
-  const first = pathname.split("/")[1];
-  if (isLocale(first)) return;
-  // /404 resta così com'è e mostra la pagina 404 (senza aggiungere la lingua)
-  if (pathname === "/404") return;
+  const parts = pathname.split("/").filter(Boolean);
+
+  // Indirizzo con la lingua: esiste solo se la pagina è tra quelle note
+  if (isLocale(parts[0])) {
+    return PAGES.has(parts.slice(1).join("/")) ? undefined : notFound(request);
+  }
+
+  // Indirizzo senza lingua: se la pagina non esiste, niente giri inutili
+  if (!PAGES.has(parts.join("/"))) return notFound(request);
 
   const saved = request.cookies.get(LOCALE_COOKIE)?.value;
   const locale = isLocale(saved) ? saved : matchLocale(request.headers.get("accept-language"));
 
   const url = request.nextUrl.clone();
-  url.pathname = `/${locale}${pathname === "/" ? "" : pathname}`;
+  url.pathname = `/${locale}${parts.length ? `/${parts.join("/")}` : ""}`;
   const res = NextResponse.redirect(url);
   // La scelta dipende dagli header della richiesta: le cache non devono condividerla tra utenti
   res.headers.set("Vary", "Accept-Language, Cookie");
@@ -46,6 +59,6 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Esclude solo i file interni di Next e l'icona generata (i file con estensione li gestisce la funzione qui sopra)
+  // Esclude solo i file interni di Next e l'icona generata
   matcher: ["/((?!_next/|api/|apple-icon).*)"],
 };

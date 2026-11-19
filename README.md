@@ -35,6 +35,11 @@ Per ferie o chiusure, aggiungi le date in `closures` in `src/data/site.ts` (form
 Durante la chiusura il sito mostra un avviso su tutte le pagine, il badge "Chiuso · riapre …" e un riquadro negli orari;
 il giorno della riapertura gli avvisi spariscono da soli.
 
+## Pagina 404
+
+Ogni indirizzo inesistente porta a `/404`. L'elenco delle pagine esistenti è in `src/proxy.ts` (`PAGES`):
+se si aggiunge una pagina nuova in `src/app/[lang]`, va aggiunta anche lì.
+
 ## Lingue e tema
 
 - **Lingue:** italiano, inglese e tedesco, con indirizzi separati (`/it`, `/en`, `/de`), tutti statici.
