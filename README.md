@@ -72,9 +72,15 @@ Con `contacts.whatsapp` compilato in `src/data/site.ts` compare il pulsante "Chi
 
 ## Deploy su Vercel
 
-1. Importa il repository su [vercel.com/new](https://vercel.com/new): Next.js viene riconosciuto in automatico, non serve configurare nulla.
-2. In *Settings → Environment Variables* imposta `NEXT_PUBLIC_SITE_URL` con il dominio definitivo (es. `https://www.losfizio-dro.it`). Vedi `.env.example`.
-3. Collega il dominio in *Settings → Domains*.
+Il progetto è collegato a GitHub: ogni modifica salvata sul repository viene pubblicata da sola.
+
+- Variabile d'ambiente su Vercel: `NEXT_PUBLIC_SITE_URL` = `https://losfiziodro.it`
+- Dominio: **losfiziodro.it** (comprato su Register.it), con `www.losfiziodro.it` che porta allo stesso sito.
+  In Vercel: *Settings → Domains*. Su Register.it, nella gestione DNS del dominio:
+  - record **A** per `losfiziodro.it` (nome vuoto o `@`) → `76.76.21.21`
+  - record **CNAME** per `www` → `cname.vercel-dns.com`
+
+  (valgono i valori che mostra Vercel, se diversi)
 
 ## Struttura
 

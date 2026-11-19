@@ -17,8 +17,8 @@ export interface TimeSlot {
 
 export const site = {
   name: "Lo Sfizio",
-  /** URL definitivo del sito (usato per SEO, sitemap e Open Graph). DA VERIFICARE */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://losfizio-dro.vercel.app",
+  /** Indirizzo del sito (SEO, sitemap, anteprime social). Dominio: losfiziodro.it (Register.it). */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://losfiziodro.it",
 
   address: {
     /** Confermato dal titolare. */
