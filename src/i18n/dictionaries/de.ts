@@ -229,15 +229,17 @@ export const de: Dictionary = {
     madeWith: "Mit Liebe (und etwas Mehl) gemacht im Sarcatal.",
   },
   menuPage: {
+    priceOnRequest: "Preis auf Anfrage",
     eyebrow: "Unsere Speisekarte",
     title: "Der ganze Geschmack von *Lo Sfizio*",
     intro:
       "Pizza, Kebab, Piadina und Getränke. Suche dein Lieblingsgericht oder filtere nach vegetarisch und scharf.",
     notesLabel: "Hinweise zur Speisekarte",
     notes: [
+      "Einige Produkte können tiefgekühlt sein.",
+      "Service am Tisch: 1,50 €.",
       "Glutenfreie Pizza erhältlich: Frag einfach bei der Bestellung danach.",
-      "Extra-Zutaten: 1 € bis 2,50 € je nach Zutat.",
-      "Informationen zu Allergenen erhältst du auf Nachfrage beim Personal.",
+      "Allergene: Frag unser Personal, wir sagen dir, was in jedem Gericht steckt.",
     ],
     searchLabel: "Speisekarte durchsuchen",
     searchPlaceholder: "Pizza oder Zutat suchen…",

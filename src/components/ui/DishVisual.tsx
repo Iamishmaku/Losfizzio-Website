@@ -20,7 +20,7 @@ export function DishVisual({ item, locale, sizes = "(min-width: 1024px) 300px, 7
       <span className={clsx(styles.photo, className)}>
         <Image
           src={item.image}
-          alt={`${item.name[locale]}: ${item.description[locale]}`}
+          alt={item.description ? `${item.name[locale]}: ${item.description[locale]}` : item.name[locale]}
           fill
           sizes={sizes}
         />

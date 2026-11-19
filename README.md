@@ -66,7 +66,8 @@ I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **s
 - [x] Orario invernale: lun–ven 11:30–14:00 e 17:30–22:30, sab–dom 11:30–22:30
 - [x] Orario estivo: tutti i giorni 11:30–22:30
 - [x] Orario estivo dal 1 aprile al 30 settembre (`summer` in `src/data/site.ts`): il sito cambia orario da solo
-- [ ] Menu e prezzi (ora: esempio realistico)
+- [x] Menu dal menu cartaceo (novembre 2026), tradotto in inglese e tedesco
+- [ ] Prezzi mancanti: pizza Salamino & gorgonzola, Peperoni & gorgonzola, Senza glutine, Con Nutella (ora "prezzo su richiesta")
 - [x] Risposte delle FAQ: carta sì, pizza senza glutine sì, prenotazione non obbligatoria
 - [x] Instagram (@losfiziodro) e Facebook
 - [x] Privacy riscritta su misura (niente account, moduli o statistiche; un solo cookie tecnico per la lingua)

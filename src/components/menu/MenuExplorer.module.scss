@@ -216,6 +216,16 @@
   }
 }
 
+.catNote {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--c-paper);
+  border: 1px dashed var(--c-line-strong);
+  color: var(--c-ink-soft);
+  font-size: rem(14.5);
+}
+
 .empty {
   display: grid;
   justify-items: center;

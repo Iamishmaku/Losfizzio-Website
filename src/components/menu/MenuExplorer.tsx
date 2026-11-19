@@ -34,7 +34,7 @@ export function MenuExplorer() {
         ...c,
         items: c.items.filter(
           (i) =>
-            (!q || normalize(`${i.name[locale]} ${i.description[locale]}`).includes(q)) &&
+            (!q || normalize(`${i.name[locale]} ${i.description?.[locale] ?? ""}`).includes(q)) &&
             active.every((t) => i.tags?.includes(t)),
         ),
       }))
@@ -145,6 +145,7 @@ export function MenuExplorer() {
                     ))}
                   </AnimatePresence>
                 </ul>
+                {c.note && <p className={styles.catNote}>{c.note[locale]}</p>}
               </motion.section>
             );
           })}

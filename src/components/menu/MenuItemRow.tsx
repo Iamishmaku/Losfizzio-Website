@@ -34,9 +34,11 @@ export function MenuItemRow({ item }: { item: MenuItem }) {
           );
         })}
         <span className={styles.leader} aria-hidden="true" />
-        <span className={styles.price}>{formatPrice(item.price, locale)}</span>
+        <span className={styles.price}>
+          {formatPrice(item.price, locale) ?? dict.menuPage.priceOnRequest}
+        </span>
       </div>
-      <p className={styles.desc}>{item.description[locale]}</p>
+      {item.description && <p className={styles.desc}>{item.description[locale]}</p>}
     </div>
   );
 }

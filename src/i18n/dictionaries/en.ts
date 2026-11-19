@@ -228,15 +228,17 @@ export const en: Dictionary = {
     madeWith: "Made with love (and a little flour) in the Sarca Valley.",
   },
   menuPage: {
+    priceOnRequest: "Price on request",
     eyebrow: "Our menu",
     title: "All the flavour of *Lo Sfizio*",
     intro:
       "Pizza, kebab, piadina and drinks. Search for your favourite dish or filter by vegetarian and spicy options.",
     notesLabel: "Menu notes",
     notes: [
+      "Some products may be frozen.",
+      "Table service: €1.50.",
       "Gluten-free pizza available: just ask when you order.",
-      "Extra toppings: from €1 to €2.50 depending on the ingredient.",
-      "Allergen information is available on request: please ask our staff.",
+      "Allergens: please ask our staff, we'll tell you what each dish contains.",
     ],
     searchLabel: "Search the menu",
     searchPlaceholder: "Search for a pizza or an ingredient…",

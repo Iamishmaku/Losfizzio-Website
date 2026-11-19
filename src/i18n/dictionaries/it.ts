@@ -229,15 +229,17 @@ export const it = {
     madeWith: "Fatto con passione (e un po' di farina) in Valle del Sarca.",
   },
   menuPage: {
+    priceOnRequest: "Prezzo su richiesta",
     eyebrow: "Il nostro menu",
     title: "Tutto il gusto dello *Sfizio*",
     intro:
       "Pizze, kebab, piadine e bevande. Cerca il tuo piatto preferito o filtra per le proposte vegetariane e piccanti.",
     notesLabel: "Note sul menu",
     notes: [
+      "Alcuni prodotti possono essere surgelati.",
+      "Servizio al tavolo: 1,50 €.",
       "Pizza senza glutine disponibile: chiedila quando ordini.",
-      "Aggiunte: da 1 € a 2,50 € in base all'ingrediente.",
-      "Gli allergeni presenti nei piatti sono indicati nell'apposito registro: chiedi al personale.",
+      "Allergeni: chiedi al personale, ti diciamo cosa contiene ogni piatto.",
     ],
     searchLabel: "Cerca nel menu",
     searchPlaceholder: "Cerca una pizza o un ingrediente…",

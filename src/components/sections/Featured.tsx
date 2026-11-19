@@ -97,9 +97,11 @@ export function Featured() {
                   ) : null}
                   <div className={styles.titleRow}>
                     <h3>{p.name[locale]}</h3>
-                    <span className={styles.price}>{formatPrice(p.price, locale)}</span>
+                    <span className={styles.price}>
+                      {formatPrice(p.price, locale) ?? dict.menuPage.priceOnRequest}
+                    </span>
                   </div>
-                  <p>{p.description[locale]}</p>
+                  {p.description && <p>{p.description[locale]}</p>}
                 </div>
               </motion.article>
             </li>

@@ -44,8 +44,10 @@ export function JsonLd({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         hasMenuItem: c.items.map((i) => ({
           "@type": "MenuItem",
           name: i.name[locale],
-          description: i.description[locale],
-          offers: { "@type": "Offer", price: i.price.toFixed(2), priceCurrency: "EUR" },
+          ...(i.description ? { description: i.description[locale] } : {}),
+          ...(i.price !== undefined
+            ? { offers: { "@type": "Offer", price: i.price.toFixed(2), priceCurrency: "EUR" } }
+            : {}),
         })),
       })),
     },
