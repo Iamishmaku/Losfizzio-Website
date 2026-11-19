@@ -289,7 +289,7 @@ export const en: Dictionary = {
       { title: "Data Controller", text: "{holder}\n{address}\nPhone: {phone}" },
       {
         title: "Data Collected",
-        text: 'The website is a simple showcase: there are no accounts, forms, online orders or payments, and we use no analytics or profiling tools.\n\nWhen you visit the site, the server hosting it receives your IP address and the technical details of the request (browser, page requested, date and time), which are needed to show you the pages and protect the site from abuse.\n\nTo keep the site fast we use Vercel Speed Insights, which measures page loading times anonymously and in aggregate: it uses no cookies, does not identify visitors and is not used for advertising.\n\nIf you choose a language or a theme (light or dark), we save that preference on your device, as explained in the "Cookies" section.',
+        text: 'The website is a simple showcase: there are no accounts, forms, online orders or payments, and we use no profiling cookies or advertising.\n\nWhen you visit the site, the server hosting it receives your IP address and the technical details of the request (browser, page requested, date and time), which are needed to show you the pages and protect the site from abuse.\n\nTo understand how many people visit the site and keep it fast, we use Vercel Web Analytics and Vercel Speed Insights. They collect, anonymously and in aggregate, the pages visited, the referring site, the country, the device type and loading times: they use no cookies, do not identify visitors and are not used for advertising.\n\nIf you choose a language or a theme (light or dark), we save that preference on your device, as explained in the "Cookies" section.',
       },
       {
         title: "Legal Basis",
