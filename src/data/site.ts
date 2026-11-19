@@ -57,7 +57,7 @@ export const site = {
 
   /**
    * Periodo dell'orario estivo, nel formato "MM-GG" (estremi inclusi). Il resto dell'anno vale l'orario invernale.
-   * Il sito passa da un orario all'altro da solo in base alla data. DA CONFERMARE le date.
+   * Il sito passa da un orario all'altro da solo in base alla data. Date confermate dal titolare (aprile–settembre).
    */
   summer: { from: "04-01", to: "09-30" },
 
