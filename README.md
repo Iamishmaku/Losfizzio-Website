@@ -57,6 +57,8 @@ Tutti i contenuti stanno in pochi file. Modificandoli si aggiornano le pagine, i
 - `src/data/site.ts`: indirizzo, telefono, WhatsApp, e-mail, social, **orari**
 - `src/data/menu.ts`: categorie, piatti, prezzi, etichette (vegetariana, piccante…), ingredienti per il disegno della pizza
   e pizze in evidenza. Ogni testo è scritto come `l("italiano", "english", "deutsch")`
+- `src/data/partners.ts`: aziende amiche e partner della pagina `/partners`. Per aggiungerne una basta un nuovo elemento
+  nell'elenco `partners` (nome, descrizione nelle tre lingue, contatti): i campi facoltativi vuoti non vengono mostrati
 - `src/i18n/dictionaries/it.ts`, `en.ts`, `de.ts`: tutti i testi del sito nelle tre lingue (comprese le FAQ).
   Le parti tra `*asterischi*` vengono evidenziate in rosso
 

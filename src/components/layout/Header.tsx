@@ -28,6 +28,7 @@ export function Header() {
     { href: localePath(locale, "/menu"), label: dict.nav.menu },
     { href: localePath(locale, "#hours"), label: dict.nav.hours },
     { href: localePath(locale, "#location"), label: dict.nav.location },
+    { href: localePath(locale, "/partners"), label: dict.nav.partners },
     { href: localePath(locale, "#contact"), label: dict.nav.contact },
   ];
 
