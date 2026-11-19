@@ -53,10 +53,10 @@ Tutti i contenuti stanno in pochi file. Modificandoli si aggiornano le pagine, i
 
 I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **segnaposto**. Sono tutti marcati con `DA VERIFICARE`:
 
-- [ ] Nome esatto dell'attività (ora: "Lo Sfizio")
+- [x] Nome: "Lo Sfizio" (confermato)
 - [x] Indirizzo: Piazza Repubblica 15, 38074 Dro (TN)
 - [x] Numero di telefono e WhatsApp: `388 907 7320` (su WhatsApp solo chiamate, niente messaggi)
-- [ ] E-mail (vuota = nascosta)
+- [x] E-mail: non c'è (resta nascosta)
 - [x] Orario invernale: lun–ven 11:30–14:00 e 17:30–22:30, sab–dom 11:30–22:30
 - [x] Orario estivo: tutti i giorni 11:30–22:30
 - [x] Orario estivo dal 1 aprile al 30 settembre (`summer` in `src/data/site.ts`): il sito cambia orario da solo
