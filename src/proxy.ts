@@ -20,11 +20,11 @@ const PUBLIC_DIRS = ["/images/", "/.well-known/"];
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Indirizzi con estensione (es. /bot.txt) che non sono file del sito: mostriamo la nostra pagina 404
+  // Indirizzi con estensione (es. /bot.txt) che non sono file del sito: portiamo alla pagina /404 (stato 404)
   if (pathname.includes(".")) {
     if (SITE_FILES.has(pathname) || PUBLIC_DIRS.some((d) => pathname.startsWith(d))) return;
     const first = pathname.split("/")[1];
-    if (!isLocale(first)) return NextResponse.rewrite(new URL("/404", request.url));
+    if (!isLocale(first)) return NextResponse.redirect(new URL("/404", request.url), 307);
     return;
   }
 
