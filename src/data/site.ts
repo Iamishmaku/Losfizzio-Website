@@ -15,10 +15,21 @@ export interface TimeSlot {
   close: string;
 }
 
+/**
+ * Ripulisce l'indirizzo del sito da piccoli errori di battitura nella variabile d'ambiente:
+ * spazi, punto o barra finale, "https://" mancante.
+ */
+function normalizeSiteUrl(value: string | undefined, fallback: string) {
+  let url = (value ?? "").trim().replace(/[./\s]+$/, "");
+  if (!url) return fallback;
+  if (!/^https?:\/\//i.test(url)) url = `https://${url}`;
+  return url;
+}
+
 export const site = {
   name: "Lo Sfizio",
   /** Indirizzo del sito (SEO, sitemap, anteprime social). Dominio: losfiziodro.it (Register.it). */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://losfiziodro.it",
+  url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://losfiziodro.it"),
 
   address: {
     /** Confermato dal titolare. */
