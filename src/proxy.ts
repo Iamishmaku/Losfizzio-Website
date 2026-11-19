@@ -15,7 +15,7 @@ const PUBLIC_DIRS = ["/images/", "/.well-known/"];
  * Pagine esistenti (dopo la lingua). Se aggiungi una pagina in src/app/[lang], aggiungila anche qui,
  * altrimenti il suo indirizzo porterebbe alla pagina 404.
  */
-const PAGES = new Set(["", "menu", "privacy", "opengraph-image"]);
+const PAGES = new Set(["", "menu", "partners", "privacy", "opengraph-image"]);
 
 function notFound(request: NextRequest) {
   return NextResponse.redirect(new URL("/404", request.url), 307);

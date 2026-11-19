@@ -22,6 +22,17 @@ export const it = {
     menuTitle: "Menu",
     menuDescription:
       "Il menu di Lo Sfizio a Dro: pizze classiche e speciali, kebab, piadine, bar e bevande. Prezzi e ingredienti.",
+    partnersTitle: "Cosa fare a Dro: e-bike e parco avventura",
+    partnersDescription:
+      "Cosa fare a Dro e in Valle del Sarca: noleggio e-bike, parco avventura e le attività amiche di Lo Sfizio. Indirizzi, orari e contatti.",
+    partnersKeywords: [
+      "cosa fare a Dro",
+      "noleggio e-bike Dro",
+      "parco avventura Dro",
+      "Elias Adventure Park",
+      "Lelettrica Dro",
+      "Valle del Sarca",
+    ],
     privacyTitle: "Privacy e cookie",
     privacyDescription: "Informativa privacy e cookie del sito di Lo Sfizio.",
     ogBadge: "Asporto · {phone}",
@@ -39,6 +50,7 @@ export const it = {
     menu: "Menu",
     hours: "Orari",
     location: "Dove siamo",
+    partners: "Amici",
     contact: "Contatti",
     privacy: "Privacy e cookie",
     mainLabel: "Navigazione principale",
@@ -252,6 +264,20 @@ export const it = {
     countOther: "{n} proposte",
     empty: "Nessuna proposta trovata. Prova con un altro ingrediente!",
     reset: "Azzera i filtri",
+  },
+  partnersPage: {
+    eyebrow: "Amici e partner",
+    title: "Le aziende *amiche* di Lo Sfizio a Dro",
+    intro:
+      "Le attività con cui collaboriamo e gli amici che ci piace consigliare a chi viene a Dro: noleggio e-bike, parco avventura e altro ancora, nella Valle del Sarca, vicino ad Arco e al Lago di Garda.",
+    afterTitle: "Dopo la gita, *ti aspettiamo* in piazza",
+    afterText:
+      "Che tu arrivi da una pedalata o da una giornata di avventura, Lo Sfizio è la pizzeria in piazza a Dro: pizze cotte al momento, kebab, piadine e un buon caffè.",
+    listLabel: "Aziende amiche",
+    logoAlt: "Logo di {name}",
+    hours: "Orari",
+    website: "Sito web",
+    directions: "Indicazioni",
   },
   privacy: {
     eyebrow: "Informativa",

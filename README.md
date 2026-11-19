@@ -37,7 +37,7 @@ il giorno della riapertura gli avvisi spariscono da soli.
 
 ## Pagina 404
 
-Ogni indirizzo inesistente porta a `/404`. L'elenco delle pagine esistenti è in `src/proxy.ts` (`PAGES`):
+Ogni indirizzo inesistente porta a `/404`. L'elenco delle pagine esistenti (home, menu, partners, privacy) è in `src/proxy.ts` (`PAGES`):
 se si aggiunge una pagina nuova in `src/app/[lang]`, va aggiunta anche lì.
 
 ## Lingue e tema
@@ -57,6 +57,9 @@ Tutti i contenuti stanno in pochi file. Modificandoli si aggiornano le pagine, i
 - `src/data/site.ts`: indirizzo, telefono, WhatsApp, e-mail, social, **orari**
 - `src/data/menu.ts`: categorie, piatti, prezzi, etichette (vegetariana, piccante…), ingredienti per il disegno della pizza
   e pizze in evidenza. Ogni testo è scritto come `l("italiano", "english", "deutsch")`
+- `src/data/partners.ts`: aziende amiche e partner della pagina `/partners` (logo in `public/images/partners`).
+  Per aggiungerne una basta un nuovo elemento nell'elenco `partners` (nome, descrizione nelle tre lingue, contatti):
+  i campi facoltativi vuoti non vengono mostrati e pagina, sitemap, dati strutturati e `llms.txt` si aggiornano da soli
 - `src/i18n/dictionaries/it.ts`, `en.ts`, `de.ts`: tutti i testi del sito nelle tre lingue (comprese le FAQ).
   Le parti tra `*asterischi*` vengono evidenziate in rosso
 
