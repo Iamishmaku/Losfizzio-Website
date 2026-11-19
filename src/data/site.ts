@@ -19,7 +19,7 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://losfizio-dro.vercel.app",
 
   address: {
-    /** Fonte: Tripadvisor e altri elenchi online (2026). */
+    /** Confermato dal titolare. */
     street: "Piazza Repubblica 15",
     postalCode: "38074",
     city: "Dro",

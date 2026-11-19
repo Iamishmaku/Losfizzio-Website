@@ -54,7 +54,7 @@ Tutti i contenuti stanno in pochi file. Modificandoli si aggiornano le pagine, i
 I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **segnaposto**. Sono tutti marcati con `DA VERIFICARE`:
 
 - [ ] Nome esatto dell'attività (ora: "Lo Sfizio")
-- [ ] Indirizzo (ora: Piazza Repubblica 15, Dro, da elenchi online) e coordinate
+- [x] Indirizzo: Piazza Repubblica 15, 38074 Dro (TN)
 - [x] Numero di telefono e WhatsApp: `388 907 7320` (su WhatsApp solo chiamate, niente messaggi)
 - [ ] E-mail (vuota = nascosta)
 - [ ] Orari di apertura (ora: orario continuato, da RestaurantGuru)
