@@ -28,8 +28,8 @@ function normalizeSiteUrl(value: string | undefined, fallback: string) {
 
 export const site = {
   name: "Lo Sfizio",
-  /** Indirizzo del sito (SEO, sitemap, anteprime social). Dominio: losfiziodro.it (Register.it). */
-  url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://losfiziodro.it"),
+  /** Indirizzo del sito (SEO, sitemap, anteprime social). Dominio principale: www.losfiziodro.it (Register.it); losfiziodro.it rimanda qui. */
+  url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL, "https://www.losfiziodro.it"),
 
   address: {
     /** Confermato dal titolare. */

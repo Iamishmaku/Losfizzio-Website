@@ -74,8 +74,8 @@ Con `contacts.whatsapp` compilato in `src/data/site.ts` compare il pulsante "Chi
 
 Il progetto è collegato a GitHub: ogni modifica salvata sul repository viene pubblicata da sola.
 
-- Variabile d'ambiente su Vercel: `NEXT_PUBLIC_SITE_URL` = `https://losfiziodro.it`
-- Dominio: **losfiziodro.it** (comprato su Register.it), con `www.losfiziodro.it` che porta allo stesso sito.
+- Indirizzo principale: `https://www.losfiziodro.it` (predefinito nel codice; la variabile `NEXT_PUBLIC_SITE_URL` su Vercel non serve, se la crei usa il tipo *Config*)
+- Dominio: **www.losfiziodro.it** (comprato su Register.it); `losfiziodro.it` senza www rimanda a www.
   In Vercel: *Settings → Domains*. Su Register.it, nella gestione DNS del dominio:
   - record **A** per `losfiziodro.it` (nome vuoto o `@`) → `76.76.21.21`
   - record **CNAME** per `www` → `cname.vercel-dns.com`
