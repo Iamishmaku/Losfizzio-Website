@@ -1,11 +1,23 @@
-# Foto del menu
+# Immagini del menu
 
-Metti qui le foto dei piatti (JPG o WebP, quadrate, almeno 800×800 px).
-Poi aggiungi il campo `image` al piatto in `src/data/menu.ts`, per esempio:
+**Di base il sito usa le illustrazioni disegnate dal codice** (componente `PizzaArt`): ogni pizza viene
+disegnata con i suoi ingredienti, indicati nel campo `toppings` del piatto in `src/data/menu.ts`, per esempio:
 
 ```ts
-{ name: "Margherita", ..., image: "/images/menu/margherita.jpg" }
+{
+  id: "diavola",
+  name: l("Diavola"),
+  description: l("Pomodoro, fior di latte, salame piccante", "Tomato, fior di latte, spicy salami", "Tomate, Fior di Latte, scharfe Salami"),
+  price: 8,
+  toppings: ["tomato", "mozzarella", "salami"],
+}
 ```
 
-La foto sostituisce l'illustrazione disegnata nel carosello della home e compare come miniatura nel menu.
-Usa solo foto della pizzeria o di cui avete i diritti.
+Ingredienti disponibili per il disegno: `tomato`, `mozzarella`, `basil`, `salami`, `ham`, `mushroom`, `olive`,
+`pepper`, `onion`, `rocket`, `tuna`, `egg`, `sausage`, `speck`, `zucchini`.
+
+## Foto (facoltative)
+
+Se un giorno si vogliono usare foto vere al posto di un disegno: metti qui il file (JPG o WebP, quadrato, almeno
+800×800 px) e aggiungi al piatto `image: "/images/menu/nome-file.jpg"`. Usa solo foto della pizzeria o di cui
+avete i diritti.
