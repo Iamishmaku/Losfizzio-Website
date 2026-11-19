@@ -88,9 +88,9 @@ export const menu: MenuCategory[] = [
       "Alle frisch gebacken. Auch glutenfreie Pizza erhältlich.",
     ),
     note: l(
-      "Pizza a più gusti: +0,50 € per ogni gusto · Ogni supplemento: 1,50 € sulla pizza piccola, 6,00 € sulla pizza maxi",
-      "Pizza with more than one flavour: +€0.50 for each flavour · Each extra topping: €1.50 on a small pizza, €6.00 on a maxi pizza",
-      "Pizza mit mehreren Sorten: +0,50 € pro Sorte · Jede Extrazutat: 1,50 € auf der kleinen Pizza, 6,00 € auf der Maxi-Pizza",
+      "Pizza a più gusti: +0,50 € per ogni gusto\nOgni supplemento sulla pizza piccola: 1,50 €\nOgni supplemento sulla pizza maxi: 6,00 €",
+      "Pizza with more than one flavour: +€0.50 for each flavour\nEach extra topping on a small pizza: €1.50\nEach extra topping on a maxi pizza: €6.00",
+      "Pizza mit mehreren Sorten: +0,50 € pro Sorte\nJede Extrazutat auf der kleinen Pizza: 1,50 €\nJede Extrazutat auf der Maxi-Pizza: 6,00 €",
     ),
     items: [
       {

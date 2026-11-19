@@ -218,6 +218,7 @@
 
 .catNote {
   margin-top: 16px;
+  white-space: pre-line; // "\n" nella nota = a capo
   padding: 14px 16px;
   border-radius: var(--radius-sm);
   background: var(--c-paper);
