@@ -20,6 +20,7 @@ export function JsonLd({ locale, dict }: { locale: Locale; dict: Dictionary }) {
     telephone: site.contacts.phone,
     ...(site.contacts.email ? { email: site.contacts.email } : {}),
     image: `${site.url}/${locale}/opengraph-image`,
+    logo: `${site.url}/images/logo/lo-sfizio-icona-512.png`,
     servesCuisine: ["Pizza", "Italian", "Kebab"],
     priceRange: "€",
     hasMap: mapsLink,
