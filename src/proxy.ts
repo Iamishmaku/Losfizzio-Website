@@ -3,6 +3,7 @@ import { LOCALE_COOKIE, isLocale, matchLocale } from "@/i18n/config";
 
 /** File veri del sito con estensione: vanno serviti così come sono. */
 const SITE_FILES = new Set([
+  "/favicon.ico",
   "/robots.txt",
   "/sitemap.xml",
   "/manifest.webmanifest",

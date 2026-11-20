@@ -23,8 +23,6 @@ const nextConfig: NextConfig = {
     // Il nome standard è /llms.txt; anche /llm.txt porta lì
     return [
       { source: "/llm.txt", destination: "/llms.txt", permanent: true },
-      // Alcuni browser cercano ancora /favicon.ico: lo mandiamo all'icona del sito
-      { source: "/favicon.ico", destination: "/icon.svg", permanent: true },
     ];
   },
   async headers() {
