@@ -74,7 +74,7 @@ I dati reali della pizzeria non erano disponibili, quindi alcuni valori sono **s
 - [x] Indirizzo: Piazza Repubblica 15, 38074 Dro (TN)
 - [x] Numero di telefono e WhatsApp: `388 907 7320` (su WhatsApp solo chiamate, niente messaggi)
 - [x] E-mail: non c'è (resta nascosta)
-- [x] Orario invernale: lun–ven 11:30–14:00 e 17:30–22:30, sab–dom 11:30–22:30
+- [x] Orario invernale: lun, mar, gio, ven 11:30–14:00 e 17:30–22:30, mercoledì chiuso, sab–dom 11:30–22:30
 - [x] Orario estivo: tutti i giorni 11:30–22:30
 - [x] Orario estivo dal 1 aprile al 30 settembre (`summer` in `src/data/site.ts`): il sito cambia orario da solo
 - [x] Menu dal menu cartaceo (novembre 2026), tradotto in inglese e tedesco

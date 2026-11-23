@@ -103,10 +103,7 @@ export const site = {
         { open: "11:30", close: "14:00" },
         { open: "17:30", close: "22:30" },
       ],
-      wed: [
-        { open: "11:30", close: "14:00" },
-        { open: "17:30", close: "22:30" },
-      ],
+      wed: [], // mercoledì chiuso (solo in inverno)
       thu: [
         { open: "11:30", close: "14:00" },
         { open: "17:30", close: "22:30" },
