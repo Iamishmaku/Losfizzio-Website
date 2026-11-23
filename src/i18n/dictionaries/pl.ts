@@ -97,7 +97,6 @@ export const pl: Dictionary = {
     lead: "Pizza pieczona na zamówienie, kebab, piadina i dobra kawa w samym sercu Dro. Usiądź na placu albo odbierz zamówienie na wynos.",
     ctaMenu: "Zobacz menu",
     ctaPhone: "Zamów telefonicznie",
-    ring: "Pizzeria · Kebab · Bar · Kawiarnia · Na placu w Dro · ",
     illustration: "Ilustracja pizzy",
   },
   marquee: [

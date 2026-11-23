@@ -94,7 +94,6 @@ export const en: Dictionary = {
     lead: "Freshly baked pizza, kebab, piadina and great coffee in the heart of Dro. Grab a table on the square or pick it up to take away.",
     ctaMenu: "See the menu",
     ctaPhone: "Order by phone",
-    ring: "Pizzeria · Kebab · Bar · Café · On the square in Dro · ",
     illustration: "Illustration of a pizza",
   },
   marquee: [

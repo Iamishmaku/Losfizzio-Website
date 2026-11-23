@@ -97,7 +97,6 @@ export const sk: Dictionary = {
     lead: "Pizza pečená na objednávku, kebab, piadina a dobrá káva v srdci Dro. Sadni si na námestí alebo si ju vyzdvihni so sebou.",
     ctaMenu: "Pozrieť menu",
     ctaPhone: "Objednať telefonicky",
-    ring: "Pizzeria · Kebab · Bar · Kaviareň · Na námestí v Dro · ",
     illustration: "Ilustrácia pizze",
   },
   marquee: [

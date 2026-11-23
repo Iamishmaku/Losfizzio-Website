@@ -95,7 +95,6 @@ export const de: Dictionary = {
     lead: "Frisch gebackene Pizza, Kebab, Piadina und guter Kaffee mitten in Dro. Setz dich auf die Piazza oder hol sie dir zum Mitnehmen ab.",
     ctaMenu: "Zur Speisekarte",
     ctaPhone: "Telefonisch bestellen",
-    ring: "Pizzeria · Kebab · Bar · Café · Auf der Piazza in Dro · ",
     illustration: "Illustration einer Pizza",
   },
   marquee: [

@@ -133,17 +133,6 @@ export function Hero() {
               </motion.div>
             </motion.div>
 
-            <svg viewBox="0 0 200 200" className={styles.ring} aria-hidden="true">
-              <defs>
-                <path id="hero-ring" d="M100 100 m-88 0 a88 88 0 1 1 176 0 a88 88 0 1 1 -176 0" />
-              </defs>
-              <text>
-                {/* textLength adatta il testo alla circonferenza (2π·88), qualunque sia la lingua */}
-                <textPath href="#hero-ring" textLength={552} lengthAdjust="spacing">
-                  {dict.hero.ring}
-                </textPath>
-              </text>
-            </svg>
           </div>
 
           <motion.div className={`${styles.float} ${styles.f1}`} style={{ y: leafY }}>

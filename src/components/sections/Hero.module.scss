@@ -158,23 +158,6 @@
   height: auto;
 }
 
-.ring {
-  position: absolute;
-  inset: -7%;
-  width: 114%;
-  height: 114%;
-  animation: spin 40s linear infinite;
-  pointer-events: none;
-
-  text {
-    font-family: var(--font-body);
-    font-size: 8.4px;
-    font-weight: 700;
-    text-transform: uppercase;
-    fill: var(--c-ink);
-  }
-}
-
 .float {
   position: absolute;
   width: clamp(36px, 7vw, 64px);
@@ -210,12 +193,6 @@
   transform: rotate(60deg) scale(0.8);
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 // opacity parte da 0.01 (non 0): così il browser dipinge subito il testo
 // e lo conta come contenuto visibile (LCP) già dal primo frame.
 @keyframes rise {
@@ -246,7 +223,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ring,
   .enter,
   .board,
   .wordWrap > span,

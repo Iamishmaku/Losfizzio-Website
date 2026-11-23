@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import styles from "./Logo.module.scss";
 
-/** Il cuoco con i baffi de Lo Sfizio (stesso disegno di public/images/logo/lo-sfizio-icona.svg). */
+/** Il cuoco con i baffi de Lo Sfizio (stesso disegno di public/images/logo/lo-sfizio-icona-rossa.svg). */
 const MARK_PATHS = [
   "M190,308 C190,243 240,181 297,177 C343,174 360,203 416,197 C508,187 553,104 637,102 C718,100 789,170 824,236 C849,284 824,307 768,307 C745,307 727,302 720,323 L712,350 C619,337 506,344 418,372 C373,386 332,404 301,425 L278,381 C323,360 379,341 439,327 C373,329 285,374 237,365 C206,359 190,341 190,308 Z",
   "M310,445 C378,391 549,361 665,369 C704,372 724,381 728,412 L733,453 C735,465 726,469 721,458 C710,433 669,423 609,422 C521,420 429,440 367,470 C342,482 328,496 325,507 C322,517 309,516 307,505 C303,487 299,459 310,445 Z",
@@ -15,7 +15,7 @@ const MARK_PATHS = [
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 1024 1024" className={className} aria-hidden="true">
-      <rect width="1024" height="1024" rx="230" fill="#2b2e8f" />
+      <rect width="1024" height="1024" rx="230" fill="#c8321f" />
       <g fill="#fff" transform="translate(-102 -10) scale(1.2)">
         {MARK_PATHS.map((d) => (
           <path key={d.slice(0, 12)} d={d} />

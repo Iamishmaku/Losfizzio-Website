@@ -95,7 +95,6 @@ export const it = {
     lead: "Pizze cotte al momento, kebab, piadine e un buon caffè, nel cuore di Dro. Siediti in piazza o passa a ritirarla da asporto.",
     ctaMenu: "Scopri il menu",
     ctaPhone: "Ordina al telefono",
-    ring: "Pizzeria · Kebab · Bar · Caffè · In piazza a Dro · ",
     illustration: "Illustrazione di una pizza",
   },
   marquee: [
