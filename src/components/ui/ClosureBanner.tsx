@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useSyncExternalStore } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CalendarX2, X } from "lucide-react";
 import { intlLocale } from "@/i18n/config";
@@ -17,6 +17,7 @@ export function useClosureText() {
   if (!closure) return null;
   const date = (key: string) => formatDayKey(key, intlLocale[locale]);
   return {
+    id: closure.until,
     title: dict.closure.title,
     text:
       closure.reopenDate && closure.reopenTime
@@ -29,11 +30,48 @@ export function useClosureText() {
   };
 }
 
+/*
+ * Quando il visitatore chiude l'avviso con la X, lo ricordiamo nel browser (localStorage)
+ * per quella chiusura: non ricompare cambiando pagina né riaprendo il sito.
+ * Una nuova chiusura (date diverse) ha un altro identificativo, quindi l'avviso torna a vedersi.
+ */
+const DISMISS_KEY = "losfizio:closure-dismissed";
+const listeners = new Set<() => void>();
+let dismissedInMemory: string | null = null; // se il browser blocca localStorage
+
+function readDismissed() {
+  try {
+    return window.localStorage.getItem(DISMISS_KEY) ?? dismissedInMemory;
+  } catch {
+    return dismissedInMemory;
+  }
+}
+
+function subscribeDismissed(callback: () => void) {
+  listeners.add(callback);
+  window.addEventListener("storage", callback);
+  return () => {
+    listeners.delete(callback);
+    window.removeEventListener("storage", callback);
+  };
+}
+
+function dismissClosure(id: string) {
+  dismissedInMemory = id;
+  try {
+    window.localStorage.setItem(DISMISS_KEY, id);
+  } catch {
+    // modalità privata o archiviazione bloccata: resta nascosto finché la pagina è aperta
+  }
+  listeners.forEach((l) => l());
+}
+
 /** Avviso fisso in basso su tutte le pagine durante una chiusura straordinaria. */
 export function ClosureBanner() {
   const { dict } = useI18n();
   const closure = useClosureText();
-  const [dismissed, setDismissed] = useState(false);
+  const dismissedId = useSyncExternalStore(subscribeDismissed, readDismissed, () => null);
+  const dismissed = closure !== null && dismissedId === closure.id;
 
   return (
     <AnimatePresence>
@@ -53,7 +91,7 @@ export function ClosureBanner() {
             <strong>{closure.title}</strong>
             <span>{closure.text}</span>
           </p>
-          <button className={styles.close} onClick={() => setDismissed(true)} aria-label={dict.closure.close}>
+          <button className={styles.close} onClick={() => closure && dismissClosure(closure.id)} aria-label={dict.closure.close}>
             <X />
           </button>
         </motion.aside>
