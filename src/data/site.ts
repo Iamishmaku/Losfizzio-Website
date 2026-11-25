@@ -87,7 +87,7 @@ export const site = {
    * Chiusure straordinarie (ferie, lavori…), date "AAAA-MM-GG" a estremi inclusi.
    * Durante una chiusura il sito mostra un avviso e il badge "Chiuso · riapre …"; finita la chiusura gli avvisi spariscono da soli.
    */
-  closures: [{ from: "2026-11-19", to: "2026-11-24" }] as { from: string; to: string }[],
+  closures: [] as { from: string; to: string }[],
 
   /**
    * Orari di apertura (fuso orario Europe/Rome). Array vuoto = chiuso.
